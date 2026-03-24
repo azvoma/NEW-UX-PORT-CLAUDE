@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrew Zvoma | UX/UI & Product Designer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── HERO ─────────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: calc(var(--nav-h) + 60px) 5% 80px;
+  position: relative; overflow: hidden;
+  background: var(--bg);
+}
+.hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 65% 40%, rgba(82,183,136,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 15% 80%, rgba(45,106,79,0.05) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background: var(--accent-lt);
+  border: 1px solid rgba(45,106,79,0.2);
+  color: var(--accent); padding:6px 14px; border-radius:100px;
+  font-size:0.78rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase;
+  margin-bottom:28px; width:fit-content;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+.hero-badge::before {
+  content:''; width:7px; height:7px; background:var(--accent);
+  border-radius:50%; animation: pulse 2s infinite;
+}
+.hero h1 {
+  font-family:var(--head); font-size:clamp(3rem,7vw,6rem); font-weight:800;
+  line-height:1; letter-spacing:-0.04em; margin-bottom:16px;
+  animation: fadeUp 0.7s 0.2s ease both; color: var(--text);
+}
+.hero h1 .line2 { color: var(--muted); }
+.hero-sub {
+  font-family:var(--head); font-size:clamp(1rem,2vw,1.3rem);
+  color:var(--muted); font-weight:500; margin-bottom:16px;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.hero-desc {
+  max-width:520px; color:var(--muted); font-size:1rem; line-height:1.7;
+  margin-bottom:36px; animation: fadeUp 0.7s 0.4s ease both;
+}
+.hero-pills {
+  display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px;
+  animation: fadeUp 0.7s 0.5s ease both;
+}
+.pill {
+  background:var(--surface); border:1px solid var(--border);
+  color:var(--muted); padding:8px 16px; border-radius:100px; font-size:0.84rem;
+}
+.hero-actions {
+  display:flex; gap:14px; flex-wrap:wrap;
+  animation: fadeUp 0.7s 0.6s ease both;
+}
+
+/* ── CASE STUDIES ─────────────────────────────────────────────────── */
+#case-studies { padding: 100px 5%; background: var(--surface); }
+.cases-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+.case-card {
+  background:var(--card); border:1px solid var(--border); border-radius:20px;
+  overflow:hidden; text-decoration:none; color:inherit;
+  display:flex; flex-direction:column;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.case-card:hover {
+  border-color: rgba(45,106,79,0.3); transform:translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.case-img-wrap { position:relative; overflow:hidden; aspect-ratio:16/9; background:var(--surface2); }
+.case-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; display:block; }
+.case-card:hover .case-img-wrap img { transform:scale(1.03); }
+.case-tag {
+  position:absolute; top:14px; left:14px;
+  background: rgba(255,255,255,0.9); backdrop-filter:blur(8px);
+  border:1px solid var(--border); color:var(--accent);
+  padding:4px 12px; border-radius:100px; font-size:0.72rem; font-weight:600; letter-spacing:0.04em;
+}
+.case-body { padding:26px 26px 30px; flex:1; display:flex; flex-direction:column; }
+.case-title { font-family:var(--head); font-size:1.25rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:7px; }
+.case-desc { color:var(--muted); font-size:0.87rem; line-height:1.6; flex:1; margin-bottom:18px; }
+.case-link {
+  display:inline-flex; align-items:center; gap:6px;
+  color:var(--accent); font-size:0.83rem; font-weight:600; text-decoration:none;
+  transition:gap 0.2s;
+}
+.case-card:hover .case-link { gap:10px; }
+
+/* ── PROCESS ──────────────────────────────────────────────────────── */
+#process { padding:100px 5%; background: var(--bg); }
+.process-grid {
+  display:grid; grid-template-columns:repeat(5,1fr);
+  gap:1px; background:var(--border); border:1px solid var(--border);
+  border-radius:20px; overflow:hidden;
+}
+.process-step { background:var(--bg); padding:30px 20px; transition:background 0.2s; }
+.process-step:hover { background:var(--surface); }
+.step-num {
+  font-family:var(--head); font-size:2.2rem; font-weight:800;
+  color: var(--accent-lt); line-height:1; margin-bottom:14px; letter-spacing:-0.04em;
+}
+.step-title { font-family:var(--head); font-size:0.92rem; font-weight:700; margin-bottom:6px; }
+.step-desc { color:var(--muted); font-size:0.8rem; line-height:1.5; }
+
+/* ── ABOUT ────────────────────────────────────────────────────────── */
+#about { padding:100px 5%; background:var(--surface); }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+.about-text p { color:var(--muted); line-height:1.75; margin-bottom:16px; font-size:0.97rem; }
+.stats-row { display:flex; gap:48px; margin-top:32px; padding-top:32px; border-top:1px solid var(--border); }
+.stat-num { font-family:var(--head); font-size:2.8rem; font-weight:800; color:var(--accent); line-height:1; margin-bottom:4px; letter-spacing:-0.04em; }
+.stat-label { color:var(--muted); font-size:0.84rem; }
+.tools-title { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+.tools-wrap { display:flex; flex-wrap:wrap; gap:10px; }
+.tool-chip {
+  background:var(--bg); border:1px solid var(--border); color:var(--text);
+  padding:8px 16px; border-radius:100px; font-size:0.85rem;
+  transition:border-color 0.2s, color 0.2s;
+}
+.tool-chip:hover { border-color:var(--accent); color:var(--accent); }
+
+/* ── CONTACT ──────────────────────────────────────────────────────── */
+#contact { padding:100px 5%; background:var(--bg); text-align:center; }
+#contact .section-desc { margin:0 auto 40px; }
+.contact-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:20px; }
+.contact-email { color:var(--muted); font-size:0.9rem; margin-top:8px; }
+.contact-email a { color:var(--muted); text-decoration:none; }
+.contact-email a:hover { color:var(--accent); }
+
+/* ── ANIMATIONS ───────────────────────────────────────────────────── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+@keyframes fadeDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
+nav { animation: fadeDown 0.6s ease both; }
+
+@media(max-width:900px) {
+  .cases-grid { grid-template-columns:1fr; }
+  .process-grid { grid-template-columns:1fr 1fr; }
+  .about-grid { grid-template-columns:1fr; gap:48px; }
+}
+@media(max-width:600px) {
+  .process-grid { grid-template-columns:1fr; }
+  .stats-row { flex-direction:column; gap:20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Andrew<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="mailto:azvoma@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Open to new opportunities</div>
+  <h1>Hi, I'm Andrew Zvoma<br><span class="line2">UX/UI Designer</span></h1>
+  <p class="hero-sub">UX/UI & Product Designer with 5+ years experience designing scalable digital products</p>
+  <p class="hero-desc">I design end-to-end experiences across SaaS, apps, and websites — combining UX strategy, UI craft, and product thinking to drive measurable outcomes.</p>
+  <div class="hero-pills">
+    <span class="pill">End-to-end UX/UI & Product Design</span>
+    <span class="pill">SaaS, Apps, Websites & Design Sprints</span>
+    <span class="pill">Data-informed, human-centred design</span>
+  </div>
+  <div class="hero-actions">
+    <a href="case-studies.html" class="btn-primary">View Case Studies</a>
+    <a href="#about" class="btn-ghost">About Me</a>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case-studies">
+  <p class="section-label reveal">Case Studies</p>
+  <h2 class="section-title reveal">Selected Work</h2>
+  <p class="section-desc reveal">A selection of product work across SaaS, sprint delivery, mobile, and web.</p>
+  <div class="cases-grid">
+
+    <a href="case-studies/bluvape.html" class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="https://a2zee.uk/_astro/blu_vape_main_screen%20copy.DW4DA4Pl.png" alt="Blu Vape Sprint" loading="lazy">
+        <span class="case-tag">5 days</span>
+      </div>
+      <div class="case-body">
+        <h3 class="case-title">Blu Vape Sprint</h3>
+        <p class="case-desc">Reimagined brand through loyalty and community — facilitated a 5-day Google Design Sprint to rapidly explore, prototype, and validate a new brand experience.</p>
+        <span class="case-link">Read Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="case-studies/surgeryprep.html" class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="https://a2zee.uk/_astro/surgery_prep_main_screen%20copy.BBaETT9Z.png" alt="SurgeryPrep" loading="lazy">
+        <span class="case-tag">3 months</span>
+      </div>
+      <div class="case-body">
+        <h3 class="case-title">SurgeryPrep</h3>
+        <p class="case-desc">Personalised surgical guidance to reduce patient anxiety. Designed a mobile companion guiding patients through their surgical journey with clear, timely information.</p>
+        <span class="case-link">Read Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="case-studies/harrods.html" class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="https://a2zee.uk/_astro/harrods_main_screen%20copy.dk7MFWev.png" alt="Harrods Pre-order" loading="lazy">
+        <span class="case-tag">8 weeks</span>
+      </div>
+      <div class="case-body">
+        <h3 class="case-title">Harrods Pre-order</h3>
+        <p class="case-desc">Effortless, luxury-grade way to reserve high-demand products. Improved demand forecasting and conversion confidence for Harrods' eCommerce platform.</p>
+        <span class="case-link">Read Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="case-studies/samsung.html" class="case-card reveal">
+      <div class="case-img-wrap">
+        <img src="https://a2zee.uk/_astro/samsung_main_screen%20copy.CrlS8Bga.png" alt="Samsung B2B" loading="lazy">
+        <span class="case-tag">3 months</span>
+      </div>
+      <div class="case-body">
+        <h3 class="case-title">Samsung B2B</h3>
+        <p class="case-desc">Repositioning Samsung from vendor to strategic partner. Transformed the B2B presence into a consultative partnership platform generating higher-quality leads.</p>
+        <span class="case-link">Read Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="case-studies/mindnest.html" class="case-card reveal">
+      <div class="case-img-wrap" style="background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%); display:flex; align-items:center; justify-content:center;">
+        <div style="font-family:var(--head);font-size:3rem;font-weight:800;color:#2d6a4f;opacity:0.4;">MN</div>
+      </div>
+      <div class="case-body">
+        <h3 class="case-title">MindNest</h3>
+        <p class="case-desc">35% reduction in week-one churn through improved onboarding. Redesigned habit formation experience for a wellness app, increasing daily active users by 22%.</p>
+        <span class="case-link">Read Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="case-studies/plantapp.html" class="case-card reveal">
+      <div class="case-img-wrap" style="background:linear-gradient(135deg,#f1f8e9 0%,#dcedc8 100%); display:flex; align-items:center; justify-content:center; font-size:4rem;">
+        🌿
+      </div>
+      <div class="case-body">
+        <h3 class="case-title">Plant Care App</h3>
+        <p class="case-desc">A personalised plant care companion helping users discover, grow, and maintain their plants — combining beautiful UI with intelligent care tracking and community features.</p>
+        <span class="case-link">Read Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+  <div style="text-align:center; margin-top:40px;" class="reveal">
+    <a href="case-studies.html" class="btn-ghost">View All Case Studies</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <p class="section-label reveal">My Process</p>
+  <h2 class="section-title reveal">Modern Workflow</h2>
+  <p class="section-desc reveal">A structured process that balances discovery with delivery.</p>
+  <div class="process-grid reveal">
+    <div class="process-step"><div class="step-num">01</div><h3 class="step-title">Discovery & Insights</h3><p class="step-desc">Research, interviews, and problem definition</p></div>
+    <div class="process-step"><div class="step-num">02</div><h3 class="step-title">Ideation & Exploration</h3><p class="step-desc">Ideation, sketching, and concept validation</p></div>
+    <div class="process-step"><div class="step-num">03</div><h3 class="step-title">Design & Prototype</h3><p class="step-desc">Wireframes, prototypes, and visual design</p></div>
+    <div class="process-step"><div class="step-num">04</div><h3 class="step-title">Testing & Iteration</h3><p class="step-desc">Usability testing and iteration</p></div>
+    <div class="process-step"><div class="step-num">05</div><h3 class="step-title">Implementation</h3><p class="step-desc">Implementation support and measurement</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="section-label reveal">About Me</p>
+      <h2 class="section-title reveal">I design products people love to use</h2>
+      <p class="reveal">I'm a UX/UI Product Designer with over 5 years of experience creating scalable digital products that solve real user problems and drive business results.</p>
+      <p class="reveal">My approach combines data-informed insights with modern design workflows, always keeping the human experience at the centre. I've worked across various industries, from B2B SaaS platforms to consumer mobile apps, helping teams deliver experiences that users love.</p>
+      <p class="reveal">I believe in the power of collaboration, rapid prototyping, and continuous iteration. Whether it's a 5-day design sprint or a 12-week product overhaul, I bring strategic thinking and craft to every project.</p>
+      <div class="stats-row reveal">
+        <div><div class="stat-num">5+</div><div class="stat-label">Years Experience</div></div>
+        <div><div class="stat-num">20+</div><div class="stat-label">Projects Shipped</div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="tools-title">Tools & Technologies</p>
+      <div class="tools-wrap">
+        <span class="tool-chip">Figma</span><span class="tool-chip">Miro</span>
+        <span class="tool-chip">Notion</span><span class="tool-chip">Adobe Creative Suite</span>
+        <span class="tool-chip">Sketch</span><span class="tool-chip">Principle</span>
+        <span class="tool-chip">Framer</span><span class="tool-chip">HTML/CSS</span>
+        <span class="tool-chip">Adobe XD</span><span class="tool-chip">Hotjar</span>
+        <span class="tool-chip">Maze</span><span class="tool-chip">Zeplin</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label reveal">Get In Touch</p>
+  <h2 class="section-title reveal">Let's Work Together</h2>
+  <p class="section-desc reveal">Available for freelance projects and full-time opportunities.</p>
+  <div class="contact-actions reveal">
+    <a href="mailto:azvoma@gmail.com" class="btn-primary">Email Me</a>
+    <a href="https://a2zee.uk" target="_blank" class="btn-ghost">View Live Portfolio</a>
+  </div>
+  <p class="contact-email reveal"><a href="mailto:azvoma@gmail.com">azvoma@gmail.com</a></p>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">Andrew<span>.</span></a>
+      <p>UX/UI Product Designer with 5+ years experience creating scalable digital products.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="#about">About</a></li><li><a href="#process">Process</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Get In Touch</h4><ul>
+      <li><a href="mailto:azvoma@gmail.com">azvoma@gmail.com</a></li>
+      <li><a href="https://a2zee.uk" target="_blank">a2zee.uk</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 Andrew Zvoma. All rights reserved.</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*60); obs.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});
+});
+</script>
+</body>
+</html>
