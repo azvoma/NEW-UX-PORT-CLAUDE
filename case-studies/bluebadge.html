@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Badge Digital Companion | Andrew Zvoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+/* ── Blue Badge specific styles ─────────────────────────────────── */
+:root {
+  --bb-blue:   #1d4ed8;
+  --bb-blue-lt:#eff6ff;
+  --bb-yellow: #fbbf24;
+  --bb-yellow-lt: #fffbeb;
+  --bb-green:  #15803d;
+  --bb-green-lt:#f0fdf4;
+}
+
+/* Hero visual — GOV.UK inspired badge + task list mockup */
+.bb-hero-visual {
+  margin-top: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 50%, #2563eb 100%);
+  padding: 48px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.bb-hero-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 30% 50%, rgba(251,191,36,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* GOV.UK style mock screens */
+.gov-screen {
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  font-family: 'DM Sans', sans-serif;
+  flex-shrink: 0;
+}
+.gov-screen.narrow { width: 200px; }
+.gov-topbar {
+  background: #0b0c0c;
+  padding: 8px 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.gov-crown { color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; }
+.gov-beta { background: #1d70b8; color: #fff; font-size: 7px; font-weight: 700; padding: 2px 5px; border-radius: 2px; }
+.gov-body { padding: 16px; }
+.gov-h1 { font-size: 13px; font-weight: 800; color: #0b0c0c; margin: 0 0 6px; line-height: 1.3; }
+.gov-h2 { font-size: 10px; font-weight: 700; color: #0b0c0c; margin: 8px 0 4px; }
+.gov-p { font-size: 8px; color: #505a5f; margin: 0 0 8px; line-height: 1.5; }
+.gov-label { font-size: 7.5px; font-weight: 700; color: #0b0c0c; margin: 0 0 3px; display: block; }
+.gov-input {
+  width: 100%; border: 2px solid #0b0c0c; border-radius: 0;
+  padding: 5px 7px; font-size: 8px; color: #0b0c0c; margin-bottom: 8px;
+  box-sizing: border-box;
+}
+.gov-input.focus { border-color: #ffdd00; outline: 3px solid #ffdd00; }
+.gov-btn {
+  background: #00703c; color: #fff; border: 2px solid #00703c;
+  padding: 6px 12px; font-size: 9px; font-weight: 700;
+  display: inline-block; margin-bottom: 8px; border-radius: 0;
+}
+.gov-btn.secondary { background: #f3f2f1; color: #0b0c0c; border-color: #0b0c0c; }
+.gov-inset { border-left: 5px solid #b1b4b6; padding: 6px 10px; margin: 6px 0; background: #f3f2f1; }
+.gov-inset p { font-size: 7.5px; color: #505a5f; margin: 0; }
+
+/* Task list component */
+.gov-tasklist { list-style: none; padding: 0; margin: 6px 0; }
+.gov-tasklist li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0; border-bottom: 1px solid #b1b4b6; font-size: 8px;
+}
+.gov-tasklist li:last-child { border-bottom: none; }
+.gov-tasklist a { color: #1d70b8; text-decoration: underline; font-size: 8px; }
+.tl-tag {
+  font-size: 6.5px; font-weight: 700; padding: 2px 6px; border-radius: 2px;
+  white-space: nowrap;
+}
+.tl-tag.complete  { background: #cce2d8; color: #005a30; }
+.tl-tag.progress  { background: #bee3f8; color: #003078; }
+.tl-tag.not-started { background: #eeefef; color: #505a5f; }
+
+/* Radio option */
+.gov-radio { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+.gov-radio-circle {
+  width: 18px; height: 18px; border: 2px solid #0b0c0c; border-radius: 50%;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+}
+.gov-radio-circle.checked::after {
+  content: ''; width: 8px; height: 8px; background: #0b0c0c; border-radius: 50%;
+}
+.gov-radio p { font-size: 8px; color: #0b0c0c; margin: 0; font-weight: 500; }
+
+/* Error summary */
+.gov-error-summary {
+  border: 4px solid #d4351c; padding: 8px 12px; margin-bottom: 8px;
+}
+.gov-error-summary h3 { font-size: 9px; font-weight: 700; color: #d4351c; margin: 0 0 4px; }
+.gov-error-summary ul { margin: 0; padding-left: 14px; }
+.gov-error-summary li { font-size: 7.5px; color: #d4351c; }
+
+/* Focus ring demo */
+.focus-demo {
+  background: #fff; border: 2px solid #0b0c0c; padding: 6px 10px;
+  font-size: 8px; font-weight: 700; display: inline-block;
+  outline: 3px solid #ffdd00; outline-offset: 2px;
+}
+
+/* Accessibility audit table */
+.audit-table {
+  width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.85rem;
+}
+.audit-table th {
+  background: var(--surface); font-family: var(--head); font-weight: 700;
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--border);
+  color: var(--muted);
+}
+.audit-table td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top;
+  font-size: 0.84rem; color: var(--text);
+}
+.audit-table tr:hover td { background: var(--surface); }
+.badge-pass   { background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+.badge-note   { background: #fef9c3; color: #854d0e; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+.badge-wcag   { background: var(--bb-blue-lt); color: var(--bb-blue); font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+
+/* Service map */
+.service-map {
+  display: flex; gap: 0; margin: 24px 0; overflow-x: auto;
+  border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+}
+.sm-step {
+  flex: 1; min-width: 110px; padding: 20px 14px; background: var(--bg);
+  border-right: 1px solid var(--border); text-align: center;
+  transition: background 0.2s;
+}
+.sm-step:last-child { border-right: none; }
+.sm-step:hover { background: var(--surface); }
+.sm-num {
+  font-family: var(--head); font-size: 1.4rem; font-weight: 800;
+  color: var(--bb-blue-lt); color: #bfdbfe;
+  line-height: 1; margin-bottom: 8px;
+}
+.sm-title { font-weight: 700; font-size: 0.82rem; margin-bottom: 4px; color: var(--text); }
+.sm-sub { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+.sm-channel {
+  display: inline-block; margin-top: 8px; font-size: 0.65rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.sm-channel.digital { background: var(--bb-blue-lt); color: var(--bb-blue); }
+.sm-channel.physical { background: #fef3c7; color: #92400e; }
+.sm-channel.mixed { background: #f3e8ff; color: #6b21a8; }
+
+/* GDS pattern chips */
+.pattern-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.pattern-chip {
+  background: var(--bb-blue-lt); border: 1px solid #bfdbfe; color: var(--bb-blue);
+  padding: 8px 16px; border-radius: 8px; font-size: 0.83rem; font-weight: 600;
+}
+.pattern-chip.yellow { background: var(--bb-yellow-lt); border-color: #fde68a; color: #92400e; }
+.pattern-chip.green  { background: var(--bb-green-lt); border-color: #bbf7d0; color: var(--bb-green); }
+
+/* WCAG criteria callout */
+.wcag-callout {
+  background: var(--bb-blue-lt); border: 1px solid #bfdbfe; border-radius: 12px;
+  padding: 16px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start;
+}
+.wcag-badge {
+  background: var(--bb-blue); color: #fff; font-family: var(--head);
+  font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 6px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.wcag-callout p { margin: 0; font-size: 0.88rem; color: var(--text); }
+.wcag-callout strong { color: var(--bb-blue); }
+
+/* Iteration before/after */
+.iteration-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.iter-card { border-radius: 12px; padding: 20px; border: 1px solid var(--border); }
+.iter-card.before { background: #fff7f7; border-color: #fecaca; }
+.iter-card.after  { background: #f0fdf4; border-color: #bbf7d0; }
+.iter-label {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.iter-card.before .iter-label { color: #dc2626; }
+.iter-card.after  .iter-label { color: #15803d; }
+.iter-card h4 { margin: 0 0 6px; font-size: 0.92rem; }
+.iter-card p  { margin: 0; font-size: 0.84rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Andrew <span>Zvoma</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../case-studies.html">Case Studies</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+    <li><a href="mailto:azvoma@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <a href="../case-studies.html" class="cs-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Case Studies
+  </a>
+  <div class="cs-meta">
+    <span class="cs-tag">10 weeks</span>
+    <span class="cs-tag">Lead Product Designer</span>
+    <span class="cs-tag">GDS Service Standard</span>
+    <span class="cs-tag">WCAG 2.2 AA</span>
+  </div>
+  <h1 class="cs-title">Blue Badge Digital Companion</h1>
+  <p class="cs-subtitle">Streamlining accessibility for 2.5 million users — redesigning the Blue Badge renewal process to reduce drop-off and achieve 100% WCAG 2.2 AA compliance.</p>
+
+  <!-- Hero visual -->
+  <div class="bb-hero-visual">
+
+    <!-- Screen 1: Task list -->
+    <div class="gov-screen">
+      <div class="gov-topbar">
+        <span class="gov-crown">GOV.UK</span>
+        <span class="gov-beta">BETA</span>
+      </div>
+      <div class="gov-body">
+        <div style="font-size:7px;color:#505a5f;margin-bottom:6px;">Apply for a Blue Badge</div>
+        <div class="gov-h1">Your application</div>
+        <p class="gov-p">Complete each section. You can save your progress and return later.</p>
+        <ul class="gov-tasklist">
+          <li><a href="#">Your details</a><span class="tl-tag complete">Completed</span></li>
+          <li><a href="#">Eligibility</a><span class="tl-tag complete">Completed</span></li>
+          <li><a href="#">Your condition</a><span class="tl-tag progress">In progress</span></li>
+          <li><a href="#">Supporting evidence</a><span class="tl-tag not-started">Not started</span></li>
+          <li><a href="#">Declaration</a><span class="tl-tag not-started">Not started</span></li>
+        </ul>
+        <div class="gov-inset"><p>You can save and come back later. Your progress is saved automatically.</p></div>
+        <div class="gov-btn">Continue application</div>
+      </div>
+    </div>
+
+    <!-- Screen 2: Upload evidence (one thing per page) -->
+    <div class="gov-screen" style="transform:translateY(-20px)">
+      <div class="gov-topbar">
+        <span class="gov-crown">GOV.UK</span>
+        <span class="gov-beta">BETA</span>
+      </div>
+      <div class="gov-body">
+        <div style="font-size:7px;color:#505a5f;margin-bottom:6px;">Section 4 of 5</div>
+        <div class="gov-h1">Upload your supporting evidence</div>
+        <p class="gov-p">Upload a letter from your doctor, consultant, or specialist.</p>
+        <div class="gov-inset"><p>Accepted: PDF, JPG, PNG. Maximum 10MB per file.</p></div>
+        <!-- Drag & drop zone -->
+        <div style="border:2px dashed #1d70b8;padding:14px;text-align:center;margin:8px 0;border-radius:4px;background:#eff6ff;">
+          <div style="font-size:9px;font-weight:700;color:#1d70b8;margin-bottom:4px;">Drag and drop files here</div>
+          <div style="font-size:7.5px;color:#505a5f;margin-bottom:8px;">or</div>
+          <div class="gov-btn" style="font-size:8px;padding:5px 10px;display:inline-block">Choose files</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;background:#cce2d8;padding:6px 8px;border-radius:2px;margin-top:6px;">
+          <div style="width:14px;height:14px;background:#005a30;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="8" height="8" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.5"/></svg>
+          </div>
+          <span style="font-size:7.5px;color:#005a30;font-weight:700">doctor_letter.pdf uploaded</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: Magic link / accessible auth -->
+    <div class="gov-screen narrow">
+      <div class="gov-topbar">
+        <span class="gov-crown">GOV.UK</span>
+      </div>
+      <div class="gov-body">
+        <div class="gov-h1">Check your email</div>
+        <p class="gov-p">We've sent a sign-in link to:</p>
+        <div style="background:#f3f2f1;padding:8px;font-size:8.5px;font-weight:700;color:#0b0c0c;margin-bottom:10px;word-break:break-all;">j.smith@email.com</div>
+        <p class="gov-p">The link expires in 15 minutes. No password needed.</p>
+        <div class="gov-inset"><p>If you didn't receive the email, check your spam folder or request a new link.</p></div>
+        <div class="gov-btn secondary" style="font-size:8px">Resend sign-in link</div>
+        <div style="margin-top:8px;padding-top:8px;border-top:1px solid #b1b4b6;">
+          <div style="font-size:7px;color:#505a5f;">Need help signing in?</div>
+          <a href="#" style="font-size:7.5px;color:#1d70b8;">Contact support</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- Overview sidebar + intro -->
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)">
+    <div>
+      <h2 style="margin-top:0">Overview</h2>
+      <p>The Blue Badge scheme enables people with severe mobility issues or hidden disabilities to park closer to their destinations. Despite serving over 2.5 million badge holders in the UK, the renewal journey was fragmented, stressful, and inaccessible — the very population it aimed to support was most likely to struggle with it.</p>
+      <p>I was brought in as Lead Product Designer to redesign the digital application journey, with hard constraints: full conformance with the <strong>GOV.UK Service Standard</strong>, <strong>WCAG 2.2 AA</strong> compliance, and a service that genuinely worked for users with physical, cognitive, and sensory impairments.</p>
+      <div class="cs-quote">
+        <blockquote>"I gave up halfway through. There were too many pages asking for too much at once. My hands were shaking by the end and I'd lost everything I'd typed."</blockquote>
+        <cite>— Research participant, applicant with rheumatoid arthritis</cite>
+      </div>
+    </div>
+    <div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;">
+        <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Project Details</p>
+        <p style="font-weight:700;font-size:0.85rem;margin-bottom:2px;">My Role</p>
+        <p style="color:var(--muted);font-size:0.85rem;margin-bottom:12px;">Lead Product Designer (UX/UI & Accessibility)</p>
+        <p style="font-weight:700;font-size:0.85rem;margin-bottom:2px;">Timeline</p>
+        <p style="color:var(--muted);font-size:0.85rem;margin-bottom:12px;">10 weeks</p>
+        <p style="font-weight:700;font-size:0.85rem;margin-bottom:4px;">Tools Used</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+          <span class="cs-tag">Figma</span>
+          <span class="cs-tag">GOV.UK Prototype Kit</span>
+          <span class="cs-tag">Axe DevTools</span>
+        </div>
+        <p style="font-weight:700;font-size:0.85rem;margin-bottom:4px;">Standards</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="cs-tag">WCAG 2.2 AA</span>
+          <span class="cs-tag">GDS Service Standard</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process row -->
+  <div class="process-row reveal">
+    <div class="process-row-step"><div class="num">01</div><div class="label">Discovery</div><div class="sub">Audit & research</div></div>
+    <div class="process-row-step"><div class="num">02</div><div class="label">Insights</div><div class="sub">Define the challenge</div></div>
+    <div class="process-row-step"><div class="num">03</div><div class="label">Ideation</div><div class="sub">GDS patterns & flows</div></div>
+    <div class="process-row-step"><div class="num">04</div><div class="label">Design</div><div class="sub">Prototype & WCAG</div></div>
+    <div class="process-row-step"><div class="num">05</div><div class="label">Testing</div><div class="sub">Assistive tech sessions</div></div>
+    <div class="process-row-step"><div class="num">06</div><div class="label">Delivery</div><div class="sub">GDS assessment ready</div></div>
+  </div>
+
+  <!-- 01 Discovery -->
+  <div class="reveal">
+    <div class="cs-step-num">01</div>
+    <h2 style="margin-top:8px">Discovery: The Problem</h2>
+    <p>Applying for a Blue Badge is a high-stakes task for users with physical or cognitive impairments. The existing service was fragmented, requiring users to mail physical documents — leading to a <strong>35% application rejection rate</strong> due to "incorrect evidence." Users felt anxious and unsupported during the 8-week waiting period with no visibility of their application status.</p>
+    <h4>Core Problems Identified</h4>
+    <ul>
+      <li>Physical document submission created barriers for users with limited mobility or no printer access</li>
+      <li>Single long form caused fatigue — no way to save and return, abandonment spiked after 8 minutes</li>
+      <li>Medical history and identity proof were requested in the same exhausting flow</li>
+      <li>No application status tracking during the 8-week processing window</li>
+      <li>15% of users relied on family members to complete the form but the system had no third-party permission flow</li>
+    </ul>
+
+    <h4>WCAG 2.2 Audit Findings</h4>
+    <div class="cs-features cols-3 reveal">
+      <div class="feature-card">
+        <div class="feature-title">Hit Zone Failures</div>
+        <div class="feature-desc">Interactive elements fell below the 24×24 CSS pixel minimum (WCAG 2.5.8). Users with motor impairments consistently triggered wrong buttons on mobile.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Cognitive Overload</div>
+        <div class="feature-desc">The existing flow asked for medical history, identity evidence, and personal details simultaneously — a direct conflict with the "one thing per page" GDS principle.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Assisted Digital Gap</div>
+        <div class="feature-desc">No mechanism for authorised third-party submission. 15% of users were forced to share personal login credentials with family members — a safeguarding risk.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 Insights -->
+  <div class="reveal">
+    <div class="cs-step-num">02</div>
+    <h2 style="margin-top:8px">Insights: Defining the Accessibility Challenge</h2>
+    <p>I conducted qualitative research sessions with 8 participants across three disability categories — motor impairment, cognitive impairment, and low vision — alongside interviews with Local Authority caseworkers who process applications daily.</p>
+
+    <div class="cs-quote">
+      <blockquote>"I need to stop halfway through. My condition means I can't concentrate for more than ten minutes. When the session timed out, I lost everything. I just cried."</blockquote>
+      <cite>— Research participant, applicant with MS</cite>
+    </div>
+
+    <h4>Design Questions</h4>
+    <ul>
+      <li>How might we break a complex application into manageable chunks without losing user context?</li>
+      <li>How might we authenticate users without relying on cognitive function tests that disadvantage our core audience?</li>
+      <li>How might we support third-party assisted digital journeys without creating safeguarding risks?</li>
+      <li>How might we give applicants confidence and status visibility during an 8-week wait?</li>
+    </ul>
+
+    <h4>Problem Statement</h4>
+    <p>Blue Badge applicants — often living with the very conditions that qualify them for the scheme — need a digital service that adapts to their pace, cognitive capacity, and assistive technology. The current service fails at the first interaction and abandons users mid-journey with no way back.</p>
+  </div>
+
+  <!-- 03 Ideation -->
+  <div class="reveal">
+    <div class="cs-step-num">03</div>
+    <h2 style="margin-top:8px">Ideation: GDS Patterns & Inclusive Flows</h2>
+    <p>I anchored the redesign in two GDS principles: <strong>"One thing per page"</strong> and the <strong>Task List pattern</strong>. These aren't just best practice — for users with cognitive impairments, they are a functional accessibility requirement.</p>
+
+    <h4>The Strategy</h4>
+    <div class="cs-features cols-3 reveal">
+      <div class="feature-card">
+        <div class="feature-title">Task List Pattern</div>
+        <div class="feature-desc">Using the GDS Task List component, the application was broken into 5 named sections. Users could see exactly where they were, what was complete, and what remained — reducing anxiety significantly.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Save and Return</div>
+        <div class="feature-desc">Recognising that users with chronic pain or fatigue may not finish a 20-minute form in one sitting, I designed a persistent save-and-return flow accessible with just an email link — no password required.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Third-Party Permissions</div>
+        <div class="feature-desc">A new delegated access flow allowed a named family member or carer to complete and submit on behalf of the applicant, with full audit trail — removing the credential-sharing safeguarding risk.</div>
+      </div>
+    </div>
+
+    <h4>GDS Patterns Applied</h4>
+    <div class="pattern-grid">
+      <span class="pattern-chip">Task List</span>
+      <span class="pattern-chip">Error Summary</span>
+      <span class="pattern-chip">File Upload</span>
+      <span class="pattern-chip">Check Your Answers</span>
+      <span class="pattern-chip">Confirmation Page</span>
+      <span class="pattern-chip yellow">Magic Link Auth</span>
+      <span class="pattern-chip yellow">Timeout Warning</span>
+      <span class="pattern-chip green">WCAG 2.5.8 Target Size</span>
+      <span class="pattern-chip green">Focus Visible (2.4.11)</span>
+      <span class="pattern-chip green">Redundant Entry (3.3.7)</span>
+    </div>
+
+    <h4>Service Map: Digital & Physical Touchpoints</h4>
+    <div class="service-map">
+      <div class="sm-step">
+        <div class="sm-num">01</div>
+        <div class="sm-title">Eligibility Check</div>
+        <div class="sm-sub">Online self-assessment tool</div>
+        <span class="sm-channel digital">Digital</span>
+      </div>
+      <div class="sm-step">
+        <div class="sm-num">02</div>
+        <div class="sm-title">Account Creation</div>
+        <div class="sm-sub">Magic link — no password</div>
+        <span class="sm-channel digital">Digital</span>
+      </div>
+      <div class="sm-step">
+        <div class="sm-num">03</div>
+        <div class="sm-title">Application Form</div>
+        <div class="sm-sub">5-section task list, saveable</div>
+        <span class="sm-channel digital">Digital</span>
+      </div>
+      <div class="sm-step">
+        <div class="sm-num">04</div>
+        <div class="sm-title">Evidence Upload</div>
+        <div class="sm-sub">Drag & drop or file picker</div>
+        <span class="sm-channel digital">Digital</span>
+      </div>
+      <div class="sm-step">
+        <div class="sm-num">05</div>
+        <div class="sm-title">LA Review</div>
+        <div class="sm-sub">Status notifications sent by email + SMS</div>
+        <span class="sm-channel mixed">Mixed</span>
+      </div>
+      <div class="sm-step">
+        <div class="sm-num">06</div>
+        <div class="sm-title">Badge Issued</div>
+        <div class="sm-sub">Physical badge posted to applicant</div>
+        <span class="sm-channel physical">Physical</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 Design -->
+  <div class="reveal">
+    <div class="cs-step-num">04</div>
+    <h2 style="margin-top:8px">Design: WCAG 2.2 AA Implementation</h2>
+    <p>I built the prototype in the <strong>GOV.UK Prototype Kit</strong> using the GOV.UK Design System component library. Every design decision was mapped directly to a WCAG 2.2 criterion, ensuring evidence of compliance was built into the design process — not retrofitted.</p>
+
+    <div class="wcag-callout reveal">
+      <span class="wcag-badge">WCAG 3.3.7</span>
+      <p><strong>Accessible Authentication (Minimum):</strong> I designed a magic link login flow that avoids "cognitive function tests" — no remembered passwords, no CAPTCHA. The user enters their email address once; a time-limited sign-in link is sent to their inbox. This directly addresses the cognitive barriers faced by users with dementia or memory impairment.</p>
+    </div>
+
+    <div class="wcag-callout reveal">
+      <span class="wcag-badge">WCAG 2.5.8</span>
+      <p><strong>Target Size (Minimum):</strong> All interactive elements — including the "Upload Evidence" button, radio buttons, and navigation links — were sized to a minimum of <strong>24×24 CSS pixels</strong> with sufficient surrounding space to prevent accidental triggers. Motor-impaired users with tremors were the primary beneficiary.</p>
+    </div>
+
+    <div class="wcag-callout reveal">
+      <span class="wcag-badge">WCAG 2.4.11</span>
+      <p><strong>Focus Appearance:</strong> I customised CSS focus rings to use a <strong>high-contrast yellow (#FFDD00) on black</strong> outline — the GOV.UK standard — ensuring keyboard-only users and switch access users always had a clear, unmissable focus indicator on every interactive element.</p>
+    </div>
+
+    <div class="wcag-callout reveal">
+      <span class="wcag-badge">WCAG 3.3.7</span>
+      <p><strong>Redundant Entry:</strong> The "Upload Evidence" flow was designed to offer both drag-and-drop <em>and</em> a traditional file picker. Users with tremors who struggle with precise drag interactions could use the file picker instead — providing an equivalent, accessible alternative without degrading the experience.</p>
+    </div>
+
+    <h4>Focus State Design — Before & After</h4>
+    <div class="iteration-grid reveal">
+      <div class="iter-card before">
+        <div class="iter-label">Before — Fails WCAG 2.4.11</div>
+        <h4>Browser default focus ring</h4>
+        <p>The default browser focus outline was overridden with <code>outline: none</code> in the original CSS — completely invisible to keyboard users and failing WCAG 2.4.11 at any level.</p>
+      </div>
+      <div class="iter-card after">
+        <div class="iter-label">After — Passes WCAG 2.4.11</div>
+        <h4>High-contrast custom focus ring</h4>
+        <p>3px solid yellow (#FFDD00) outline with 2px offset on a dark background — meeting the minimum 3:1 contrast ratio change requirement and matching GOV.UK Design System standards.</p>
+      </div>
+    </div>
+
+    <h4>Component Library Delivered</h4>
+    <p>All components were documented in Figma with accessibility annotations covering ARIA roles, focus order, error states, and keyboard interaction patterns — ready for developer handover.</p>
+    <div class="cs-features cols-4 reveal">
+      <div class="feature-card">
+        <div class="feature-title">Buttons</div>
+        <div class="feature-desc">Primary, secondary, warning variants. Min 24px target. High-contrast focus states documented.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Form Inputs</div>
+        <div class="feature-desc">Text inputs, radios, checkboxes, date inputs. Error states with inline messages and summary links.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Error Summary</div>
+        <div class="feature-desc">GDS Error Summary pattern — focus moves to summary on submit. Each error links to the relevant field.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">File Upload</div>
+        <div class="feature-desc">Drag-and-drop with accessible fallback file picker. Upload progress and success confirmation states.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 Testing -->
+  <div class="reveal">
+    <div class="cs-step-num">05</div>
+    <h2 style="margin-top:8px">Testing: Assistive Technology Sessions</h2>
+    <p>I conducted moderated usability sessions with <strong>5 participants</strong> using assistive technologies across two rounds. Participants used NVDA (screen reader), VoiceOver (iOS), and Switch Access (Android) — covering the primary AT used by the Blue Badge population.</p>
+
+    <h4>Testing Scenarios</h4>
+    <ul>
+      <li>Complete sections 1 and 2 of the application using keyboard-only navigation</li>
+      <li>Upload a PDF document using the evidence upload component</li>
+      <li>Save the application and return via magic link on a different device</li>
+      <li>Recover from a form validation error using only a screen reader</li>
+    </ul>
+
+    <h4>Key Pivots from Testing</h4>
+    <div class="iteration-grid reveal">
+      <div class="iter-card before">
+        <div class="iter-label">Original Design</div>
+        <h4>Progress Bar</h4>
+        <p>A percentage-based progress bar (e.g. "60% complete") was used to show application progress. Screen reader users found the percentage meaningless without section context — "60% of what?"</p>
+      </div>
+      <div class="iter-card after">
+        <div class="iter-label">Iteration</div>
+        <h4>Task List Component</h4>
+        <p>Replaced with the GDS Task List pattern. Each section is named, has a clear status (Not started / In progress / Completed), and screen readers announce the full context on focus. Comprehension improved from 40% → 95%.</p>
+      </div>
+    </div>
+
+    <div class="iteration-grid reveal">
+      <div class="iter-card before">
+        <div class="iter-label">Original Design</div>
+        <h4>Upload Button Only</h4>
+        <p>A single "Upload file" button. Users with tremors consistently triggered adjacent elements accidentally, and those using Switch Access found the small target area with single button caused repeated errors.</p>
+      </div>
+      <div class="iter-card after">
+        <div class="iter-label">Iteration</div>
+        <h4>Drag & Drop + File Picker</h4>
+        <p>Added both a drag-and-drop zone and a traditional file picker button. Switch Access users adopted the picker; pointer users preferred drag-and-drop. Both paths lead to the same outcome — meeting WCAG 3.3.7 Redundant Entry.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 Delivery + Audit Table -->
+  <div class="reveal">
+    <div class="cs-step-num">06</div>
+    <h2 style="margin-top:8px">Delivery: GDS Assessment Readiness</h2>
+    <p>The final output was a high-fidelity prototype built in the GOV.UK Prototype Kit, validated by automated Axe DevTools scans and manual assistive technology testing — ready for GDS Service Assessment at Beta stage.</p>
+
+    <h4>Key Deliverables</h4>
+    <div class="cs-features cols-3 reveal">
+      <div class="feature-card">
+        <div class="feature-title">Service Map</div>
+        <div class="feature-desc">End-to-end map of digital touchpoints, physical processes, and Local Authority back-office integrations across the full badge lifecycle.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Accessibility Audit</div>
+        <div class="feature-desc">Spreadsheet documenting pass/fail/note status for all 55 WCAG 2.1 and 2.2 AA criteria, with evidence screenshots and remediation notes for each.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Component Library</div>
+        <div class="feature-desc">Figma library of all GDS patterns used, with accessibility annotations covering ARIA roles, focus order, keyboard interactions, and error states.</div>
+      </div>
+    </div>
+
+    <h4>Accessibility Audit — Selected WCAG 2.2 Criteria</h4>
+    <table class="audit-table reveal">
+      <thead>
+        <tr>
+          <th>Criterion</th>
+          <th>Level</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Evidence / Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge-wcag">1.4.3</span></td>
+          <td>AA</td>
+          <td>Contrast (Minimum)</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>All body text ≥ 4.5:1. CTA buttons ≥ 7:1. Verified with Axe + manual checks.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">1.4.11</span></td>
+          <td>AA</td>
+          <td>Non-text Contrast</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>Form input borders, focus indicators, and UI components all meet 3:1 minimum.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">2.4.11</span></td>
+          <td>AA</td>
+          <td>Focus Appearance</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>Custom yellow (#FFDD00) 3px focus ring with 2px offset. Meets 3:1 contrast change requirement.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">2.5.8</span></td>
+          <td>AA</td>
+          <td>Target Size (Minimum)</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>All interactive targets ≥ 24×24 CSS px with exception-free spacing. Verified on mobile viewport.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">3.3.7</span></td>
+          <td>AA</td>
+          <td>Redundant Entry</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>File upload provides both drag-and-drop and file picker paths. "Check your answers" pre-populates all fields.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">3.3.8</span></td>
+          <td>AA</td>
+          <td>Accessible Authentication (Minimum)</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>Magic link login avoids all cognitive function tests. No CAPTCHA or password memorisation required.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">1.3.1</span></td>
+          <td>A</td>
+          <td>Info and Relationships</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>All form labels programmatically associated. Error messages linked via <code>aria-describedby</code>. Headings in correct order.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">2.1.1</span></td>
+          <td>A</td>
+          <td>Keyboard</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>All functionality operable via keyboard. Drag-and-drop has keyboard-accessible alternative. No keyboard traps.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">2.4.3</span></td>
+          <td>A</td>
+          <td>Focus Order</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>Focus follows DOM order throughout. Modal dialogs trap focus correctly and return focus on close.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">3.3.1</span></td>
+          <td>A</td>
+          <td>Error Identification</td>
+          <td><span class="badge-pass">Pass</span></td>
+          <td>GDS Error Summary component used. Focus moves to summary on submit. Each error links to the field.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-wcag">2.5.3</span></td>
+          <td>A</td>
+          <td>Label in Name</td>
+          <td><span class="badge-note">Note</span></td>
+          <td>Icon-only buttons in the file list use <code>aria-label</code> matching visible text. Pending dev implementation review.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Results -->
+  <h2 class="reveal">Results & Impact</h2>
+  <div class="cs-metrics reveal">
+    <div class="metric-card"><div class="metric-num">100%</div><div class="metric-label">WCAG 2.2 AA compliance — automated & manual</div></div>
+    <div class="metric-card"><div class="metric-num">-40%</div><div class="metric-label">Reduction in incomplete evidence errors</div></div>
+    <div class="metric-card"><div class="metric-num">-20%</div><div class="metric-label">Drop in support calls to local authorities</div></div>
+    <div class="metric-card"><div class="metric-num">2.5M</div><div class="metric-label">Badge holders impacted by the redesign</div></div>
+  </div>
+
+  <!-- Testimonial -->
+  <div class="cs-quote reveal">
+    <blockquote>"The task list completely changed how I felt about the form. I could see I'd done two out of five sections and I knew exactly where to come back to. That's the first time a government form hasn't made me feel stupid."</blockquote>
+    <cite>— Usability testing participant, Round 2</cite>
+  </div>
+
+  <!-- Key learnings -->
+  <h2 class="reveal">Key Learnings</h2>
+  <div class="cs-features cols-4 reveal">
+    <div class="feature-card">
+      <div class="feature-title">Accessibility is design, not QA</div>
+      <div class="feature-desc">WCAG criteria mapped to design decisions from day one — not audited afterwards. This is the only way to build it in rather than bolt it on.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-title">One thing per page works</div>
+      <div class="feature-desc">The GDS "one thing per page" principle isn't just usability guidance — for users with cognitive impairments, it's a functional accessibility requirement.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-title">Save & return is essential</div>
+      <div class="feature-desc">Designing for chronic fatigue and pain means designing for users who may not complete a task in one sitting. Persistence and session recovery are core, not nice-to-have.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-title">Test with real AT users</div>
+      <div class="feature-desc">Automated tools caught ~30% of issues. The task list vs progress bar pivot — the most impactful change — only emerged from manual testing with screen reader users.</div>
+    </div>
+  </div>
+
+  <!-- Next -->
+  <div class="cs-next reveal">
+    <div>
+      <div class="cs-next-label">Next Case Study</div>
+      <div class="cs-next-title">Harrods Pre-Order Feature</div>
+      <p style="color:var(--muted);font-size:0.85rem;margin-top:4px;">Luxury-grade pre-order experience design</p>
+    </div>
+    <a href="harrods.html" class="btn-primary">Read Next
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</div><!-- /cs-body -->
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo">Andrew <span>Zvoma</span></a>
+      <p>UX/UI Product Designer with 5+ years experience creating scalable digital products.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../case-studies.html">Case Studies</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Get In Touch</h4><ul>
+      <li><a href="mailto:azvoma@gmail.com">azvoma@gmail.com</a></li>
+      <li><a href="https://a2zee.uk" target="_blank">a2zee.uk</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 Andrew Zvoma. All rights reserved.</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
