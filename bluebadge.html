@@ -17,10 +17,10 @@
   
 <title>Blue Badge Digital Companion | Andrew Zvoma — UX/UI Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet"><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#F9F8F5;--bg2:#F2F1ED;--bg3:#ECEAE4;--surface:#fff;--ink:#1A1916;--ink-muted:#5C5B55;--ink-faint:#A8A69F;--accent:#2952e3;--accent-light:rgba(41,82,227,0.08);--accent-glow:rgba(41,82,227,0.2);--border:rgba(26,25,22,0.1);--border-strong:rgba(26,25,22,0.2);--green:#16A34A;--green-bg:rgba(22,163,74,0.08);--amber:#B45309;--amber-bg:rgba(180,83,9,0.07);--tag-bg:rgba(26,25,22,0.05);--radius:10px;--radius-lg:16px}
+:root{--bg:#FFFFFF;--bg2:#F0F4FF;--bg3:#E8EDF8;--surface:#FFFFFF;--ink:#0F172A;--ink-muted:#475569;--ink-faint:#94A3B8;--accent:#3B82F6;--accent-dark:#1D4ED8;--accent-light:#EFF6FF;--accent-glow:rgba(59,130,246,0.25);--border:#E2E8F0;--border-strong:#CBD5E1;--green:#16A34A;--green-bg:#F0FDF4;--amber:#D97706;--amber-bg:#FFFBEB;--tag-bg:#F1F5F9;--nav-bg:#FFFFFF;--footer-bg:#0F172A;--footer-ink:#E2E8F0;--footer-muted:#94A3B8;--radius:10px;--radius-lg:16px}
 html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}
-nav{position:sticky;top:0;z-index:100;background:rgba(249,248,245,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:600;color:var(--ink)}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{font-size:.85rem;font-weight:500;color:var(--ink-muted)}.nav-links a:hover{color:var(--ink)}
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg,#fff);border-bottom:1px solid var(--border);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink)}.nav-logo .highlight{color:var(--accent)}.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}.nav-links a{font-size:.875rem;font-weight:500;color:var(--ink-muted);transition:color .2s}.nav-links a:hover{color:var(--ink)}.nav-links .nav-contact{background:var(--accent);color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.875rem}.nav-links .nav-contact:hover{background:var(--accent-dark)}
 .container{max-width:960px;margin:0 auto}section{padding:5rem 2rem}.section-label{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
 h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.02em;font-weight:700}
 h2{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.15;font-weight:600;letter-spacing:-.015em;margin-bottom:1rem}
@@ -60,13 +60,13 @@ footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align
 </head>
 <body>
 <nav>
-  <a class="nav-logo" href="../index.html">Andrew Zvoma</a>
+  <a class="nav-logo" href="../index.html">Andrew <span class="highlight">Zvoma</span></a>
   <ul class="nav-links">
     <li><a href="../index.html">Home</a></li>
     <li><a href="../case-studies.html">Case Studies</a></li>
     <li><a href="../index.html#about">About Me</a></li>
     <li><a href="../index.html#process">Process</a></li>
-    <li><a href="mailto:azvoma@gmail.com">Contact</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#e5849f938a8884a58288848c89cb868a88">Contact</a></li>
   </ul>
 </nav>
 
@@ -317,4 +317,4 @@ footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align
     <li><a href="../index.html#about">About Me</a></li>
     <li><a href="../index.html#process">Process</a></li>
   </ul>
-  <p class="footer-copy">© 2026 Andrew Zvoma. All rights 
+  <p class="footer-
