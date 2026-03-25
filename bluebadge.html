@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samsung B2B Case Study | Andrew Zvoma</title>
+<title>Blue Badge Digital Companion | Andrew Zvoma</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#F9F8F5;--surface:#fff;--ink:#1A1916;--ink-muted:#6B6860;--ink-faint:#A8A69F;--accent:#1D4ED8;--accent-light:#EEF2FF;--accent-muted:#3B5BDB;--border:#E5E3DC;--green:#16A34A;--green-bg:#F0FDF4;--amber:#B45309;--amber-bg:#FFFBEB;--tag-bg:#F0EFEA;--radius:10px;--radius-lg:16px}
 html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}
@@ -39,78 +39,85 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
 <section style="background:var(--surface);">
   <div class="container">
     <a class="back-link" href="../case-studies.html">← Back to Case Studies</a>
-    <p class="section-label">Case Study · 3 Months · UI/UX Designer</p>
-    <h1>Samsung B2B Lead Generation</h1>
-    <p class="hero-intro">Transformed Samsung's B2B digital presence from a product showcase into a consultative partnership platform — demonstrating industry expertise, building trust, and generating higher-quality leads in the Construction and PRS sectors.</p>
+    <p class="section-label">Case Study · 10 Weeks · Lead Product Designer (UX/UI &amp; Accessibility)</p>
+    <h1>Blue Badge Digital Companion</h1>
+    <p class="hero-intro">Streamlining accessibility for 2.5 million users. Redesigned the Blue Badge renewal process to reduce application drop-off and achieve 100% WCAG 2.2 AA compliance — applying GDS patterns and the GOV.UK Design System throughout.</p>
     <div class="meta-strip">
-      <div class="meta-cell"><div class="meta-label">Timeline</div><div class="meta-val">3 Months</div></div>
-      <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-val">UX/UI Designer</div></div>
-      <div class="meta-cell"><div class="meta-label">Tools</div><div class="meta-val">Figma · Adobe XD · Miro · HTML/CSS/JS</div></div>
-      <div class="meta-cell"><div class="meta-label">Team</div><div class="meta-val">6-person cross-functional</div></div>
+      <div class="meta-cell"><div class="meta-label">Timeline</div><div class="meta-val">10 Weeks</div></div>
+      <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-val">Lead Product Designer (UX/UI &amp; Accessibility)</div></div>
+      <div class="meta-cell"><div class="meta-label">Tools</div><div class="meta-val">Figma · GOV.UK Prototype Kit · Axe DevTools</div></div>
+      <div class="meta-cell"><div class="meta-label">Standards</div><div class="meta-val">GDS · GOV.UK Design System · WCAG 2.2 AA</div></div>
     </div>
-    <img class="hero-img" src="https://a2zee.uk/_astro/samsung_main_screen.CrlS8Bga.png" alt="Samsung B2B screens" />
+    <div style="background:#1D4ED8;border-radius:var(--radius-lg);height:280px;display:flex;align-items:center;justify-content:center;margin:2rem 0;">
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="46" fill="white" fill-opacity="0.12"/>
+        <circle cx="50" cy="50" r="30" fill="white" fill-opacity="0.18"/>
+        <path d="M50 28c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z" fill="white"/>
+        <path d="M33 70c0-7 7.6-12.5 17-12.5s17 5.5 17 12.5v3H33v-3z" fill="white"/>
+      </svg>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>The Challenge</h2>
-    <p style="color:var(--ink-muted);font-size:.93rem;max-width:680px;">Samsung's existing B2B presence was product-led — positioning them as a supplier rather than a strategic partner. Senior decision-makers in Construction and PRS responded poorly to generic feature messaging. The challenge was repositioning through design, not just copy.</p>
+    <h2>The Problem</h2>
+    <p style="color:var(--ink-muted);font-size:.93rem;max-width:680px;">Applying for a Blue Badge is a high-stakes task for users with physical or cognitive impairments. The existing service was fragmented — requiring physical documents by post — leading to a 35% application rejection rate due to incorrect evidence submission. Users felt anxious and unsupported during the 8-week waiting period, and 15% relied on a family member to complete the form on their behalf.</p>
 
     <div class="step-grid" style="margin-top:2.5rem;">
       <div class="step">
         <div class="step-num">01</div>
-        <h3>Research</h3>
-        <p>Facilitated cross-department workshops with Samsung's B2B marketing, sales, and technical teams. Conducted stakeholder interviews, qualitative research with target decision-makers, competitive analysis of competitor B2B pages, and a content strategy review. Key insight: senior stakeholders prioritise clarity, trust, and partnership credibility above technical specs.</p>
-        <div class="img-row" style="margin-top:1rem;">
-          <img src="https://a2zee.uk/_astro/competitive_analysis%20copy.DtIbKoEo.png" alt="Competitive analysis" />
-          <img src="https://a2zee.uk/_astro/rpbcrwwexiyucwyk.CCDwc9Tn.png" alt="Content strategy" />
-        </div>
+        <h3>Discovery &amp; Insights</h3>
+        <p>Audited the existing journey against WCAG 2.2 and conducted accessibility-focused user research. Key findings: users with motor impairments struggled with small hit zones on mobile; cognitive load was the biggest barrier with medical history and identity proof combined in a single exhausting flow; and the system had no accessible route for third-party (family member) submissions.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <h3>Persona &amp; Strategy</h3>
-        <p>Designed around a mid-to-senior B2B decision-maker who is time-poor, outcome-focused, and skeptical of sales-led messaging. This persona shaped every structural and content decision — deprioritising product grids and promotional language in favour of scannable narratives, proof points, and consultative calls-to-action.</p>
-        <img class="single-img" src="https://a2zee.uk/_astro/w4kmuc7ixp4mr6fm.fWp1yXzO.jpg" alt="User persona" />
+        <h3>Ideation &amp; Exploration</h3>
+        <p>Applied the GDS Task List pattern to break the application into digestible, single-purpose steps — following the "one thing per page" principle throughout. Introduced a "Save and come back later" feature, recognising that users with chronic pain or fatigue cannot always complete a 20-minute form in a single sitting. Third-party submission flows were also scoped.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
-        <h3>Ideation &amp; IA</h3>
-        <p>Explored multiple narrative and structural concepts through wireframing. Used a value vs. effort matrix to prioritise features. Deliberately avoided aggressive lead-capture forms and feature-heavy product sections — both of which reinforced the vendor perception. Designed a linear IA guiding users from industry context through partnership value to meaningful engagement.</p>
-        <div class="img-row" style="margin-top:1rem;">
-          <img src="https://a2zee.uk/_astro/cbliimemci6sokvz.CBNatdHa.png" alt="Wireframe sketches" />
-          <img src="https://a2zee.uk/_astro/kaeeuvjspp8byvpn.CUqbp19Z.png" alt="Ideation board" />
-        </div>
+        <h3>Design &amp; Prototype</h3>
+        <p>Built on the GOV.UK Design System for familiarity and trust. Implemented magic-link authentication to avoid cognitive function tests (WCAG 2.2 – 3.3.7). Ensured all interactive elements met the 24×24 CSS px minimum target size (WCAG 2.2 – 2.5.8). Customised CSS focus rings to high-contrast yellow/black — so keyboard-only users never lost their place in the flow.</p>
       </div>
       <div class="step">
         <div class="step-num">04</div>
-        <h3>Design &amp; Prototype</h3>
-        <p>Worked in an agile, multidisciplinary team alongside developers and marketing. Created low-fidelity wireframes to test narrative flow, then refined iteratively based on stakeholder feedback. High-fidelity designs met WCAG 2.2 AA — proper colour contrast, semantic HTML, keyboard navigation, and ARIA labels. Collaborated closely with engineering to ensure HTML/CSS/JS implementation was feasible.</p>
-        <div class="img-row" style="margin-top:1rem;">
-          <img src="https://a2zee.uk/_astro/p5vycbgvfsuw7vfw_(1).ryCqD_D-.png" alt="Design iteration 1" />
-          <img src="https://a2zee.uk/_astro/3krvyfojzvpzcrh4_(1).DIobK5Ne.png" alt="Design iteration 2" />
-          <img src="https://a2zee.uk/_astro/bj4xrm7ktqkna6sz_(1).Bs5NSWnd.png" alt="Design iteration 3" />
-        </div>
+        <h3>Testing &amp; Iteration</h3>
+        <p>Conducted usability sessions with 5 participants using screen readers and switch access. Testing revealed the Upload button confused users with tremors — iterated to support both drag-and-drop and a traditional file picker (WCAG 2.2 Redundant Entry). Replaced a percentage-based progress bar with a GDS Task List after screen reader users found percentage progress too vague and non-actionable.</p>
       </div>
-    </div>
-
-    <div class="quote-block" style="margin-top:2rem;">
-      <p>"Andrew transformed how we present ourselves to B2B clients. He facilitated workshops across our marketing, sales, and technical teams, turning conflicting priorities into a unified vision. The new platform positions us as strategic partners, not just vendors."</p>
-      <cite>— Michael Chen, B2B Marketing Director, Samsung Electronics</cite>
+      <div class="step">
+        <div class="step-num">05</div>
+        <h3>Implementation &amp; Deliverables</h3>
+        <p>Delivered a high-fidelity prototype ready for GDS Service Assessment. Key deliverables included: a service map linking digital touchpoints to physical badge delivery; an accessibility audit spreadsheet documenting passes across all 55 WCAG 2.1/2.2 AA criteria; and a documented GDS component library covering buttons, radios, error summaries, and task list patterns.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">06</div>
+        <h3>Accessibility Highlights</h3>
+        <ul>
+          <li>Magic-link login — no cognitive function tests (WCAG 2.2 3.3.7)</li>
+          <li>All interactive targets min. 24×24 CSS px (WCAG 2.2 2.5.8)</li>
+          <li>High-contrast yellow/black focus rings for keyboard navigation</li>
+          <li>Drag-and-drop + file picker redundancy (WCAG 2.2 Redundant Entry)</li>
+          <li>GDS Task List replacing vague percentage progress bars</li>
+          <li>Save &amp; return flow for users with chronic fatigue or pain</li>
+          <li>100% WCAG 2.2 AA validated via Axe DevTools + manual testing</li>
+        </ul>
+      </div>
     </div>
 
     <h2 style="margin-top:3rem;">Outcomes</h2>
     <div class="outcomes">
-      <div class="outcome-card"><div class="outcome-num" style="color:var(--green);">✓</div><div class="outcome-label">Strong stakeholder alignment on partnership-led messaging</div></div>
-      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">AA</div><div class="outcome-label">WCAG 2.2 AA compliant throughout</div></div>
-      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">↑</div><div class="outcome-label">Higher-quality lead generation potential validated</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">40%</div><div class="outcome-label">Reduction in incomplete evidence errors</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--green);">100%</div><div class="outcome-label">WCAG 2.2 AA compliance validated</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">20%</div><div class="outcome-label">Drop in support calls to local authorities</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--ink-faint);">2.5M</div><div class="outcome-label">Users served by this service</div></div>
     </div>
   </div>
 </section>
 
 <div class="next-cs">
   <p>Next Case Study</p>
-  <a href="bluebadge.html">Blue Badge Digital Companion →</a>
+  <a href="mindnest.html">MindNest →</a>
 </div>
 
 <footer>

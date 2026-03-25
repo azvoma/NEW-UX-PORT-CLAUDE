@@ -2,211 +2,150 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Studies | Andrew Zvoma - UX/UI Designer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<style>
-.page-hero { padding: calc(var(--nav-h) + 80px) 5% 70px; background:var(--surface); border-bottom:1px solid var(--border); }
-.page-hero h1 { font-family:var(--head); font-size:clamp(2.5rem,5vw,4rem); font-weight:800; letter-spacing:-0.04em; margin-bottom:12px; }
-.page-hero p { color:var(--muted); max-width:560px; line-height:1.7; }
-.cases-full { padding:60px 5% 100px; }
-.case-row {
-  display:grid; grid-template-columns:1fr 1fr; gap:24px;
-  padding-bottom:48px; margin-bottom:48px; border-bottom:1px solid var(--border);
-  text-decoration:none; color:inherit;
-}
-.case-row:last-child { border-bottom:none; }
-.case-row-img { border-radius:16px; overflow:hidden; aspect-ratio:16/10; background:var(--surface2); }
-.case-row-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
-.case-row:hover .case-row-img img { transform:scale(1.03); }
-.case-row-body { display:flex; flex-direction:column; justify-content:center; padding:8px 0; }
-.case-row-meta { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
-.case-row-tag {
-  background:var(--accent-lt); color:var(--accent);
-  padding:4px 12px; border-radius:100px; font-size:0.75rem; font-weight:600;
-}
-.case-row-title { font-family:var(--head); font-size:1.7rem; font-weight:700; letter-spacing:-0.03em; margin-bottom:8px; }
-.case-row-sub { font-style:italic; color:var(--muted); margin-bottom:12px; font-size:0.92rem; }
-.case-row-desc { color:var(--muted); line-height:1.7; font-size:0.92rem; margin-bottom:16px; }
-.case-row-role { font-size:0.8rem; color:var(--muted); margin-bottom:20px; }
-.case-row-role span { font-weight:600; color:var(--text); }
-.cta-box { background:var(--surface); border-radius:20px; padding:60px 40px; text-align:center; margin-top:60px; }
-.cta-box h2 { font-family:var(--head); font-size:1.8rem; font-weight:700; margin-bottom:10px; }
-.cta-box p { color:var(--muted); margin-bottom:28px; }
-@media(max-width:700px) { .case-row { grid-template-columns:1fr; } }
+<title>Case Studies | Andrew Zvoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F9F8F5;--surface:#fff;--ink:#1A1916;--ink-muted:#6B6860;--ink-faint:#A8A69F;--accent:#1D4ED8;--accent-light:#EEF2FF;--accent-muted:#3B5BDB;--border:#E5E3DC;--green:#16A34A;--green-bg:#F0FDF4;--amber:#B45309;--amber-bg:#FFFBEB;--tag-bg:#F0EFEA;--radius:10px;--radius-lg:16px}
+html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}
+nav{position:sticky;top:0;z-index:100;background:rgba(249,248,245,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink);text-decoration:none}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{text-decoration:none;font-size:.875rem;font-weight:500;color:var(--ink-muted)}.nav-links a:hover{color:var(--ink)}
+.container{max-width:960px;margin:0 auto}section{padding:5rem 2rem}.section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.02em;font-weight:400}h2{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.15;font-weight:400;letter-spacing:-.01em;margin-bottom:1rem}h3{font-size:.95rem;font-weight:600;line-height:1.4}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--ink-muted);text-decoration:none;margin-bottom:2rem}.back-link:hover{color:var(--ink)}
+.meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:1.5rem 0 2.5rem}.meta-cell{background:var(--surface);padding:.9rem 1.1rem}.meta-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}.meta-val{font-size:.85rem;font-weight:600;color:var(--ink)}
+.hero-intro{font-size:1rem;color:var(--ink-muted);max-width:660px;margin:.6rem 0 0;line-height:1.8}
+.hero-img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--border);margin:2rem 0;object-fit:cover;max-height:420px}
+.step-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:.5rem}.step{border-top:1px solid var(--border);padding-top:1.5rem}.step-num{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--ink-faint);margin-bottom:.4rem}.step p{font-size:.875rem;color:var(--ink-muted);line-height:1.75;margin-top:.3rem}.step ul{font-size:.85rem;color:var(--ink-muted);padding-left:1.2rem;margin-top:.5rem;line-height:1.8}
+.img-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.25rem 0}.img-row img{border-radius:var(--radius);border:1px solid var(--border);width:100%;object-fit:cover;height:180px}
+.single-img{border-radius:var(--radius);border:1px solid var(--border);margin:1.25rem 0;max-width:100%}
+.outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:2rem}.outcome-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;text-align:center}.outcome-num{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1;margin-bottom:5px}.outcome-label{font-size:.78rem;color:var(--ink-muted);line-height:1.5}
+.quote-block{border-left:3px solid var(--accent);padding:.75rem 1.25rem;margin:1.25rem 0;background:var(--accent-light);border-radius:0 var(--radius) var(--radius) 0}.quote-block p{font-size:.875rem;color:var(--accent-muted);font-style:italic;line-height:1.7}.quote-block cite{font-size:.75rem;color:var(--ink-faint);font-style:normal;display:block;margin-top:.4rem}
+.testimonial{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin-top:2rem}.testimonial p{font-size:.9rem;color:var(--ink-muted);font-style:italic;line-height:1.8}.testimonial cite{font-size:.78rem;color:var(--ink-faint);font-style:normal;display:block;margin-top:.75rem;font-weight:600}
+.next-cs{background:var(--surface);border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}.next-cs p{font-size:.75rem;color:var(--ink-faint);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}.next-cs a{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--ink);text-decoration:none}.next-cs a:hover{color:var(--accent)}
+footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}.footer-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);text-decoration:none}.footer-links{display:flex;gap:1.5rem;list-style:none}.footer-links a{font-size:.8rem;color:var(--ink-muted);text-decoration:none}.footer-links a:hover{color:var(--ink)}.footer-copy{font-size:.75rem;color:var(--ink-faint);width:100%}
+@media(max-width:700px){nav{padding:0 1rem}.nav-links{gap:1rem}section{padding:3.5rem 1.25rem}.step-grid{grid-template-columns:1fr}.img-row img{height:140px}}
+.cs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem}
+.cs-card{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.cs-card:hover{border-color:var(--border-strong);transform:translateY(-2px)}
+.cs-img{width:100%;height:200px;object-fit:cover;display:block;background:var(--tag-bg)}
+.cs-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center}
+.cs-body{padding:1.25rem 1.5rem 1.5rem}
+.cs-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.5rem}
+.cs-tag{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
+.cs-tag.hi{color:var(--accent-muted)}
+.cs-title{font-size:1rem;font-weight:600;margin-bottom:.35rem}
+.cs-desc{font-size:.85rem;color:var(--ink-muted);line-height:1.6}
+.cs-role{font-size:.78rem;color:var(--ink-faint);margin-top:.5rem;font-weight:500}
+.cs-link{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;color:var(--accent);margin-top:.9rem;text-decoration:none}
 </style>
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-logo">Andrew <span>Zvoma</span></a>
+  <a class="nav-logo" href="index.html">Andrew Zvoma</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="case-studies.html">Case Studies</a></li>
-    <li><a href="index.html#about">About</a></li><li><a href="index.html#process">Process</a></li>
-    <li><a href="mailto:azvoma@gmail.com" class="nav-cta">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="mailto:azvoma@gmail.com">Contact</a></li>
   </ul>
 </nav>
+<section>
+  <div class="container">
+    <p class="section-label">All Work</p>
+    <h1>Case Studies</h1>
+    <p class="hero-intro">A selection of product work across SaaS, sprint delivery, mobile, and web — each showcasing measurable impact through human-centred design.</p>
+    <div class="cs-grid">
 
-<div class="page-hero">
-  <p class="section-label">Case Studies</p>
-  <h1>Case Studies</h1>
-  <p>A selection of product work across SaaS, sprint delivery, mobile, and web — each showcasing measurable impact through human-centered design.</p>
-</div>
+      <a class="cs-card" href="case-studies/mindnest.html">
+        <img class="cs-img" src="https://a2zee.uk/_astro/small.urvlQFVU.png" alt="MindNest" />
+        <div class="cs-body">
+          <div class="cs-meta"><span class="cs-tag">10 Weeks</span><span class="cs-tag">·</span><span class="cs-tag hi">95% User Approval</span></div>
+          <div class="cs-title">MindNest</div>
+          <div class="cs-desc">Compassionate mental health support at your fingertips. Redesigned onboarding and habit formation to cut week-one churn by 35% and grow daily active users by 22%.</div>
+          <div class="cs-role">UI/UX Designer</div>
+          <span class="cs-link">Read Full Case Study →</span>
+        </div>
+      </a>
 
-<div class="cases-full">
+      <a class="cs-card" href="case-studies/bluvape.html">
+        <img class="cs-img" src="https://a2zee.uk/_astro/blu_vape_main_screen.DW4DA4Pl.png" alt="Blu Vape Sprint" />
+        <div class="cs-body">
+          <div class="cs-meta"><span class="cs-tag">5 Days</span><span class="cs-tag">·</span><span class="cs-tag hi">87% User Approval</span></div>
+          <div class="cs-title">Blu Vape Sprint</div>
+          <div class="cs-desc">Reimagined brand through loyalty and community. Facilitated a 5-day Google Design Sprint to explore, prototype, and validate a new brand direction in a regulated environment.</div>
+          <div class="cs-role">UI/UX Designer &amp; Sprint Facilitator</div>
+          <span class="cs-link">Read Full Case Study →</span>
+        </div>
+      </a>
 
-  <a href="case-studies/bluvape.html" class="case-row reveal">
-    <div class="case-row-img">
-      <img src="https://a2zee.uk/_astro/blu_vape_main_screen%20copy.DW4DA4Pl.png" alt="Blu Vape Sprint">
-    </div>
-    <div class="case-row-body">
-      <div class="case-row-meta">
-        <span class="case-row-tag">5 days</span>
-        <span class="case-row-tag">87% user approval</span>
-      </div>
-      <h2 class="case-row-title">Blu Vape Sprint</h2>
-      <p class="case-row-sub">Reimagined brand through loyalty and community</p>
-      <p class="case-row-desc">Facilitated a 5-day Google Design Sprint to rapidly explore, prototype, and validate a new brand experience focused on customer loyalty, community engagement, and personalised experiences.</p>
-      <p class="case-row-role">Role: <span>UI/UX Designer & Sprint Facilitator</span></p>
-      <span class="case-link">Read Full Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </div>
-  </a>
+      <a class="cs-card" href="case-studies/surgeryprep.html">
+        <img class="cs-img" src="https://a2zee.uk/_astro/surgery_prep_main_screen.BBaETT9Z.png" alt="SurgeryPrep" />
+        <div class="cs-body">
+          <div class="cs-meta"><span class="cs-tag">3 Months</span><span class="cs-tag">·</span><span class="cs-tag">Client Project</span></div>
+          <div class="cs-title">SurgeryPrep</div>
+          <div class="cs-desc">Personalised surgical guidance to reduce patient anxiety. Designed a WCAG-compliant mobile companion grounded in user research across patients and clinical staff.</div>
+          <div class="cs-role">UI/UX Designer</div>
+          <span class="cs-link">Read Full Case Study →</span>
+        </div>
+      </a>
 
-  <a href="case-studies/surgeryprep.html" class="case-row reveal">
-    <div class="case-row-img">
-      <img src="https://a2zee.uk/_astro/surgery_prep_main_screen%20copy.BBaETT9Z.png" alt="SurgeryPrep">
-    </div>
-    <div class="case-row-body">
-      <div class="case-row-meta">
-        <span class="case-row-tag">3 months</span>
-        <span class="case-row-tag">Client Project</span>
-      </div>
-      <h2 class="case-row-title">SurgeryPrep</h2>
-      <p class="case-row-sub">Personalised surgical guidance to reduce patient anxiety</p>
-      <p class="case-row-desc">Designed a personalised mobile companion that guides patients through their surgical journey with clear, timely, and emotionally supportive information.</p>
-      <p class="case-row-role">Role: <span>UI/UX Designer</span></p>
-      <span class="case-link">Read Full Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </div>
-  </a>
+      <a class="cs-card" href="case-studies/harrods.html">
+        <img class="cs-img" src="https://a2zee.uk/_astro/harrods_main_screen.dk7MFWev.png" alt="Harrods Pre-order" />
+        <div class="cs-body">
+          <div class="cs-meta"><span class="cs-tag">8 Weeks</span><span class="cs-tag">·</span><span class="cs-tag">Client Project</span></div>
+          <div class="cs-title">Harrods Pre-order</div>
+          <div class="cs-desc">Effortless, luxury-grade way to reserve high-demand products. Reduced support queries by 85% through data-informed, accessible interaction design.</div>
+          <div class="cs-role">UI/UX Designer</div>
+          <span class="cs-link">Read Full Case Study →</span>
+        </div>
+      </a>
 
-  <a href="case-studies/harrods.html" class="case-row reveal">
-    <div class="case-row-img">
-      <img src="https://a2zee.uk/_astro/harrods_main_screen%20copy.dk7MFWev.png" alt="Harrods Pre-order">
-    </div>
-    <div class="case-row-body">
-      <div class="case-row-meta">
-        <span class="case-row-tag">8 weeks</span>
-        <span class="case-row-tag">Client Project</span>
-      </div>
-      <h2 class="case-row-title">Harrods Pre-order</h2>
-      <p class="case-row-sub">Effortless, luxury-grade way to reserve high-demand products</p>
-      <p class="case-row-desc">Designed a luxury-grade pre-order experience that helps customers secure coveted products in advance while enabling Harrods to better forecast demand and increase conversion confidence.</p>
-      <p class="case-row-role">Role: <span>UI/UX Designer</span></p>
-      <span class="case-link">Read Full Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </div>
-  </a>
+      <a class="cs-card" href="case-studies/samsung.html">
+        <img class="cs-img" src="https://a2zee.uk/_astro/samsung_main_screen.CrlS8Bga.png" alt="Samsung B2B" />
+        <div class="cs-body">
+          <div class="cs-meta"><span class="cs-tag">3 Months</span><span class="cs-tag">·</span><span class="cs-tag">Client Project</span></div>
+          <div class="cs-title">Samsung B2B</div>
+          <div class="cs-desc">Repositioning Samsung from vendor to strategic partner. Transformed the B2B platform through consultative design — partnering with engineering on accessible, WCAG 2.2 AA compliant delivery.</div>
+          <div class="cs-role">UI/UX Designer</div>
+          <span class="cs-link">Read Full Case Study →</span>
+        </div>
+      </a>
 
-  <a href="case-studies/samsung.html" class="case-row reveal">
-    <div class="case-row-img">
-      <img src="https://a2zee.uk/_astro/samsung_main_screen%20copy.CrlS8Bga.png" alt="Samsung B2B">
-    </div>
-    <div class="case-row-body">
-      <div class="case-row-meta">
-        <span class="case-row-tag">3 months</span>
-        <span class="case-row-tag">Client Project</span>
-      </div>
-      <h2 class="case-row-title">Samsung B2B</h2>
-      <p class="case-row-sub">Repositioning Samsung from vendor to strategic partner</p>
-      <p class="case-row-desc">Transformed Samsung's B2B presence from a product showcase into a consultative partnership platform — demonstrating industry expertise, building trust, and generating higher-quality leads.</p>
-      <p class="case-row-role">Role: <span>UI/UX Designer</span></p>
-      <span class="case-link">Read Full Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </div>
-  </a>
+      <a class="cs-card" href="case-studies/bluebadge.html">
+        <div class="cs-placeholder" style="background:#1D4ED8;">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="32" fill="white" fill-opacity="0.12"/><circle cx="36" cy="36" r="21" fill="white" fill-opacity="0.18"/><path d="M36 20c-4 0-7.2 3.2-7.2 7.2s3.2 7.2 7.2 7.2 7.2-3.2 7.2-7.2S40 20 36 20z" fill="white"/><path d="M24 50c0-5 5.4-9 12-9s12 4 12 9v2H24v-2z" fill="white"/></svg>
+        </div>
+        <div class="cs-body">
+          <div class="cs-meta"><span class="cs-tag">10 Weeks</span><span class="cs-tag">·</span><span class="cs-tag hi">100% WCAG 2.2 AA</span></div>
+          <div class="cs-title">Blue Badge Digital Companion</div>
+          <div class="cs-desc">Streamlining accessibility for 2.5 million users. Led end-to-end redesign of the Blue Badge renewal service using GDS patterns and GOV.UK Design System — cutting incomplete applications by 40%.</div>
+          <div class="cs-role">Lead Product Designer (UX/UI &amp; Accessibility)</div>
+          <span class="cs-link">Read Full Case Study →</span>
+        </div>
+      </a>
 
-  <a href="case-studies/mindnest.html" class="case-row reveal">
-    <div class="case-row-img" style="background:linear-gradient(135deg,#e8f5e9 0%,#a5d6a7 100%); display:flex; align-items:center; justify-content:center;">
-      <div style="font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;color:#2d6a4f;opacity:0.3;">MN</div>
     </div>
-    <div class="case-row-body">
-      <div class="case-row-meta">
-        <span class="case-row-tag">8 weeks</span>
-        <span class="case-row-tag">Shipped to Production</span>
-      </div>
-      <h2 class="case-row-title">MindNest</h2>
-      <p class="case-row-sub">35% reduction in week-one churn through improved onboarding</p>
-      <p class="case-row-desc">Redesigned the onboarding and habit formation experience for a wellness app, achieving a 35% reduction in week-one churn and 22% increase in daily active users.</p>
-      <p class="case-row-role">Role: <span>Product Designer</span></p>
-      <span class="case-link">Read Full Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </div>
-  </a>
-
-  <a href="case-studies/plantapp.html" class="case-row reveal">
-    <div class="case-row-img" style="background:linear-gradient(135deg,#f1f8e9 0%,#c5e1a5 100%); display:flex; align-items:center; justify-content:center; font-size:5rem;">
-      🌿
-    </div>
-    <div class="case-row-body">
-      <div class="case-row-meta">
-        <span class="case-row-tag">12 weeks</span>
-        <span class="case-row-tag">Mobile App</span>
-      </div>
-      <h2 class="case-row-title">Plant Care App</h2>
-      <p class="case-row-sub">A personalised plant care companion for modern plant parents</p>
-      <p class="case-row-desc">Designed a comprehensive plant care app combining intelligent care reminders, plant identification, an extensive plant database, and a community platform — making plant ownership joyful and effortless.</p>
-      <p class="case-row-role">Role: <span>UI/UX Designer</span></p>
-      <span class="case-link">Read Full Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </div>
-  </a>
-
-  <a href="case-studies/bluebadge.html" class="case-row reveal">
-    <div class="case-row-img" style="background:linear-gradient(135deg,#1e3a5f 0%,#1d4ed8 60%,#3b82f6 100%); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px;">
-      <div style="background:rgba(251,191,36,0.2);border:2px solid #fbbf24;border-radius:50%;width:72px;height:72px;display:flex;align-items:center;justify-content:center;">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-      </div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;">GOV.UK · WCAG 2.2 AA</div>
-    </div>
-    <div class="case-row-body">
-      <div class="case-row-meta">
-        <span class="case-row-tag">10 weeks</span>
-        <span class="case-row-tag">GDS Service Standard</span>
-        <span class="case-row-tag">WCAG 2.2 AA</span>
-      </div>
-      <h2 class="case-row-title">Blue Badge Digital Companion</h2>
-      <p class="case-row-sub">Streamlining accessibility for 2.5 million users</p>
-      <p class="case-row-desc">Redesigned the Blue Badge renewal process to reduce drop-off and achieve 100% WCAG 2.2 AA compliance — applying GDS frameworks, the GOV.UK Design System, and extensive assistive technology testing.</p>
-      <p class="case-row-role">Role: <span>Lead Product Designer (UX/UI & Accessibility)</span></p>
-      <span class="case-link">Read Full Case Study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-    </div>
-  </a>
-
-  <div class="cta-box reveal">
-    <h2>Interested in working together?</h2>
-    <p>Let's discuss how I can help bring your product vision to life.</p>
-    <a href="mailto:azvoma@gmail.com" class="btn-primary">Get In Touch</a>
   </div>
-</div>
+</section>
+
+<section style="background:var(--surface);text-align:center;padding:3rem 2rem;">
+  <div class="container" style="max-width:560px;">
+    <p style="font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem;">Interested in working together?</p>
+    <h2>Let's discuss how I can help bring your product vision to life.</h2>
+    <a href="mailto:azvoma@gmail.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:12px 28px;border-radius:8px;margin-top:1.5rem;">Get In Touch</a>
+  </div>
+</section>
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="index.html" class="footer-logo">Andrew <span>Zvoma</span></a>
-      <p>UX/UI Product Designer with 5+ years experience creating scalable digital products.</p>
-    </div>
-    <div class="footer-col"><h4>Quick Links</h4><ul>
-      <li><a href="index.html">Home</a></li><li><a href="case-studies.html">Case Studies</a></li>
-      <li><a href="index.html#about">About</a></li><li><a href="index.html#process">Process</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Get In Touch</h4><ul>
-      <li><a href="mailto:azvoma@gmail.com">azvoma@gmail.com</a></li>
-      <li><a href="https://a2zee.uk" target="_blank">a2zee.uk</a></li>
-    </ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 Andrew Zvoma. All rights reserved.</div>
+  <a class="footer-name" href="index.html">Andrew Zvoma</a>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#process">Process</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Andrew Zvoma. All rights reserved.</p>
 </footer>
-<script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); obs.unobserve(e.target); } });
-}, {threshold:0.05});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
 </body>
 </html>

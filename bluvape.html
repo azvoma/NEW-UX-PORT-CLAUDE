@@ -2,212 +2,127 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blu Vape Brand Reimagination | Andrew Zvoma</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../shared.css">
+<title>Blu Vape Sprint | Andrew Zvoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F9F8F5;--surface:#fff;--ink:#1A1916;--ink-muted:#6B6860;--ink-faint:#A8A69F;--accent:#1D4ED8;--accent-light:#EEF2FF;--accent-muted:#3B5BDB;--border:#E5E3DC;--green:#16A34A;--green-bg:#F0FDF4;--amber:#B45309;--amber-bg:#FFFBEB;--tag-bg:#F0EFEA;--radius:10px;--radius-lg:16px}
+html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}
+nav{position:sticky;top:0;z-index:100;background:rgba(249,248,245,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink);text-decoration:none}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{text-decoration:none;font-size:.875rem;font-weight:500;color:var(--ink-muted)}.nav-links a:hover{color:var(--ink)}
+.container{max-width:960px;margin:0 auto}section{padding:5rem 2rem}.section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.02em;font-weight:400}h2{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.15;font-weight:400;letter-spacing:-.01em;margin-bottom:1rem}h3{font-size:.95rem;font-weight:600;line-height:1.4}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--ink-muted);text-decoration:none;margin-bottom:2rem}.back-link:hover{color:var(--ink)}
+.meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:1.5rem 0 2.5rem}.meta-cell{background:var(--surface);padding:.9rem 1.1rem}.meta-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}.meta-val{font-size:.85rem;font-weight:600;color:var(--ink)}
+.hero-intro{font-size:1rem;color:var(--ink-muted);max-width:660px;margin:.6rem 0 0;line-height:1.8}
+.hero-img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--border);margin:2rem 0;object-fit:cover;max-height:420px}
+.step-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:.5rem}.step{border-top:1px solid var(--border);padding-top:1.5rem}.step-num{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--ink-faint);margin-bottom:.4rem}.step p{font-size:.875rem;color:var(--ink-muted);line-height:1.75;margin-top:.3rem}.step ul{font-size:.85rem;color:var(--ink-muted);padding-left:1.2rem;margin-top:.5rem;line-height:1.8}
+.img-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.25rem 0}.img-row img{border-radius:var(--radius);border:1px solid var(--border);width:100%;object-fit:cover;height:180px}
+.single-img{border-radius:var(--radius);border:1px solid var(--border);margin:1.25rem 0;max-width:100%}
+.outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:2rem}.outcome-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;text-align:center}.outcome-num{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1;margin-bottom:5px}.outcome-label{font-size:.78rem;color:var(--ink-muted);line-height:1.5}
+.quote-block{border-left:3px solid var(--accent);padding:.75rem 1.25rem;margin:1.25rem 0;background:var(--accent-light);border-radius:0 var(--radius) var(--radius) 0}.quote-block p{font-size:.875rem;color:var(--accent-muted);font-style:italic;line-height:1.7}.quote-block cite{font-size:.75rem;color:var(--ink-faint);font-style:normal;display:block;margin-top:.4rem}
+.testimonial{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin-top:2rem}.testimonial p{font-size:.9rem;color:var(--ink-muted);font-style:italic;line-height:1.8}.testimonial cite{font-size:.78rem;color:var(--ink-faint);font-style:normal;display:block;margin-top:.75rem;font-weight:600}
+.next-cs{background:var(--surface);border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}.next-cs p{font-size:.75rem;color:var(--ink-faint);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}.next-cs a{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--ink);text-decoration:none}.next-cs a:hover{color:var(--accent)}
+footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}.footer-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);text-decoration:none}.footer-links{display:flex;gap:1.5rem;list-style:none}.footer-links a{font-size:.8rem;color:var(--ink-muted);text-decoration:none}.footer-links a:hover{color:var(--ink)}.footer-copy{font-size:.75rem;color:var(--ink-faint);width:100%}
+@media(max-width:700px){nav{padding:0 1rem}.nav-links{gap:1rem}section{padding:3.5rem 1.25rem}.step-grid{grid-template-columns:1fr}.img-row img{height:140px}}</style>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-logo">Andrew <span>Zvoma</span></a>
+  <a class="nav-logo" href="../index.html">Andrew Zvoma</a>
   <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li><li><a href="../case-studies.html">Case Studies</a></li>
-    <li><a href="../index.html#about">About</a></li><li><a href="../index.html#process">Process</a></li>
-    <li><a href="mailto:azvoma@gmail.com" class="nav-cta">Contact</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../case-studies.html">Case Studies</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+    <li><a href="mailto:azvoma@gmail.com">Contact</a></li>
   </ul>
 </nav>
 
-<div class="cs-hero">
-  <a href="../case-studies.html" class="cs-back">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    Back to Case Studies
-  </a>
-  <div class="cs-meta">
-    <span class="cs-tag">5 days</span>
-    <span class="cs-tag">UI/UX Designer</span>
-    <span class="cs-tag">87% User Approval</span>
-  </div>
-  <h1 class="cs-title">Blu Vape Brand Reimagination</h1>
-  <p class="cs-subtitle">A 5-Day Google Design Sprint — From ambiguity to a validated product and loyalty direction, all within one week.</p>
-  <div class="cs-hero-img">
-    <img src="https://a2zee.uk/_astro/blu_vape_main_screen%20copy.DW4DA4Pl.png" alt="Blu Vape Brand Reimagination">
-  </div>
-</div>
-
-<div class="cs-body">
-
-  <!-- Overview grid -->
-  <div style="display:grid;grid-template-columns:2fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)">
-    <div>
-      <h2 style="margin-top:0">The Challenge</h2>
-      <p>Blu Vape was experiencing declining market share driven by increased competition, shifting customer expectations, and weakening brand loyalty.</p>
-      <div class="cs-quote">
-        <blockquote>"We're losing market share to competitors who better understand what customers want. Our brand feels outdated, and the experience is fragmented."</blockquote>
-        <cite>— Marketing Director, Blu Vape</cite>
-      </div>
-      <p>Existing experiences were heavily product-focused, with limited emotional connection, long-term engagement, or community value. A 5-day design sprint was chosen to create alignment quickly, explore bold ideas safely, and validate direction before committing to further investment.</p>
-      <p>This project required careful navigation of the regulated vaping industry environment, balancing user experience goals with mandatory age verification, marketing restrictions, and consumer protection requirements.</p>
+<section style="background:var(--surface);">
+  <div class="container">
+    <a class="back-link" href="../case-studies.html">← Back to Case Studies</a>
+    <p class="section-label">Case Study · 5 Days · UI/UX Designer &amp; Sprint Facilitator</p>
+    <h1>Blu Vape Brand Reimagination</h1>
+    <p class="hero-intro">A 5-day Google Design Sprint that moved Blu Vape from brand ambiguity to a validated loyalty and community direction — with 87% user approval, in a single week.</p>
+    <div class="meta-strip">
+      <div class="meta-cell"><div class="meta-label">Timeline</div><div class="meta-val">5 Days</div></div>
+      <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-val">UX/UI Designer &amp; Sprint Facilitator</div></div>
+      <div class="meta-cell"><div class="meta-label">Tools</div><div class="meta-val">Figma · Adobe XD · Miro · FigJam</div></div>
+      <div class="meta-cell"><div class="meta-label">Context</div><div class="meta-val">Regulated vaping industry</div></div>
     </div>
-    <div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;">
-        <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Project Details</p>
-        <p style="font-weight:700;font-size:0.85rem;margin-bottom:2px;">My Role</p>
-        <p style="color:var(--muted);font-size:0.85rem;margin-bottom:12px;">UX/UI Designer & Sprint Facilitator</p>
-        <p style="font-weight:700;font-size:0.85rem;margin-bottom:2px;">Team Size</p>
-        <p style="color:var(--muted);font-size:0.85rem;margin-bottom:12px;">5 members (cross-functional)</p>
-        <p style="font-weight:700;font-size:0.85rem;margin-bottom:4px;">Sprint Team</p>
-        <ul style="margin-bottom:12px">
-          <li>Sprint Facilitator (Me)</li><li>Product Manager</li>
-          <li>Marketing Lead</li><li>Retail Stakeholder</li><li>UX Researcher</li>
-        </ul>
-        <p style="font-weight:700;font-size:0.85rem;margin-bottom:4px;">Tools Used</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="cs-tag">Miro</span><span class="cs-tag">Figma</span>
-          <span class="cs-tag">Adobe XD</span><span class="cs-tag">FigJam</span>
-          <span class="cs-tag">HTML/CSS</span>
+    <img class="hero-img" src="https://a2zee.uk/_astro/blu_vape_main_screen.DW4DA4Pl.png" alt="Blu Vape main screens" />
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>The Challenge</h2>
+    <p style="color:var(--ink-muted);font-size:.93rem;max-width:680px;">Blu Vape was losing market share to competitors who better understood customer expectations. The brand felt fragmented and product-focused, with limited loyalty or emotional connection. The sprint needed to deliver a validated direction — without months of speculation — while respecting regulatory constraints around age verification and responsible marketing.</p>
+
+    <div class="step-grid" style="margin-top:2.5rem;">
+      <div class="step">
+        <div class="step-num">Day 1</div>
+        <h3>Understand</h3>
+        <p>Facilitated alignment sessions with C-level stakeholders and department leads. Led customer journey mapping to identify friction, emotional drop-offs, and missed opportunities. By end of day the team aligned on a single challenge: how might Blu Vape build long-term relationships rather than one-off transactions?</p>
+        <div class="img-row" style="margin-top:1rem;">
+          <img src="https://a2zee.uk/_astro/customer_journey_map.CVW6Ijir.png" alt="Customer journey map" />
+          <img src="https://a2zee.uk/_astro/interview.COopHMA1.png" alt="Research synthesis" />
         </div>
       </div>
+      <div class="step">
+        <div class="step-num">Day 2</div>
+        <h3>Diverge</h3>
+        <p>Ran Crazy 8s and structured ideation — each team member worked independently before sharing. Themes emerged around customer loyalty, product trial, and tobacconist retail partnerships. Concepts were deliberately constrained to what could be prototyped and tested within 48 hours.</p>
+        <img class="single-img" src="https://a2zee.uk/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Crazy 8s sketches" />
+      </div>
+      <div class="step">
+        <div class="step-num">Day 3</div>
+        <h3>Decide</h3>
+        <p>Evaluated all concepts using dot voting and a decision matrix across desirability, business value, and feasibility. The winning concept — an integrated loyalty ecosystem connecting digital and physical retail — unified loyalty, trial, and tobacconist engagement into a single coherent direction.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Day 4</div>
+        <h3>Prototype</h3>
+        <p>Built mid-fidelity wireframes to validate information architecture, then a high-fidelity mobile prototype in Figma. Designed within regulatory requirements for the vaping industry — including age verification and responsible marketing constraints — while maintaining a strong brand feel.</p>
+        <div class="img-row" style="margin-top:1rem;">
+          <img src="https://a2zee.uk/_astro/mid_fidelity_wireframes.BcOZNdSp.png" alt="Mid-fidelity wireframes" />
+          <img src="https://a2zee.uk/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.wkzdukoN.png" alt="Hi-fi screen" />
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">Day 5</div>
+        <h3>Test</h3>
+        <p>Conducted moderated usability sessions with 8 participants — existing customers, potential new users, and tobacconist representatives. Testing confirmed the concept shifted brand perception from "selling products" to "building a relationship." Key usability issues around reward redemption and onboarding guidance were captured for iteration.</p>
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:2.5rem;">
+      <p>"Andrew's facilitation transformed our week. He navigated conflicting stakeholder priorities with diplomacy, kept us focused under tight deadlines, and delivered a prototype that exceeded expectations."</p>
+      <cite>— Sarah Mitchell, Head of Product, Blu Vape</cite>
+    </div>
+
+    <h2 style="margin-top:3rem;">Outcomes</h2>
+    <div class="outcomes">
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--green);">87%</div><div class="outcome-label">User approval for new concept</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">100%</div><div class="outcome-label">New users valued starter kits</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">75%</div><div class="outcome-label">Interest in community features</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--ink-faint);">5 days</div><div class="outcome-label">Ambiguity to validated direction</div></div>
     </div>
   </div>
+</section>
 
-  <!-- Process row -->
-  <h2>The 5-Day Sprint Framework</h2>
-  <div class="process-row reveal">
-    <div class="process-row-step"><div class="num">01</div><div class="label">Understand</div><div class="sub">Map the problem space</div></div>
-    <div class="process-row-step"><div class="num">02</div><div class="label">Diverge</div><div class="sub">Sketch solutions</div></div>
-    <div class="process-row-step"><div class="num">03</div><div class="label">Decide</div><div class="sub">Choose direction</div></div>
-    <div class="process-row-step"><div class="num">04</div><div class="label">Prototype</div><div class="sub">Build to test</div></div>
-    <div class="process-row-step"><div class="num">05</div><div class="label">Test</div><div class="sub">Validate ideas</div></div>
-  </div>
-
-  <!-- Day 1 -->
-  <div class="reveal">
-    <div class="cs-step-num">01</div>
-    <h2 style="margin-top:8px">Day 1: Understand — Mapping the Challenge</h2>
-    <p>I facilitated strategic alignment sessions with C-level stakeholders, ensuring buy-in across marketing, product, and retail teams. Through structured stakeholder interviews and collaborative workshops, I helped the team articulate Blu Vape's vision, rebranding goals, and commercial challenges while managing competing priorities.</p>
-    <h4>Key Activities</h4>
-    <ul>
-      <li><strong>Stakeholder Interviews & Lightning Talks</strong> — Facilitated discussions to clarify business objectives and sprint success criteria</li>
-      <li><strong>Competitive Analysis</strong> — Reviewed competitor approaches to loyalty, trial, and retail engagement</li>
-      <li><strong>Customer Journey Mapping</strong> — Mapped the existing journey identifying friction points and emotional drop-offs</li>
-      <li><strong>Synthesis & Problem Statements</strong> — Synthesised insights into clear objectives</li>
-    </ul>
-    <div class="cs-img-grid">
-      <div><img src="https://a2zee.uk/_astro/customer_journey_map.CVW6Ijir.png" alt="Customer Journey Map" style="border-radius:12px;border:1px solid var(--border)"></div>
-      <div><img src="https://a2zee.uk/_astro/interview.COopHMA1.png" alt="Research Synthesis" style="border-radius:12px;border:1px solid var(--border)"></div>
-    </div>
-    <div class="cs-quote">
-      <blockquote>How might Blu Vape build long-term relationships and brand loyalty, rather than one-off transactions?</blockquote>
-      <cite>— Sprint Challenge Statement, Day 1 Outcome</cite>
-    </div>
-  </div>
-
-  <!-- Day 2 -->
-  <div class="reveal">
-    <div class="cs-step-num">02</div>
-    <h2 style="margin-top:8px">Day 2: Diverge — Exploring Wide-Ranging Solutions</h2>
-    <p>We ran collaborative ideation sessions focused on loyalty, product trial, and tobacconist engagement. To avoid groupthink, each team member worked independently before sharing ideas.</p>
-    <ul>
-      <li>Crazy 8s and detailed concept sketching</li>
-      <li>Individual ideation followed by group critique</li>
-      <li>Thematic clustering to identify patterns and opportunities</li>
-    </ul>
-    <div class="cs-img-single">
-      <img src="https://a2zee.uk/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Crazy 8s sketches" style="border-radius:12px;border:1px solid var(--border)">
-    </div>
-    <div class="cs-features">
-      <div class="feature-card"><div class="feature-icon">🎁</div><div class="feature-title">Customer Loyalty</div><div class="feature-desc">Personalised rewards and community features</div></div>
-      <div class="feature-card"><div class="feature-icon">📦</div><div class="feature-title">Product Trial</div><div class="feature-desc">Starter kits and sampling to reduce barriers</div></div>
-      <div class="feature-card"><div class="feature-icon">🤝</div><div class="feature-title">Retail Partnerships</div><div class="feature-desc">Tools and resources for tobacconists</div></div>
-    </div>
-  </div>
-
-  <!-- Day 3 -->
-  <div class="reveal">
-    <div class="cs-step-num">03</div>
-    <h2 style="margin-top:8px">Day 3: Decide — Converging on the Best Direction</h2>
-    <p>All concepts were evaluated using dot voting and a decision matrix assessing desirability, business value, and technical feasibility.</p>
-    <h3>Winning Concept: Integrated Loyalty Ecosystem</h3>
-    <p>We selected an integrated loyalty ecosystem connecting digital experiences with physical retail touchpoints, emphasising community and personalisation.</p>
-    <div class="cs-features">
-      <div class="feature-card"><div class="feature-icon">🎁</div><div class="feature-title">Tiered loyalty rewards</div><div class="feature-desc">Progressive rewards driving repeat engagement</div></div>
-      <div class="feature-card"><div class="feature-icon">📦</div><div class="feature-title">Curated starter kits</div><div class="feature-desc">Reducing barriers for new customers</div></div>
-      <div class="feature-card"><div class="feature-icon">💬</div><div class="feature-title">Community engagement</div><div class="feature-desc">Peer connection and shared experiences</div></div>
-      <div class="feature-card"><div class="feature-icon">🤝</div><div class="feature-title">Tobacconist portal</div><div class="feature-desc">Centralised partner resource hub</div></div>
-      <div class="feature-card"><div class="feature-icon">⭐</div><div class="feature-title">Exclusive experiences</div><div class="feature-desc">VIP access for loyal customers</div></div>
-    </div>
-  </div>
-
-  <!-- Day 4 -->
-  <div class="reveal">
-    <div class="cs-step-num">04</div>
-    <h2 style="margin-top:8px">Day 4: Prototype — Building to Learn</h2>
-    <p>With limited time, my focus was on building just enough fidelity to test usability, value perception, and emotional response. I prioritised clarity, flow, and brand tone over exhaustive screen coverage — using Figma and Adobe XD for rapid prototyping.</p>
-    <div class="cs-img-single">
-      <img src="https://a2zee.uk/_astro/mid_fidelity_wireframes.BcOZNdSp.png" alt="Mid-fidelity wireframes" style="border-radius:12px;border:1px solid var(--border)">
-    </div>
-    <h3>High-Fidelity Mobile Screens</h3>
-    <div class="cs-phones">
-      <img src="https://a2zee.uk/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.wkzdukoN.png" alt="Blu Vape welcome screen">
-      <img src="https://a2zee.uk/_astro/2%20copy%20copy%20copy%20copy%20copy%20copy%20copy.DC5HWQM8.png" alt="Blu Vape flavor selection">
-      <img src="https://a2zee.uk/_astro/3%20copy%20copy%20copy%20copy%20copy%20copy%20copy.BQRh6qAu.png" alt="Blu Vape goal selection">
-      <img src="https://a2zee.uk/_astro/4%20copy%20copy%20copy%20copy%20copy%20copy%20copy.CrzI97Ox.png" alt="Blu Vape user type">
-    </div>
-  </div>
-
-  <!-- Day 5 -->
-  <div class="reveal">
-    <div class="cs-step-num">05</div>
-    <h2 style="margin-top:8px">Day 5: Test — Validating with Real Users</h2>
-    <p>We conducted moderated usability testing with 8 participants, including existing customers, potential new users, and tobacconist representatives. Each session lasted approximately 45 minutes.</p>
-  </div>
-
-  <!-- Metrics -->
-  <div class="cs-metrics reveal">
-    <div class="metric-card"><div class="metric-num">87%</div><div class="metric-label">User approval for new concept</div></div>
-    <div class="metric-card"><div class="metric-num">100%</div><div class="metric-label">New users valued starter kits</div></div>
-    <div class="metric-card"><div class="metric-num">75%</div><div class="metric-label">Interest in community features</div></div>
-    <div class="metric-card"><div class="metric-num">5 days</div><div class="metric-label">Ambiguity to validated direction</div></div>
-  </div>
-
-  <!-- Testimonial -->
-  <div class="cs-quote reveal">
-    <blockquote>"Andrew's facilitation transformed our week. He navigated conflicting stakeholder priorities with diplomacy, kept us focused under tight deadlines, and delivered a prototype that exceeded expectations. The 87% user approval speaks for itself — this sprint gave us the confidence to invest in a complete brand transformation."</blockquote>
-    <cite>— Sarah Mitchell, Head of Product, Blu Vape</cite>
-  </div>
-
-  <!-- Key Learnings -->
-  <h2 class="reveal">Key Learnings</h2>
-  <div class="cs-features reveal">
-    <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Constraints Sharpen Prioritisation</div><div class="feature-desc">Designing under tight constraints emphasised learning over perfection</div></div>
-    <div class="feature-card"><div class="feature-icon">👥</div><div class="feature-title">Structured Collaboration</div><div class="feature-desc">Cross-functional alignment unlocks confident direction under uncertainty</div></div>
-    <div class="feature-card"><div class="feature-icon">🎯</div><div class="feature-title">Value of Rapid Validation</div><div class="feature-desc">The sprint proved invaluable for rapid alignment without long speculation cycles</div></div>
-    <div class="feature-card"><div class="feature-icon">⚖️</div><div class="feature-title">Navigating Regulated Environments</div><div class="feature-desc">Balancing UX innovation with compliance requirements and responsible marketing</div></div>
-  </div>
-
-  <!-- Next -->
-  <div class="cs-next reveal">
-    <div>
-      <div class="cs-next-label">Next Case Study</div>
-      <div class="cs-next-title">Harrods Pre-Order Feature</div>
-      <p style="color:var(--muted);font-size:0.85rem;margin-top:4px;">Luxury-grade pre-order experience design</p>
-    </div>
-    <a href="harrods.html" class="btn-primary">Read Next <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-  </div>
-
+<div class="next-cs">
+  <p>Next Case Study</p>
+  <a href="surgeryprep.html">SurgeryPrep →</a>
 </div>
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand"><a href="../index.html" class="footer-logo">Andrew <span>Zvoma</span></a><p>UX/UI Product Designer with 5+ years experience creating scalable digital products.</p></div>
-    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../case-studies.html">Case Studies</a></li><li><a href="../index.html#about">About</a></li></ul></div>
-    <div class="footer-col"><h4>Get In Touch</h4><ul><li><a href="mailto:azvoma@gmail.com">azvoma@gmail.com</a></li><li><a href="https://a2zee.uk" target="_blank">a2zee.uk</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 Andrew Zvoma. All rights reserved.</div>
+  <a class="footer-name" href="../index.html">Andrew Zvoma</a>
+  <ul class="footer-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../case-studies.html">Case Studies</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Andrew Zvoma. All rights reserved.</p>
 </footer>
-<script>
-const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);obs.unobserve(e.target);}});},{threshold:0.05});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
 </body>
 </html>

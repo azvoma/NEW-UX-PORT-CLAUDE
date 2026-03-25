@@ -3,135 +3,135 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SurgeryPrep Case Study | Andrew Zvoma</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../shared.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F9F8F5;--surface:#fff;--ink:#1A1916;--ink-muted:#6B6860;--ink-faint:#A8A69F;--accent:#1D4ED8;--accent-light:#EEF2FF;--accent-muted:#3B5BDB;--border:#E5E3DC;--green:#16A34A;--green-bg:#F0FDF4;--amber:#B45309;--amber-bg:#FFFBEB;--tag-bg:#F0EFEA;--radius:10px;--radius-lg:16px}
+html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}
+nav{position:sticky;top:0;z-index:100;background:rgba(249,248,245,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink);text-decoration:none}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{text-decoration:none;font-size:.875rem;font-weight:500;color:var(--ink-muted)}.nav-links a:hover{color:var(--ink)}
+.container{max-width:960px;margin:0 auto}section{padding:5rem 2rem}.section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.02em;font-weight:400}h2{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.15;font-weight:400;letter-spacing:-.01em;margin-bottom:1rem}h3{font-size:.95rem;font-weight:600;line-height:1.4}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--ink-muted);text-decoration:none;margin-bottom:2rem}.back-link:hover{color:var(--ink)}
+.meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:1.5rem 0 2.5rem}.meta-cell{background:var(--surface);padding:.9rem 1.1rem}.meta-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}.meta-val{font-size:.85rem;font-weight:600;color:var(--ink)}
+.hero-intro{font-size:1rem;color:var(--ink-muted);max-width:660px;margin:.6rem 0 0;line-height:1.8}
+.hero-img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--border);margin:2rem 0;object-fit:cover;max-height:420px}
+.step-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:.5rem}.step{border-top:1px solid var(--border);padding-top:1.5rem}.step-num{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--ink-faint);margin-bottom:.4rem}.step p{font-size:.875rem;color:var(--ink-muted);line-height:1.75;margin-top:.3rem}.step ul{font-size:.85rem;color:var(--ink-muted);padding-left:1.2rem;margin-top:.5rem;line-height:1.8}
+.img-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.25rem 0}.img-row img{border-radius:var(--radius);border:1px solid var(--border);width:100%;object-fit:cover;height:180px}
+.single-img{border-radius:var(--radius);border:1px solid var(--border);margin:1.25rem 0;max-width:100%}
+.outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:2rem}.outcome-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;text-align:center}.outcome-num{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1;margin-bottom:5px}.outcome-label{font-size:.78rem;color:var(--ink-muted);line-height:1.5}
+.quote-block{border-left:3px solid var(--accent);padding:.75rem 1.25rem;margin:1.25rem 0;background:var(--accent-light);border-radius:0 var(--radius) var(--radius) 0}.quote-block p{font-size:.875rem;color:var(--accent-muted);font-style:italic;line-height:1.7}.quote-block cite{font-size:.75rem;color:var(--ink-faint);font-style:normal;display:block;margin-top:.4rem}
+.testimonial{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin-top:2rem}.testimonial p{font-size:.9rem;color:var(--ink-muted);font-style:italic;line-height:1.8}.testimonial cite{font-size:.78rem;color:var(--ink-faint);font-style:normal;display:block;margin-top:.75rem;font-weight:600}
+.next-cs{background:var(--surface);border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}.next-cs p{font-size:.75rem;color:var(--ink-faint);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}.next-cs a{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--ink);text-decoration:none}.next-cs a:hover{color:var(--accent)}
+footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}.footer-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);text-decoration:none}.footer-links{display:flex;gap:1.5rem;list-style:none}.footer-links a{font-size:.8rem;color:var(--ink-muted);text-decoration:none}.footer-links a:hover{color:var(--ink)}.footer-copy{font-size:.75rem;color:var(--ink-faint);width:100%}
+@media(max-width:700px){nav{padding:0 1rem}.nav-links{gap:1rem}section{padding:3.5rem 1.25rem}.step-grid{grid-template-columns:1fr}.img-row img{height:140px}}</style>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-logo">Andrew <span>Zvoma</span></a>
+  <a class="nav-logo" href="../index.html">Andrew Zvoma</a>
   <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li><li><a href="../case-studies.html">Case Studies</a></li>
-    <li><a href="../index.html#about">About</a></li><li><a href="../index.html#process">Process</a></li>
-    <li><a href="mailto:azvoma@gmail.com" class="nav-cta">Contact</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../case-studies.html">Case Studies</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+    <li><a href="mailto:azvoma@gmail.com">Contact</a></li>
   </ul>
 </nav>
 
-<div class="cs-hero">
-  <a href="../case-studies.html" class="cs-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back to Case Studies</a>
-  <div class="cs-meta"><span class="cs-tag">3 months</span><span class="cs-tag">UI/UX Designer</span><span class="cs-tag">Healthcare</span></div>
-  <h1 class="cs-title">SurgeryPrep</h1>
-  <p class="cs-subtitle">Personalised Surgical Guidance to Reduce Patient Anxiety and Clinical Overload — a mobile companion guiding patients through their surgical journey.</p>
-  <div class="cs-hero-img"><img src="https://a2zee.uk/_astro/surgery_prep_main_screen%20copy.BBaETT9Z.png" alt="SurgeryPrep Mobile App"></div>
-</div>
-
-<div class="cs-body">
-
-  <div style="display:grid;grid-template-columns:2fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)">
-    <div>
-      <h2 style="margin-top:0">The Challenge</h2>
-      <p>Patients undergoing surgery often face a stressful and information-heavy experience. Traditional communication methods frequently fail to support patients when they actually need guidance.</p>
-      <div class="cs-quote"><blockquote>"I felt completely lost after my surgery consultation. The leaflet they gave me was confusing, and I couldn't remember half of what the doctor said. I ended up calling the hospital three times just to ask basic questions."</blockquote><cite>— Sarah, knee surgery patient</cite></div>
-      <h4>Core Problems Identified</h4>
-      <ul>
-        <li>Patients forget 40–80% of medical information immediately after consultations</li>
-        <li>Printed instructions are easily misplaced or misunderstood</li>
-        <li>Anxiety peaks before surgery due to unclear preparation steps</li>
-        <li>Healthcare staff spend significant time answering repetitive patient questions</li>
-      </ul>
+<section style="background:var(--surface);">
+  <div class="container">
+    <a class="back-link" href="../case-studies.html">← Back to Case Studies</a>
+    <p class="section-label">Case Study · 3 Months · UI/UX Designer</p>
+    <h1>SurgeryPrep</h1>
+    <p class="hero-intro">A personalised mobile companion designed to guide patients through their surgical journey with clear, timely, and emotionally supportive information — reducing anxiety and clinical support burden.</p>
+    <div class="meta-strip">
+      <div class="meta-cell"><div class="meta-label">Timeline</div><div class="meta-val">3 Months</div></div>
+      <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-val">UI/UX Designer</div></div>
+      <div class="meta-cell"><div class="meta-label">Tools</div><div class="meta-val">Figma · Miro · UXPilot</div></div>
+      <div class="meta-cell"><div class="meta-label">Context</div><div class="meta-val">Regulated healthcare environment</div></div>
     </div>
-    <div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;">
-        <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Project Details</p>
-        <p style="font-weight:700;font-size:0.85rem;margin-bottom:2px;">My Role</p><p style="color:var(--muted);font-size:0.85rem;margin-bottom:12px;">UX/UI Designer</p>
-        <p style="font-weight:700;font-size:0.85rem;margin-bottom:2px;">Team Size</p><p style="color:var(--muted);font-size:0.85rem;margin-bottom:12px;">5 members (healthcare-focused)</p>
-        <p style="font-weight:700;font-size:0.85rem;margin-bottom:4px;">Collaboration</p>
-        <ul style="margin-bottom:12px"><li>Healthcare Professionals</li><li>Patient Advisors</li><li>Clinical Stakeholders</li></ul>
-        <p style="font-weight:700;font-size:0.85rem;margin-bottom:4px;">Tools Used</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="cs-tag">Figma</span><span class="cs-tag">Miro</span><span class="cs-tag">UXPilot</span></div>
+    <img class="hero-img" src="https://a2zee.uk/_astro/surgery_prep_main_screen.BBaETT9Z.png" alt="SurgeryPrep app screens" />
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>The Problem</h2>
+    <p style="color:var(--ink-muted);font-size:.93rem;max-width:680px;">Patients forget 40–80% of medical information immediately after consultations. Printed instructions are easily misplaced and anxiety peaks in the days before surgery — leading to repeated calls to clinicians for basic reassurance. A regulated healthcare environment added further constraints around safety, privacy, and clinical liability.</p>
+
+    <div class="step-grid" style="margin-top:2.5rem;">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Research &amp; Insights</h3>
+        <p>Conducted patient interviews across orthopedic, cardiac, and general surgery cohorts, plus interviews with 5 clinicians. Led journey mapping to document emotional highs and lows from diagnosis through recovery. Key finding: anxiety peaks 24–48 hours before surgery due to uncertainty — and post-surgery instructions are the most poorly retained.</p>
+        <div class="img-row" style="margin-top:1rem;">
+          <img src="https://a2zee.uk/_astro/patient_interview_report.CPMFK0Kj.png" alt="Patient interview report" />
+          <img src="https://a2zee.uk/_astro/healthcare_professional_interview_report.DIOf21jt.png" alt="Healthcare professional interview" />
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Personas &amp; Problem Framing</h3>
+        <p>Created two primary personas: a cognitively overloaded patient motivated to "do everything right," and a time-constrained surgeon frustrated by repeated basic questions. This dual perspective kept design decisions anchored to both emotional reassurance and clinical efficiency throughout the project.</p>
+        <div class="img-row" style="margin-top:1rem;">
+          <img src="https://a2zee.uk/_astro/primary_patient_persona.DcOeM3y7.png" alt="Patient persona" />
+          <img src="https://a2zee.uk/_astro/healthcare_provider_persona.D7HMOoKn.png" alt="Clinician persona" />
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Ideation &amp; IA</h3>
+        <p>Ran Crazy 8s and explored 20+ concepts. Used a value vs. effort matrix to prioritise features. Excluded live clinician chat due to clinical risk, scalability, and regulatory complexity — instead focusing on progressive disclosure, personalised timelines, and smart FAQs. Designed a clear information architecture so users always knew where they were and what to do next.</p>
+        <div class="img-row" style="margin-top:1rem;">
+          <img src="https://a2zee.uk/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Crazy 8s sketches" />
+          <img src="https://a2zee.uk/_astro/information_architecture.DHE4HRoO.png" alt="Information architecture" />
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Design &amp; Prototype</h3>
+        <p>Started with low-fidelity wireframes to validate core flows and hierarchy, then iterated into high-fidelity screens. Designed a calm, reassuring visual system using psychological principles to reduce anxiety. Every colour, typography, and interaction choice was grounded in user research rather than aesthetic preference.</p>
+        <div class="img-row" style="margin-top:1rem;">
+          <img src="https://a2zee.uk/_astro/1.CJa0_t0W.png" alt="Low fidelity wireframes" />
+          <img src="https://a2zee.uk/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.DWofB18-.png" alt="Onboarding screen" />
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="process-row reveal">
-    <div class="process-row-step"><div class="num">01</div><div class="label">Research</div><div class="sub">Human experience</div></div>
-    <div class="process-row-step"><div class="num">02</div><div class="label">Insights</div><div class="sub">Design challenge</div></div>
-    <div class="process-row-step"><div class="num">03</div><div class="label">Ideation</div><div class="sub">Problems to solutions</div></div>
-    <div class="process-row-step"><div class="num">04</div><div class="label">Solution</div><div class="sub">Design & validation</div></div>
-    <div class="process-row-step"><div class="num">05</div><div class="label">Results</div><div class="sub">Impact & validation</div></div>
-  </div>
+    <h2 style="margin-top:3rem;">Final Screens</h2>
+    <div class="img-row">
+      <img src="https://a2zee.uk/_astro/2.BXoRSYmI.png" alt="Sign in screen" />
+      <img src="https://a2zee.uk/_astro/4.BW4uVsRX.png" alt="Surgical journey timeline" />
+      <img src="https://a2zee.uk/_astro/5.gT3ZbKTb.png" alt="Educational resources" />
+      <img src="https://a2zee.uk/_astro/7.DzcOZ9nY.png" alt="Recovery tasks" />
+    </div>
 
-  <div class="reveal"><div class="cs-step-num">01</div>
-  <h2 style="margin-top:8px">Research: Understanding the Human Experience</h2>
-  <div class="cs-quote"><blockquote>"We answer the same five questions about post-surgery care at least 20 times a day. If patients had access to this information when they needed it, we could focus on more complex cases."</blockquote><cite>— Dr. Martinez, Orthopedic Surgeon</cite></div>
-  <p>Qualitative research was prioritised to uncover emotional stressors — fear, uncertainty, and information overload — that directly affect patient behaviour but are often invisible in clinical documentation.</p>
-  <div class="cs-img-grid">
-    <div><img src="https://a2zee.uk/_astro/patient_interview_report.CPMFK0Kj.png" alt="Patient Interview Report" style="border-radius:12px;border:1px solid var(--border)"></div>
-    <div><img src="https://a2zee.uk/_astro/healthcare_professional_interview_report.DIOf21jt.png" alt="Healthcare Professional Report" style="border-radius:12px;border:1px solid var(--border)"></div>
-  </div>
-  <h4>Key Insights</h4>
-  <ul>
-    <li><strong>Anxiety peaks 24–48 hours before surgery</strong> due to uncertainty about preparation steps</li>
-    <li><strong>Post-surgery instructions are poorly retained</strong>, leading to repeated calls to clinicians</li>
-    <li><strong>Personalised, time-based information</strong> significantly improves patient confidence and compliance</li>
-  </ul>
-  </div>
+    <div class="quote-block" style="margin-top:2rem;">
+      <p>"Andrew's empathetic approach to design was exactly what this project needed. The app has dramatically reduced pre-surgery anxiety calls to our nursing staff, and patient feedback has been overwhelmingly positive."</p>
+      <cite>— Dr. Emma Wilson, Director of Patient Experience, Regional Hospital Network</cite>
+    </div>
 
-  <div class="reveal"><div class="cs-step-num">02</div>
-  <h2 style="margin-top:8px">Insights: Defining the Design Challenge</h2>
-  <p><strong>Problem Statement:</strong> How might we transform complex medical instructions into clear, timely, and emotionally supportive guidance that helps patients feel confident throughout their surgical journey — while reducing unnecessary communication burden on healthcare staff?</p>
-  <div class="cs-img-grid">
-    <div><img src="https://a2zee.uk/_astro/primary_patient_persona.DcOeM3y7.png" alt="Patient Persona" style="border-radius:12px;border:1px solid var(--border)"></div>
-    <div><img src="https://a2zee.uk/_astro/healthcare_provider_persona.D7HMOoKn.png" alt="Provider Persona" style="border-radius:12px;border:1px solid var(--border)"></div>
+    <h2 style="margin-top:3rem;">Outcomes</h2>
+    <div class="outcomes">
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--green);">100%</div><div class="outcome-label">Task completion rate in usability testing</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">↓</div><div class="outcome-label">Reduced repetitive calls to clinical staff</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">✓</div><div class="outcome-label">WCAG-compliant, voice-over capable</div></div>
+    </div>
   </div>
-  </div>
+</section>
 
-  <div class="reveal"><div class="cs-step-num">03</div>
-  <h2 style="margin-top:8px">Ideation: From Problems to Solutions</h2>
-  <div class="cs-img-single"><img src="https://a2zee.uk/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Crazy 8s" style="border-radius:12px;border:1px solid var(--border)"></div>
-  <div class="cs-features">
-    <div class="feature-card"><div class="feature-icon">📅</div><div class="feature-title">Personalised Timeline</div><div class="feature-desc">Dynamic guidance tailored to surgery type and recovery stage</div></div>
-    <div class="feature-card"><div class="feature-icon">✅</div><div class="feature-title">Interactive Checklists</div><div class="feature-desc">Real-time task completion to reduce uncertainty</div></div>
-    <div class="feature-card"><div class="feature-icon">💬</div><div class="feature-title">Smart FAQ System</div><div class="feature-desc">Contextual answers surfaced based on journey stage</div></div>
-    <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Recovery Tracking</div><div class="feature-desc">Symptom logging with gentle alerts for concerning trends</div></div>
-    <div class="feature-card"><div class="feature-icon">🔔</div><div class="feature-title">Gentle Reminders</div><div class="feature-desc">Non-overwhelming notifications designed to support users</div></div>
-    <div class="feature-card"><div class="feature-icon">📚</div><div class="feature-title">Educational Content</div><div class="feature-desc">Bite-sized, plain-language medical information</div></div>
-  </div>
-  <div class="cs-img-single"><img src="https://a2zee.uk/_astro/information_architecture.DHE4HRoO.png" alt="Information Architecture" style="border-radius:12px;border:1px solid var(--border)"></div>
-  </div>
-
-  <div class="reveal"><div class="cs-step-num">04</div>
-  <h2 style="margin-top:8px">Solution: Design & Validation</h2>
-  <p>The design system prioritised a calm, reassuring aesthetic while maintaining medical credibility. Every colour, typography choice, and interaction was designed to reduce anxiety and build confidence.</p>
-  <div class="cs-img-single"><img src="https://a2zee.uk/_astro/1.CJa0_t0W.png" alt="Low-fi Wireframes" style="border-radius:12px;border:1px solid var(--border)"></div>
-  <h3>Final Design Screens</h3>
-  <div class="cs-phones">
-    <img src="https://a2zee.uk/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.DWofB18-.png" alt="Onboarding">
-    <img src="https://a2zee.uk/_astro/2.BXoRSYmI.png" alt="Sign in">
-    <img src="https://a2zee.uk/_astro/3.B-2ANGad.png" alt="Create account">
-    <img src="https://a2zee.uk/_astro/4.BW4uVsRX.png" alt="Surgical journey">
-    <img src="https://a2zee.uk/_astro/5.gT3ZbKTb.png" alt="Educational resources">
-    <img src="https://a2zee.uk/_astro/7.DzcOZ9nY.png" alt="Recovery tasks">
-    <img src="https://a2zee.uk/_astro/8.C7zZ91E5.png" alt="Care team messages">
-    <img src="https://a2zee.uk/_astro/9.A2NjYbqc.png" alt="Recovery goals">
-  </div>
-  </div>
-
-  <div class="cs-metrics reveal">
-    <div class="metric-card"><div class="metric-num">100%</div><div class="metric-label">Task completion rate in testing</div></div>
-    <div class="metric-card"><div class="metric-num">↓</div><div class="metric-label">Reduced repetitive calls to clinicians</div></div>
-    <div class="metric-card"><div class="metric-num">↑</div><div class="metric-label">Patient confidence and preparedness</div></div>
-    <div class="metric-card"><div class="metric-num">✓</div><div class="metric-label">WCAG 2.2 AA accessibility compliance</div></div>
-  </div>
-
-  <div class="cs-quote reveal"><blockquote>"Andrew's empathetic approach to design was exactly what this project needed. He navigated the complex stakeholder landscape — from surgeons to administrators — with remarkable skill, ensuring clinical accuracy while keeping the patient experience at the forefront."</blockquote><cite>— Dr. Emma Wilson, Director of Patient Experience, Regional Hospital Network</cite></div>
-
-  <div class="cs-next reveal">
-    <div><div class="cs-next-label">Next Case Study</div><div class="cs-next-title">Blu Vape Brand Reimagination</div><p style="color:var(--muted);font-size:0.85rem;margin-top:4px;">5-day Google Design Sprint</p></div>
-    <a href="bluvape.html" class="btn-primary">Read Next <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-  </div>
+<div class="next-cs">
+  <p>Next Case Study</p>
+  <a href="harrods.html">Harrods Pre-order →</a>
 </div>
 
-<footer><div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="footer-logo">Andrew <span>Zvoma</span></a><p>UX/UI Product Designer with 5+ years experience creating scalable digital products.</p></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../case-studies.html">Case Studies</a></li></ul></div><div class="footer-col"><h4>Get In Touch</h4><ul><li><a href="mailto:azvoma@gmail.com">azvoma@gmail.com</a></li></ul></div></div><div class="footer-bottom">© 2026 Andrew Zvoma. All rights reserved.</div></footer>
-<script>const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);obs.unobserve(e.target);}});},{threshold:0.05});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
-</body></html>
+<footer>
+  <a class="footer-name" href="../index.html">Andrew Zvoma</a>
+  <ul class="footer-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../case-studies.html">Case Studies</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Andrew Zvoma. All rights reserved.</p>
+</footer>
+</body>
+</html>
