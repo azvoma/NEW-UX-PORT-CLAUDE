@@ -1,68 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Andrew Zvoma | UX/UI &amp; Product Designer Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#F9F8F5;--surface:#fff;--ink:#1A1916;--ink-muted:#6B6860;--ink-faint:#A8A69F;--accent:#1D4ED8;--accent-light:#EEF2FF;--accent-muted:#3B5BDB;--border:#E5E3DC;--border-strong:#C8C6BE;--green:#16A34A;--green-bg:#F0FDF4;--amber:#B45309;--amber-bg:#FFFBEB;--tag-bg:#F0EFEA;--radius:10px;--radius-lg:16px}
+:root{
+  --bg:#F9F8F5;
+  --bg2:#F2F1ED;
+  --bg3:#ECEAE4;
+  --surface:#FFFFFF;
+  --surface2:#F5F4F0;
+  --ink:#1A1916;
+  --ink-muted:#5C5B55;
+  --ink-faint:#A8A69F;
+  --accent:#2952e3;
+  --accent-light:rgba(41,82,227,0.08);
+  --accent-glow:rgba(41,82,227,0.2);
+  --border:rgba(26,25,22,0.1);
+  --border-strong:rgba(26,25,22,0.2);
+  --green:#16A34A;
+  --green-bg:rgba(22,163,74,0.08);
+  --amber:#B45309;
+  --amber-bg:rgba(180,83,9,0.07);
+  --tag-bg:rgba(26,25,22,0.05);
+  --radius:10px;
+  --radius-lg:16px;
+}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:inherit}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-nav{position:sticky;top:0;z-index:100;background:rgba(249,248,245,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(249,248,245,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
 .nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;font-size:.875rem;font-weight:500;color:var(--ink-muted);transition:color .2s}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--ink-muted);transition:color .2s;letter-spacing:.01em}
 .nav-links a:hover{color:var(--ink)}
-.container{max-width:960px;margin:0 auto}
-section{padding:5rem 2rem}
-.section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
-h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-.02em;font-weight:400}
-h2{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,3vw,2rem);line-height:1.15;font-weight:400;letter-spacing:-.01em}
+
+.container{max-width:980px;margin:0 auto}
+section{padding:6rem 2rem}
+.section-label{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.85rem}
+
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.08;letter-spacing:-.03em;font-weight:700}
+h2{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.15;font-weight:600;letter-spacing:-.02em}
 h3{font-size:.95rem;font-weight:600;line-height:1.4}
-.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--ink-muted);text-decoration:none;margin-bottom:2rem}
-.back-link:hover{color:var(--ink)}
-.meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:2rem 0 2.5rem}
-.meta-cell{background:var(--surface);padding:1rem 1.25rem}
-.meta-label{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:4px}
-.meta-val{font-size:.875rem;font-weight:600;color:var(--ink)}
-.hero-intro{font-size:1.05rem;color:var(--ink-muted);max-width:640px;margin:.75rem 0 0;line-height:1.8}
-.stat-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent-muted);font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;border:1px solid #C7D2FE;margin:.75rem .5rem 0 0}
-.case-img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--border);margin:2rem 0;object-fit:cover}
-.case-img-sm{border-radius:var(--radius);border:1px solid var(--border);margin:1.25rem 0;max-width:100%}
-.step-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:1.5rem}
-.step{border-top:1px solid var(--border);padding-top:1.5rem}
-.step-num{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--ink-faint);margin-bottom:.5rem}
-.step p{font-size:.9rem;color:var(--ink-muted);line-height:1.75;margin-top:.3rem}
-.step ul{font-size:.875rem;color:var(--ink-muted);padding-left:1.2rem;margin-top:.5rem;line-height:1.8}
-.outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:2.5rem}
-.outcome-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center}
-.outcome-num{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1;margin-bottom:6px}
-.outcome-label{font-size:.8rem;color:var(--ink-muted);line-height:1.5}
-.quote-block{border-left:3px solid var(--accent);padding:.75rem 1.25rem;margin:1.5rem 0;background:var(--accent-light);border-radius:0 var(--radius) var(--radius) 0}
-.quote-block p{font-size:.9rem;color:var(--accent-muted);font-style:italic;line-height:1.7}
-.quote-block cite{font-size:.78rem;color:var(--ink-faint);font-style:normal;display:block;margin-top:.5rem}
-.img-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
-.img-row img{border-radius:var(--radius);border:1px solid var(--border);width:100%;object-fit:cover;height:200px}
-.tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin:.25rem .25rem 0 0}
-.tag-blue{background:var(--accent-light);color:var(--accent-muted);border:1px solid #C7D2FE}
-.tag-green{background:var(--green-bg);color:var(--green);border:1px solid #BBF7D0}
-.tag-amber{background:var(--amber-bg);color:var(--amber);border:1px solid #FDE68A}
-.tag-gray{background:var(--tag-bg);color:var(--ink-muted);border:1px solid var(--border)}
-.next-cs{background:var(--surface);border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
-.next-cs p{font-size:.8rem;color:var(--ink-faint);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
-.next-cs a{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--ink);text-decoration:none}
-.next-cs a:hover{color:var(--accent)}
-footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);text-decoration:none}
+
+.process-item{display:grid;grid-template-columns:52px 1fr;gap:1.5rem;padding:1.5rem 0;border-top:1px solid var(--border);align-items:start}
+.process-num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:var(--ink-faint);line-height:1;padding-top:2px}
+.process-content p{font-size:.875rem;color:var(--ink-muted);margin-top:.3rem;line-height:1.75}
+
+footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink)}
 .footer-links{display:flex;gap:1.5rem;list-style:none}
-.footer-links a{font-size:.8rem;color:var(--ink-muted);text-decoration:none}
+.footer-links a{font-size:.8rem;color:var(--ink-muted)}
 .footer-links a:hover{color:var(--ink)}
-.footer-copy{font-size:.75rem;color:var(--ink-faint);width:100%}
-@media(max-width:700px){nav{padding:0 1rem}.nav-links{gap:1rem}section{padding:3.5rem 1.25rem}.step-grid{grid-template-columns:1fr}.img-row img{height:160px}}
+.footer-copy{font-size:.72rem;color:var(--ink-faint);width:100%}
+
+/* Case study page specific */
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--ink-muted);margin-bottom:2rem}
+.back-link:hover{color:var(--ink)}
+.meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:1.5rem 0 2.5rem}
+.meta-cell{background:var(--surface);padding:.9rem 1.1rem}
+.meta-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}
+.meta-val{font-size:.85rem;font-weight:600;color:var(--ink)}
+.hero-intro{font-size:1rem;color:var(--ink-muted);max-width:660px;margin:.6rem 0 0;line-height:1.8}
+.hero-img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--border);margin:2rem 0;object-fit:cover;max-height:420px}
+.step-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:.5rem}
+.step{border-top:1px solid var(--border);padding-top:1.5rem}
+.step-num{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--ink-faint);margin-bottom:.4rem}
+.step p{font-size:.875rem;color:var(--ink-muted);line-height:1.75;margin-top:.3rem}
+.step ul{font-size:.85rem;color:var(--ink-muted);padding-left:1.2rem;margin-top:.5rem;line-height:1.8}
+.img-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.25rem 0}
+.img-row img{border-radius:var(--radius);border:1px solid var(--border);width:100%;object-fit:cover;height:180px}
+.single-img{border-radius:var(--radius);border:1px solid var(--border);margin:1.25rem 0;max-width:100%}
+.outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:2rem}
+.outcome-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;text-align:center}
+.outcome-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:5px}
+.outcome-label{font-size:.78rem;color:var(--ink-muted);line-height:1.5}
+.quote-block{border-left:2px solid var(--accent);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--accent-light);border-radius:0 var(--radius) var(--radius) 0}
+.quote-block p{font-size:.875rem;color:var(--ink-muted);font-style:italic;line-height:1.75}
+.quote-block cite{font-size:.75rem;color:var(--ink-faint);font-style:normal;display:block;margin-top:.4rem}
+.next-cs{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
+.next-cs p{font-size:.7rem;color:var(--ink-faint);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.next-cs a{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:600;color:var(--ink)}
+.next-cs a:hover{color:var(--accent)}
+
+@media(max-width:700px){nav{padding:0 1.25rem}.nav-links{gap:1.25rem}section{padding:4rem 1.25rem}.step-grid{grid-template-columns:1fr}.img-row img{height:140px}}
+
+/* ── BADGE ── */
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-bg);color:var(--green);font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:5px 14px;border-radius:20px;border:1px solid rgba(34,197,94,0.25);margin-bottom:1.75rem}
+.badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ── HERO — centred ── */
+#hero{padding-top:7rem;padding-bottom:6rem;text-align:center}
+.hero-role{font-size:1rem;font-weight:500;color:var(--accent);letter-spacing:.02em;margin:.75rem 0 1.25rem}
+.hero-sub{font-size:1rem;color:var(--ink-muted);max-width:580px;margin:0 auto 0;line-height:1.85}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:2rem;justify-content:center}
+.pill{background:var(--tag-bg);border:1px solid var(--border);color:var(--ink-muted);font-size:.78rem;font-weight:500;padding:6px 14px;border-radius:20px}
+.pill.accent{background:var(--accent-light);border-color:rgba(79,124,255,0.3);color:var(--accent)}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:3.5rem}
+.stat-cell{background:var(--surface);padding:1.35rem 1.5rem;text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:700;color:var(--ink);line-height:1}
+.stat-label{font-size:.7rem;color:var(--ink-faint);margin-top:5px;font-weight:500;letter-spacing:.04em}
+
+/* ── CASE STUDIES ── */
+#case-studies{background:var(--bg2)}
+.cs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.5rem;margin-top:2.5rem}
+.cs-card{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);transition:border-color .25s,transform .25s;display:block;color:inherit}
+.cs-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+.cs-img{width:100%;height:200px;object-fit:cover;display:block;background:var(--bg3)}
+.cs-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center}
+.cs-body{padding:1.25rem 1.5rem 1.5rem}
+.cs-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.5rem}
+.cs-tag{font-size:.65rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint)}
+.cs-tag.hi{color:var(--accent)}
+.cs-title{font-size:1rem;font-weight:600;margin-bottom:.35rem;color:var(--ink)}
+.cs-desc{font-size:.84rem;color:var(--ink-muted);line-height:1.65}
+.cs-link{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;color:var(--accent);margin-top:.9rem}
+.view-all{display:inline-flex;align-items:center;gap:6px;margin-top:2rem;font-size:.85rem;font-weight:600;color:var(--accent);border:1px solid rgba(79,124,255,0.3);padding:9px 22px;border-radius:8px;background:var(--accent-light);transition:background .2s}
+.view-all:hover{background:rgba(79,124,255,0.2)}
+
+/* ── SKILLS ── */
+#skills{background:var(--bg)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:1rem;margin-top:2.5rem}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.35rem 1.5rem;transition:border-color .2s}
+.skill-card:hover{border-color:var(--border-strong)}
+.skill-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;font-size:15px}
+.skill-card h3{margin-bottom:.3rem}
+.skill-card p{font-size:.84rem;color:var(--ink-muted);line-height:1.65}
+.skill-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:.75rem}
+.skill-tag{font-size:.67rem;font-weight:500;background:var(--tag-bg);color:var(--ink-muted);padding:3px 9px;border-radius:12px;border:1px solid var(--border)}
+
+/* ── PROCESS ── */
+#process{background:var(--bg2)}
+.process-list{margin-top:2.5rem}
+.p-item{display:grid;grid-template-columns:52px 1fr;gap:1.5rem;padding:1.5rem 0;border-top:1px solid var(--border)}
+.p-num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:var(--ink-faint);line-height:1;padding-top:2px}
+.p-content p{font-size:.875rem;color:var(--ink-muted);margin-top:.3rem}
+
+/* ── ABOUT ME ── */
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;align-items:start}
+.about-text p{font-size:.93rem;color:var(--ink-muted);line-height:1.85;margin-bottom:.9rem}
+.about-photo{width:100%;border-radius:var(--radius-lg);border:1px solid var(--border);object-fit:cover;aspect-ratio:1/1;margin-bottom:1.5rem}
+.tools-title{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
+.tools-list{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.75rem}
+.tool-chip{font-size:.78rem;font-weight:500;background:var(--surface);border:1px solid var(--border);color:var(--ink-muted);padding:4px 12px;border-radius:20px}
+.cert-box{background:var(--amber-bg);border:1px solid #FDE68A;border-radius:var(--radius);padding:1rem 1.25rem}
+.cert-box h4{font-size:.85rem;font-weight:600;color:var(--amber);margin-bottom:.35rem}
+.cert-box p{font-size:.78rem;color:#92400E;line-height:1.65}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg2);text-align:center}
+#contact .container{max-width:560px}
+#contact p{color:var(--ink-muted);margin:1rem 0 2rem;font-size:.93rem}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:600;font-size:.9rem;padding:13px 30px;border-radius:8px;transition:background .2s;box-shadow:0 0 24px var(--accent-glow)}
+.contact-btn:hover{background:#3a66e8}
+.contact-email{display:block;margin-top:1rem;font-size:.82rem;color:var(--ink-faint)}
+
+@media(max-width:700px){.about-grid{grid-template-columns:1fr;gap:2rem}.hero-sub{max-width:100%}}
 </style>
 </head>
 <body>
@@ -71,74 +170,18 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="case-studies.html">Case Studies</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#about">About Me</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="mailto:azvoma@gmail.com">Contact</a></li>
   </ul>
 </nav>
 
-<style>
-.badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);color:var(--green);font-size:.75rem;font-weight:600;letter-spacing:.04em;padding:5px 12px;border-radius:20px;border:1px solid #BBF7D0;margin-bottom:1.5rem}
-.badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-#hero{padding-top:6rem;padding-bottom:5rem}
-.hero-sub{font-size:1.1rem;color:var(--ink-muted);max-width:560px;margin:1.25rem 0 2rem;line-height:1.8}
-.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:2rem}
-.pill{background:var(--tag-bg);border:1px solid var(--border);color:var(--ink-muted);font-size:.8rem;font-weight:500;padding:6px 14px;border-radius:20px}
-.pill.accent{background:var(--accent-light);border-color:#C7D2FE;color:var(--accent-muted)}
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:3rem}
-.stat-cell{background:var(--surface);padding:1.25rem 1.5rem;text-align:center}
-.stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--ink);line-height:1}
-.stat-label{font-size:.72rem;color:var(--ink-faint);margin-top:4px;font-weight:500}
-#case-studies{background:var(--surface)}
-.cs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem}
-.cs-card{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--bg);transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
-.cs-card:hover{border-color:var(--border-strong);transform:translateY(-2px)}
-.cs-img{width:100%;height:200px;object-fit:cover;display:block;background:var(--tag-bg)}
-.cs-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center}
-.cs-body{padding:1.25rem 1.5rem 1.5rem}
-.cs-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.5rem}
-.cs-tag{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
-.cs-tag.hi{color:var(--accent-muted)}
-.cs-title{font-size:1rem;font-weight:600;margin-bottom:.35rem}
-.cs-desc{font-size:.85rem;color:var(--ink-muted);line-height:1.6}
-.cs-link{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;color:var(--accent);margin-top:.9rem;text-decoration:none}
-.view-all{display:inline-flex;align-items:center;gap:6px;margin-top:2rem;font-size:.875rem;font-weight:600;color:var(--accent);text-decoration:none;border:1px solid #C7D2FE;padding:8px 20px;border-radius:8px;background:var(--accent-light);transition:background .2s}
-.view-all:hover{background:#E0E7FF}
-#skills{background:var(--bg)}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem;margin-top:2.5rem}
-.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.35rem 1.5rem}
-.skill-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.85rem;font-size:15px}
-.skill-card p{font-size:.84rem;color:var(--ink-muted);line-height:1.65;margin-top:.3rem}
-.skill-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:.7rem}
-.skill-tag{font-size:.68rem;font-weight:500;background:var(--tag-bg);color:var(--ink-muted);padding:3px 9px;border-radius:12px;border:1px solid var(--border)}
-#process{background:var(--surface)}
-.process-list{margin-top:2.5rem}
-.p-item{display:grid;grid-template-columns:48px 1fr;gap:1.5rem;padding:1.5rem 0;border-top:1px solid var(--border)}
-.p-num{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--ink-faint);line-height:1;padding-top:2px}
-.p-content p{font-size:.875rem;color:var(--ink-muted);margin-top:.3rem}
-#about{background:var(--bg)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;align-items:start}
-.about-text p{font-size:.93rem;color:var(--ink-muted);line-height:1.8;margin-bottom:.9rem}
-.tools-title{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
-.tools-list{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.75rem}
-.tool-chip{font-size:.78rem;font-weight:500;background:var(--surface);border:1px solid var(--border);color:var(--ink-muted);padding:4px 11px;border-radius:20px}
-.cert-box{background:var(--amber-bg);border:1px solid #FDE68A;border-radius:var(--radius);padding:1rem 1.25rem}
-.cert-box h4{font-size:.85rem;font-weight:600;color:var(--amber);margin-bottom:.35rem}
-.cert-box p{font-size:.78rem;color:#92400E;line-height:1.6}
-#contact{background:var(--surface);text-align:center}
-#contact .container{max-width:580px}
-#contact p{color:var(--ink-muted);margin:1rem 0 2rem;font-size:.93rem}
-.contact-btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:12px 28px;border-radius:8px;transition:background .2s}
-.contact-btn:hover{background:#333}
-.contact-email{display:block;margin-top:1rem;font-size:.82rem;color:var(--ink-faint);text-decoration:none}
-@media(max-width:700px){.about-grid{grid-template-columns:1fr;gap:2rem}}
-</style>
 <section id="hero">
   <div class="container">
     <div class="badge">Open to new opportunities</div>
     <h1>Hi, I'm Andrew Zvoma</h1>
-    <p class="hero-sub">UX/UI &amp; Product Designer with 5+ years of experience building end-to-end digital products in agile, multidisciplinary teams — across SaaS platforms, mobile apps, and public-sector services.</p>
+    <p class="hero-role">UX/UI &amp; Product Designer</p>
+    <p class="hero-sub">5+ years building end-to-end digital products in agile, multidisciplinary teams — across SaaS platforms, mobile apps, and public-sector services.</p>
     <div class="hero-pills">
       <span class="pill accent">GDS &amp; GOV.UK Design System</span>
       <span class="pill accent">WCAG 2.2 AA Accessibility</span>
@@ -162,69 +205,62 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
     <h2>Case Studies</h2>
     <p style="color:var(--ink-muted);margin-top:.5rem;font-size:.93rem;">A selection of product work across SaaS, sprint delivery, mobile, and web — each demonstrating measurable, research-led outcomes.</p>
     <div class="cs-grid">
-
       <a class="cs-card" href="case-studies/mindnest.html">
-        <img class="cs-img" src="https://a2zee.uk/_astro/small.urvlQFVU.png" alt="MindNest wellness app" />
+        <img class="cs-img" src="https://a2zee.uk/_astro/small.urvlQFVU.png" alt="MindNest" />
         <div class="cs-body">
           <div class="cs-meta"><span class="cs-tag">10 Weeks</span><span class="cs-tag">·</span><span class="cs-tag hi">95% User Approval</span></div>
           <div class="cs-title">MindNest</div>
-          <div class="cs-desc">Redesigned onboarding and habit formation for a wellness app — driven by diary studies and cohort analytics to achieve a 35% reduction in week-one churn.</div>
+          <div class="cs-desc">Redesigned onboarding and habit formation for a wellness app — diary studies and cohort analytics driving a 35% reduction in week-one churn.</div>
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
-
       <a class="cs-card" href="case-studies/bluvape.html">
         <img class="cs-img" src="https://a2zee.uk/_astro/blu_vape_main_screen.DW4DA4Pl.png" alt="Blu Vape Sprint" />
         <div class="cs-body">
           <div class="cs-meta"><span class="cs-tag">5 Days</span><span class="cs-tag">·</span><span class="cs-tag hi">87% User Approval</span></div>
           <div class="cs-title">Blu Vape Sprint</div>
-          <div class="cs-desc">Facilitated a 5-day Google Design Sprint to prototype and validate a new loyalty &amp; community brand experience — from ambiguity to a tested direction in one week.</div>
+          <div class="cs-desc">Facilitated a 5-day Google Design Sprint to prototype and validate a new loyalty &amp; community brand experience — from ambiguity to tested direction in one week.</div>
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
-
       <a class="cs-card" href="case-studies/surgeryprep.html">
         <img class="cs-img" src="https://a2zee.uk/_astro/surgery_prep_main_screen.BBaETT9Z.png" alt="SurgeryPrep" />
         <div class="cs-body">
           <div class="cs-meta"><span class="cs-tag">3 Months</span><span class="cs-tag">·</span><span class="cs-tag">Regulated Environment</span></div>
           <div class="cs-title">SurgeryPrep</div>
-          <div class="cs-desc">Designed a WCAG-compliant mobile companion guiding patients through their surgical journey — using continuous research and inclusive design to reduce anxiety.</div>
+          <div class="cs-desc">WCAG-compliant mobile companion guiding patients through their surgical journey — continuous research and inclusive design reducing anxiety.</div>
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
-
       <a class="cs-card" href="case-studies/harrods.html">
         <img class="cs-img" src="https://a2zee.uk/_astro/harrods_main_screen.dk7MFWev.png" alt="Harrods Pre-order" />
         <div class="cs-body">
           <div class="cs-meta"><span class="cs-tag">8 Weeks</span><span class="cs-tag">·</span><span class="cs-tag">Client Project</span></div>
           <div class="cs-title">Harrods Pre-order</div>
-          <div class="cs-desc">Designed a luxury-grade pre-order experience — prototyped in Figma, iterated through stakeholder workshops, and shipped in close collaboration with the development team.</div>
+          <div class="cs-desc">Luxury-grade pre-order experience — prototyped in Figma, iterated through stakeholder workshops, shipped in close collaboration with the development team.</div>
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
-
       <a class="cs-card" href="case-studies/samsung.html">
         <img class="cs-img" src="https://a2zee.uk/_astro/samsung_main_screen.CrlS8Bga.png" alt="Samsung B2B" />
         <div class="cs-body">
           <div class="cs-meta"><span class="cs-tag">3 Months</span><span class="cs-tag">·</span><span class="cs-tag">B2B SaaS</span></div>
           <div class="cs-title">Samsung B2B</div>
-          <div class="cs-desc">Repositioned Samsung's B2B platform from product catalogue to consultative partnership experience — leading stakeholder alignment and working closely with engineering.</div>
+          <div class="cs-desc">Repositioned Samsung's B2B platform from product catalogue to consultative partnership — leading stakeholder alignment and working closely with engineering.</div>
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
-
       <a class="cs-card" href="case-studies/bluebadge.html">
         <div class="cs-placeholder" style="background:#1D4ED8;">
-          <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="32" fill="white" fill-opacity="0.12"/><circle cx="36" cy="36" r="21" fill="white" fill-opacity="0.18"/><path d="M36 20c-4 0-7.2 3.2-7.2 7.2s3.2 7.2 7.2 7.2 7.2-3.2 7.2-7.2S40 20 36 20z" fill="white"/><path d="M24 50c0-5 5.4-9 12-9s12 4 12 9v2H24v-2z" fill="white"/></svg>
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="32" fill="white" fill-opacity="0.1"/><circle cx="36" cy="36" r="21" fill="white" fill-opacity="0.15"/><path d="M36 20c-4 0-7.2 3.2-7.2 7.2s3.2 7.2 7.2 7.2 7.2-3.2 7.2-7.2S40 20 36 20z" fill="white"/><path d="M24 50c0-5 5.4-9 12-9s12 4 12 9v2H24v-2z" fill="white"/></svg>
         </div>
         <div class="cs-body">
           <div class="cs-meta"><span class="cs-tag">10 Weeks</span><span class="cs-tag">·</span><span class="cs-tag hi">100% WCAG 2.2 AA</span></div>
           <div class="cs-title">Blue Badge Digital Companion</div>
-          <div class="cs-desc">Redesigned the Blue Badge renewal service for 2.5 million users — GDS patterns, GOV.UK Design System, and WCAG 2.2 AA to cut incomplete applications by 40%.</div>
+          <div class="cs-desc">Redesigned the Blue Badge renewal service for 2.5M users — GDS patterns, GOV.UK Design System, WCAG 2.2 AA to cut incomplete applications by 40%.</div>
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
-
     </div>
     <a class="view-all" href="case-studies.html">View All Case Studies →</a>
   </div>
@@ -236,12 +272,12 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
     <h2>What I Bring</h2>
     <p style="color:var(--ink-muted);margin-top:.5rem;font-size:.93rem;max-width:600px;">My approach spans research, interaction, accessibility, and delivery — built across agile teams, regulated environments, and fast-moving sprints.</p>
     <div class="skills-grid">
-      <div class="skill-card"><div class="skill-icon" style="background:#EEF2FF;">🔭</div><h3>Research-Led Design</h3><p>User interviews, analytics, and usability testing inform every iteration. Data and human insight drive both direction and detail.</p><div class="skill-tags"><span class="skill-tag">User Research</span><span class="skill-tag">Analytics</span><span class="skill-tag">Usability Testing</span><span class="skill-tag">Iterative Design</span></div></div>
-      <div class="skill-card"><div class="skill-icon" style="background:#F0FDF4;">♿</div><h3>Accessibility &amp; Inclusive Design</h3><p>Accessibility is a design principle, not a checklist. I design to WCAG 2.2 AA and apply inclusive patterns across every project.</p><div class="skill-tags"><span class="skill-tag">WCAG 2.2 AA</span><span class="skill-tag">Inclusive Design</span><span class="skill-tag">Screen Readers</span><span class="skill-tag">Colour Contrast</span></div></div>
-      <div class="skill-card"><div class="skill-icon" style="background:#FFFBEB;">🏛</div><h3>GDS &amp; Public Sector Design</h3><p>Familiar with the GDS Service Design Manual, GOV.UK Design System, and standards governing digital services in regulated environments.</p><div class="skill-tags"><span class="skill-tag">GDS Framework</span><span class="skill-tag">GOV.UK Design System</span><span class="skill-tag">Service Design</span><span class="skill-tag">Regulated Environments</span></div></div>
-      <div class="skill-card"><div class="skill-icon" style="background:#EEF2FF;">🖊</div><h3>Wireframing &amp; Prototyping</h3><p>From low-fidelity sketches to interactive prototypes — using the right fidelity at the right moment to test assumptions and align teams.</p><div class="skill-tags"><span class="skill-tag">Figma</span><span class="skill-tag">Adobe XD</span><span class="skill-tag">Sketch</span><span class="skill-tag">Framer</span><span class="skill-tag">Principle</span></div></div>
-      <div class="skill-card"><div class="skill-icon" style="background:#F0FDF4;">💻</div><h3>Technical Design Capability</h3><p>Working knowledge of HTML, CSS, and JavaScript means I design with code constraints in mind and communicate precisely with developers.</p><div class="skill-tags"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Dev Collaboration</span></div></div>
-      <div class="skill-card"><div class="skill-icon" style="background:#FFF7ED;">🤝</div><h3>Stakeholder Communication</h3><p>I translate complex design decisions for audiences at every level — from engineers to C-suite — building buy-in and driving decisions forward.</p><div class="skill-tags"><span class="skill-tag">Workshops</span><span class="skill-tag">Presentations</span><span class="skill-tag">Design Critiques</span><span class="skill-tag">Agile Teams</span></div></div>
+      <div class="skill-card"><div class="skill-icon" style="background:rgba(79,124,255,0.12);">🔭</div><h3>Research-Led Design</h3><p>User interviews, analytics, and usability testing inform every iteration. Data and human insight drive both direction and detail.</p><div class="skill-tags"><span class="skill-tag">User Research</span><span class="skill-tag">Analytics</span><span class="skill-tag">Usability Testing</span><span class="skill-tag">Iterative Design</span></div></div>
+      <div class="skill-card"><div class="skill-icon" style="background:rgba(34,197,94,0.1);">♿</div><h3>Accessibility &amp; Inclusive Design</h3><p>Accessibility is a design principle, not a checklist. I design to WCAG 2.2 AA and apply inclusive patterns across every project.</p><div class="skill-tags"><span class="skill-tag">WCAG 2.2 AA</span><span class="skill-tag">Inclusive Design</span><span class="skill-tag">Screen Readers</span><span class="skill-tag">Colour Contrast</span></div></div>
+      <div class="skill-card"><div class="skill-icon" style="background:rgba(245,158,11,0.1);">🏛</div><h3>GDS &amp; Public Sector Design</h3><p>Familiar with the GDS Service Design Manual, GOV.UK Design System, and standards governing digital services in regulated environments.</p><div class="skill-tags"><span class="skill-tag">GDS Framework</span><span class="skill-tag">GOV.UK Design System</span><span class="skill-tag">Service Design</span><span class="skill-tag">Regulated Environments</span></div></div>
+      <div class="skill-card"><div class="skill-icon" style="background:rgba(79,124,255,0.12);">🖊</div><h3>Wireframing &amp; Prototyping</h3><p>From low-fidelity sketches to interactive prototypes — the right fidelity at the right moment to test assumptions and align teams.</p><div class="skill-tags"><span class="skill-tag">Figma</span><span class="skill-tag">Adobe XD</span><span class="skill-tag">Sketch</span><span class="skill-tag">Framer</span><span class="skill-tag">Principle</span></div></div>
+      <div class="skill-card"><div class="skill-icon" style="background:rgba(34,197,94,0.1);">💻</div><h3>Technical Design Capability</h3><p>Working knowledge of HTML, CSS, and JavaScript means I design with code constraints in mind and communicate precisely with developers.</p><div class="skill-tags"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Dev Collaboration</span></div></div>
+      <div class="skill-card"><div class="skill-icon" style="background:rgba(245,158,11,0.1);">🤝</div><h3>Stakeholder Communication</h3><p>I translate design decisions for audiences at every level — from engineers to C-suite — building buy-in and driving decisions forward.</p><div class="skill-tags"><span class="skill-tag">Workshops</span><span class="skill-tag">Presentations</span><span class="skill-tag">Design Critiques</span><span class="skill-tag">Agile Teams</span></div></div>
     </div>
   </div>
 </section>
@@ -252,11 +288,11 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
     <h2>Modern Workflow</h2>
     <p style="color:var(--ink-muted);margin-top:.5rem;font-size:.93rem;">A structured, agile process balancing discovery with delivery — adaptable across 5-day sprints and multi-month cycles alike.</p>
     <div class="process-list">
-      <div class="p-item"><div class="p-num">01</div><div class="p-content"><h3>Discovery &amp; Insights</h3><p>User research, stakeholder interviews, heuristic reviews, and problem framing — using qualitative insight and quantitative analytics to define the right problem before designing a solution.</p></div></div>
+      <div class="p-item"><div class="p-num">01</div><div class="p-content"><h3>Discovery &amp; Insights</h3><p>User research, stakeholder interviews, heuristic reviews, and problem framing — qualitative insight and quantitative analytics to define the right problem before designing a solution.</p></div></div>
       <div class="p-item"><div class="p-num">02</div><div class="p-content"><h3>Ideation &amp; Exploration</h3><p>Sketching, concept generation, and rapid ideation — often facilitated through Design Sprints or collaborative workshops to generate and align on direction quickly.</p></div></div>
       <div class="p-item"><div class="p-num">03</div><div class="p-content"><h3>Design &amp; Prototype</h3><p>From wireframes to high-fidelity prototypes in Figma, Adobe XD, or Framer — with WCAG 2.2 AA accessibility baked in from the start, not bolted on at the end.</p></div></div>
       <div class="p-item"><div class="p-num">04</div><div class="p-content"><h3>Testing &amp; Iteration</h3><p>Usability testing with real users, rapid iteration based on findings, and continuous feedback loops — validated against qualitative feedback and behavioural analytics.</p></div></div>
-      <div class="p-item"><div class="p-num">05</div><div class="p-content"><h3>Implementation &amp; Measurement</h3><p>Working alongside development teams through delivery — writing detailed specs, reviewing builds, and tracking measurable outcomes post-launch using analytics.</p></div></div>
+      <div class="p-item"><div class="p-num">05</div><div class="p-content"><h3>Implementation &amp; Measurement</h3><p>Working alongside development teams through delivery — writing specs, reviewing builds, and tracking measurable outcomes post-launch using analytics.</p></div></div>
     </div>
   </div>
 </section>
@@ -264,7 +300,7 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
 <section id="about">
   <div class="container">
     <p class="section-label">About Me</p>
-    <h2>Designing with purpose</h2>
+    <h2>About Me</h2>
     <div class="about-grid">
       <div class="about-text">
         <p>I'm a UX/UI Product Designer with over 5 years of experience building scalable digital products that solve real user problems and drive business results — across B2B SaaS, consumer mobile apps, public-sector services, and luxury retail.</p>
@@ -273,6 +309,7 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
         <p>I'm always keeping pace with emerging tools and methods — from AI-assisted design workflows to new accessibility standards — and I'm currently open to full-time and freelance opportunities.</p>
       </div>
       <div>
+        <img class="about-photo" src="data:image/jpeg;base64,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" alt="Andrew Zvoma" />
         <div class="tools-title">Tools &amp; Technologies</div>
         <div class="tools-list"><span class="tool-chip">Figma</span><span class="tool-chip">Adobe XD</span><span class="tool-chip">Sketch</span><span class="tool-chip">Framer</span><span class="tool-chip">Principle</span><span class="tool-chip">Miro</span><span class="tool-chip">Notion</span><span class="tool-chip">Adobe Creative Suite</span><span class="tool-chip">HTML / CSS</span><span class="tool-chip">JavaScript</span></div>
         <div class="tools-title">Frameworks &amp; Standards</div>
@@ -298,7 +335,7 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
   <ul class="footer-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="case-studies.html">Case Studies</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#about">About Me</a></li>
     <li><a href="#process">Process</a></li>
   </ul>
   <p class="footer-copy">© 2026 Andrew Zvoma. All rights reserved.</p>
