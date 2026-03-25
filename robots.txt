@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://a2zee.uk/sitemap.xml
+
+Disallow: /cdn-cgi/
