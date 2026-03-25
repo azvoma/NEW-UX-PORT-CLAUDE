@@ -156,9 +156,9 @@ footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align
 
 /* ── ABOUT ME ── */
 #about{background:var(--bg)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;align-items:start}
+.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:3rem;margin-top:2.5rem;align-items:start}
 .about-text p{font-size:.93rem;color:var(--ink-muted);line-height:1.85;margin-bottom:.9rem}
-.about-photo{width:100%;border-radius:var(--radius-lg);border:1px solid var(--border);object-fit:cover;aspect-ratio:1/1;margin-bottom:1.5rem}
+.about-photo{width:140px;height:140px;border-radius:50%;border:3px solid var(--border);object-fit:cover;object-position:center top;margin-bottom:1.25rem;display:block}
 .tools-title{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
 .tools-list{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.75rem}
 .tool-chip{font-size:.78rem;font-weight:500;background:var(--surface);border:1px solid var(--border);color:var(--ink-muted);padding:4px 12px;border-radius:20px}
@@ -186,7 +186,7 @@ footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align
     <li><a href="case-studies.html">Case Studies</a></li>
     <li><a href="#about">About Me</a></li>
     <li><a href="#process">Process</a></li>
-    <li><a href="mailto:azvoma@gmail.com">Contact</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#f4958e829b9995b49399959d98da979b99">Contact</a></li>
   </ul>
 </nav>
 
@@ -219,25 +219,19 @@ footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align
     <h2>Case Studies</h2>
     <p style="color:var(--ink-muted);margin-top:.5rem;font-size:.93rem;">A selection of product work across SaaS, sprint delivery, mobile, and web — each demonstrating measurable, research-led outcomes.</p>
     <div class="cs-grid">
-      <a class="cs-card" href="case-studies/bluvape.html">
-        <img loading="eager" class="cs-img" src="https://a2zee.uk/_astro/blu_vape_main_screen.DW4DA4Pl.png" alt="Blu Vape Sprint" />
+<a class="cs-card" href="case-studies/bluebadge.html">
+        <div class="cs-placeholder" style="background:#1D4ED8;">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="32" fill="white" fill-opacity="0.1"/><circle cx="36" cy="36" r="21" fill="white" fill-opacity="0.15"/><path d="M36 20c-4 0-7.2 3.2-7.2 7.2s3.2 7.2 7.2 7.2 7.2-3.2 7.2-7.2S40 20 36 20z" fill="white"/><path d="M24 50c0-5 5.4-9 12-9s12 4 12 9v2H24v-2z" fill="white"/></svg>
+        </div>
         <div class="cs-body">
-          <div class="cs-meta"><span class="cs-tag">5 Days</span><span class="cs-tag">·</span><span class="cs-tag hi">87% User Approval</span></div>
-          <div class="cs-title">Blu Vape Sprint</div>
-          <div class="cs-desc">Facilitated a 5-day Google Design Sprint to prototype and validate a new loyalty &amp; community brand experience — from ambiguity to tested direction in one week.</div>
+          <div class="cs-meta"><span class="cs-tag">10 Weeks</span><span class="cs-tag">·</span><span class="cs-tag hi">100% WCAG 2.2 AA</span></div>
+          <div class="cs-title">Blue Badge Digital Companion</div>
+          <div class="cs-desc">Redesigned the Blue Badge renewal service for 2.5M users — GDS patterns, GOV.UK Design System, WCAG 2.2 AA to cut incomplete applications by 40%.</div>
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
-      <a class="cs-card" href="case-studies/surgeryprep.html">
-        <img loading="lazy" class="cs-img" src="https://a2zee.uk/_astro/surgery_prep_main_screen.BBaETT9Z.png" alt="SurgeryPrep" />
-        <div class="cs-body">
-          <div class="cs-meta"><span class="cs-tag">3 Months</span><span class="cs-tag">·</span><span class="cs-tag">Regulated Environment</span></div>
-          <div class="cs-title">SurgeryPrep</div>
-          <div class="cs-desc">WCAG-compliant mobile companion guiding patients through their surgical journey — continuous research and inclusive design reducing anxiety.</div>
-          <span class="cs-link">Read Case Study →</span>
-        </div>
-      </a>
-      <a class="cs-card" href="case-studies/harrods.html">
+
+<a class="cs-card" href="case-studies/harrods.html">
         <img loading="lazy" class="cs-img" src="https://a2zee.uk/_astro/harrods_main_screen.dk7MFWev.png" alt="Harrods Pre-order" />
         <div class="cs-body">
           <div class="cs-meta"><span class="cs-tag">8 Weeks</span><span class="cs-tag">·</span><span class="cs-tag">Client Project</span></div>
@@ -246,23 +240,33 @@ footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
-      <a class="cs-card" href="case-studies/samsung.html">
+
+<a class="cs-card" href="case-studies/surgeryprep.html">
+        <img loading="lazy" class="cs-img" src="https://a2zee.uk/_astro/surgery_prep_main_screen.BBaETT9Z.png" alt="SurgeryPrep" />
+        <div class="cs-body">
+          <div class="cs-meta"><span class="cs-tag">3 Months</span><span class="cs-tag">·</span><span class="cs-tag">Regulated Environment</span></div>
+          <div class="cs-title">SurgeryPrep</div>
+          <div class="cs-desc">WCAG-compliant mobile companion guiding patients through their surgical journey — continuous research and inclusive design reducing anxiety.</div>
+          <span class="cs-link">Read Case Study →</span>
+        </div>
+      </a>
+
+<a class="cs-card" href="case-studies/bluvape.html">
+        <img loading="eager" class="cs-img" src="https://a2zee.uk/_astro/blu_vape_main_screen.DW4DA4Pl.png" alt="Blu Vape Sprint" />
+        <div class="cs-body">
+          <div class="cs-meta"><span class="cs-tag">5 Days</span><span class="cs-tag">·</span><span class="cs-tag hi">87% User Approval</span></div>
+          <div class="cs-title">Blu Vape Sprint</div>
+          <div class="cs-desc">Facilitated a 5-day Google Design Sprint to prototype and validate a new loyalty &amp; community brand experience — from ambiguity to tested direction in one week.</div>
+          <span class="cs-link">Read Case Study →</span>
+        </div>
+      </a>
+
+<a class="cs-card" href="case-studies/samsung.html">
         <img loading="lazy" class="cs-img" src="https://a2zee.uk/_astro/samsung_main_screen.CrlS8Bga.png" alt="Samsung B2B" />
         <div class="cs-body">
           <div class="cs-meta"><span class="cs-tag">3 Months</span><span class="cs-tag">·</span><span class="cs-tag">B2B SaaS</span></div>
           <div class="cs-title">Samsung B2B</div>
           <div class="cs-desc">Repositioned Samsung's B2B platform from product catalogue to consultative partnership — leading stakeholder alignment and working closely with engineering.</div>
-          <span class="cs-link">Read Case Study →</span>
-        </div>
-      </a>
-      <a class="cs-card" href="case-studies/bluebadge.html">
-        <div class="cs-placeholder" style="background:#1D4ED8;">
-          <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="32" fill="white" fill-opacity="0.1"/><circle cx="36" cy="36" r="21" fill="white" fill-opacity="0.15"/><path d="M36 20c-4 0-7.2 3.2-7.2 7.2s3.2 7.2 7.2 7.2 7.2-3.2 7.2-7.2S40 20 36 20z" fill="white"/><path d="M24 50c0-5 5.4-9 12-9s12 4 12 9v2H24v-2z" fill="white"/></svg>
-        </div>
-        <div class="cs-body">
-          <div class="cs-meta"><span class="cs-tag">10 Weeks</span><span class="cs-tag">·</span><span class="cs-tag hi">100% WCAG 2.2 AA</span></div>
-          <div class="cs-title">Blue Badge Digital Companion</div>
-          <div class="cs-desc">Redesigned the Blue Badge renewal service for 2.5M users — GDS patterns, GOV.UK Design System, WCAG 2.2 AA to cut incomplete applications by 40%.</div>
           <span class="cs-link">Read Case Study →</span>
         </div>
       </a>
@@ -330,13 +334,10 @@ footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align
     <p class="section-label">Get In Touch</p>
     <h2>Let's Work Together</h2>
     <p>Available for freelance projects and full-time opportunities — particularly within regulated environments, public sector, and aviation.</p>
-    <a class="contact-btn" href="mailto:azvoma@gmail.com">Email Me</a>
-    <a class="contact-email" href="mailto:azvoma@gmail.com"><span class="__cf_email__" data-cfemail="6908131f060408290e04080005470a0604">[email&#160;protected]</span></a>
+    <a class="contact-btn" href="/cdn-cgi/l/email-protection#c2a3b8b4adafa382a5afa3abaeeca1adaf">Email Me</a>
+    <a class="contact-email" href="/cdn-cgi/l/email-protection#9cfde6eaf3f1fddcfbf1fdf5f0b2fff3f1"><span class="__cf_email__" data-cfemail="6908131f060408290e04080005470a0604">[email&#160;protected]</span></a>
   </div>
 </section>
 
 <footer>
-  <a class="footer-name" href="index.html">Andrew Zvoma</a>
-  <ul class="footer-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="case-studies.html">Case St
+  <a class="footer-name" href="index.html">Andrew Zvoma</
