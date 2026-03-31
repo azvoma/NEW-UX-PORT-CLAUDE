@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Badge Digital Companion | Andrew Zvoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.cs-editorial{max-width:860px;margin:0 auto;padding:0 var(--px,1.5rem)}
+.cs-overview{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2.5rem 0}
+.cs-ov-cell{background:var(--white);padding:1.1rem 1.25rem}
+.cs-ov-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.35rem}
+.cs-ov-val{font-size:.88rem;font-weight:600;color:var(--text);line-height:1.45}
+.ed-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:.35rem;display:block}
+.ed-h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:var(--text);margin-bottom:1.1rem}
+.ed-p{font-size:.95rem;color:var(--text-2);line-height:1.82;margin-bottom:.9rem}
+.ed-p strong{font-weight:700;color:var(--text)}
+.ed-quote{border-left:3px solid var(--blue);margin:1.75rem 0;padding:.85rem 1.25rem;background:var(--blue-light);border-radius:0 var(--r-lg) var(--r-lg) 0}
+.ed-quote p{font-size:1rem;font-style:italic;color:var(--text-2);line-height:1.65;margin-bottom:.3rem}
+.ed-quote cite{font-size:.78rem;color:var(--text-3);font-style:normal}
+.ed-divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
+/* image sizes */
+.img-full{margin:1.75rem 0;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border)}
+.img-full img{width:100%;display:block}
+.img-research{width:100%;margin:1.75rem 0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border)}
+.img-research img{width:100%;display:block}
+.img-research-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.75rem 0}
+.img-research-2 img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+.img-narrow{width:70%;margin:1.75rem auto;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);display:block}
+.img-narrow img{width:100%;display:block}
+.img-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.75rem 0}
+.img-3 img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+/* phone frames */
+.phone-showcase{display:flex;gap:1rem;margin:2rem 0;align-items:flex-start;justify-content:center;flex-wrap:nowrap;overflow-x:auto;padding-bottom:.5rem}
+.phone-showcase::-webkit-scrollbar{height:4px}
+.phone-showcase::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:2px}
+.phone-device{flex:0 0 190px;display:flex;flex-direction:column;align-items:center}
+.phone-shell{background:#111;border-radius:28px;padding:5px;box-shadow:0 0 0 1px #1a1a1a,0 6px 20px rgba(0,0,0,.25);width:100%;position:relative}
+.phone-shell::before{display:none}
+.phone-screen{border-radius:24px;overflow-y:scroll;overflow-x:hidden;height:340px;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scrollbar-width:none;background:#fff}
+.phone-screen::-webkit-scrollbar{display:none}
+.phone-screen img{width:100%;display:block}
+.phone-caption{font-size:.7rem;color:var(--text-2);text-align:center;margin-top:.6rem;line-height:1.4;font-weight:600}
+.scroll-hint{display:flex;align-items:center;justify-content:center;gap:.3rem;font-size:.63rem;color:var(--text-4);margin-top:.2rem}
+.scroll-hint svg{width:10px;height:10px;stroke:var(--text-4);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* components */
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin:1.5rem 0}
+.insight-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.1rem}
+.insight-num{font-size:1.6rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.35rem}
+.insight-text{font-size:.82rem;color:var(--text-2);line-height:1.55}
+.feat-list{display:grid;gap:.6rem;margin:1.25rem 0}
+.feat-row{display:flex;gap:.85rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid var(--border)}
+.feat-row:last-child{border-bottom:none}
+.feat-row-num{font-size:.7rem;font-weight:700;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+.feat-row-title{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.15rem}
+.feat-row-desc{font-size:.82rem;color:var(--text-3);line-height:1.5}
+.outcomes-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin:1.75rem 0}
+.outcome-cell{background:var(--white);padding:1.5rem 1rem;text-align:center}
+.outcome-val{font-size:2rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.3rem}
+.outcome-label{font-size:.72rem;color:var(--text-3);line-height:1.4}
+.ed-test{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-xl);padding:2rem;margin:1.75rem 0}
+.ed-test p{font-size:1rem;font-style:italic;color:var(--text-2);line-height:1.75;margin-bottom:.85rem}
+.ed-test-name{font-size:.9rem;font-weight:700;color:var(--text)}
+.ed-test-role{font-size:.78rem;color:var(--text-3)}
+.ed-next{display:block;border-top:2px solid var(--border);padding:2rem 0 0;margin-top:3rem}
+.ed-next-lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3);margin-bottom:.4rem;display:block}
+.ed-next-title{font-size:1.25rem;font-weight:800;color:var(--blue);letter-spacing:-.01em}
+.ed-next:hover .ed-next-title{text-decoration:underline}
+.cs-ul{padding-left:1.2rem;margin:.75rem 0 1rem}
+.cs-ul li{font-size:.92rem;color:var(--text-2);margin-bottom:.35rem;line-height:1.65}
+.kl-list{display:grid;gap:.75rem;margin:1rem 0}
+.kl-item{display:flex;gap:.85rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.kl-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.4rem}
+.kl-text{font-size:.9rem;color:var(--text-2);line-height:1.65}
+.kl-text strong{font-weight:700;color:var(--text)}
+.gds-badge{display:inline-flex;align-items:center;gap:6px;background:#00703c;color:#fff;font-size:.72rem;font-weight:700;padding:.3rem .8rem;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1rem}
+.design-process-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.dp-step{background:var(--white);padding:.9rem .6rem;text-align:center}
+.dp-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
+.dp-label{font-size:.75rem;font-weight:600;color:var(--text)}
+.cs-outcome-lead{font-size:1.05rem;font-weight:600;color:var(--blue);line-height:1.65;max-width:640px;margin:0 0 1.25rem;border-left:3px solid var(--blue);padding:.6rem 1rem;background:var(--blue-light);border-radius:0 var(--r-lg) var(--r-lg) 0}
+/* image caption */
+.img-caption{font-size:.78rem;color:var(--text-3);text-align:center;margin-top:.4rem;font-style:italic;margin-bottom:1.25rem}
+/* lofi screens — 3 full width stacked */
+.lofi-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.75rem 0}
+.lofi-stack img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+/* wcag matrix — full width but with max height and scroll */
+.matrix-wrap{margin:1.75rem 0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);max-height:480px;overflow-y:auto}
+.matrix-wrap img{width:100%;display:block}
+
+/* hifi screens grid — matches lofi layout */
+.hifi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.75rem 0}
+.hifi-grid img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+.screen-label{font-size:.72rem;color:var(--text-3);text-align:center;margin-top:.4rem;line-height:1.4;font-style:italic}
+/* wcag list */
+.wcag-list{display:grid;gap:.5rem;margin:1rem 0}
+.wcag-item{display:grid;grid-template-columns:48px 1fr;gap:.85rem;align-items:start;padding:.65rem .85rem;background:var(--bg-soft);border-radius:var(--r);border:1px solid var(--border)}
+.wcag-code{font-size:.72rem;font-weight:700;color:var(--blue);font-family:monospace;padding-top:.1rem}
+.wcag-detail{font-size:.85rem;color:var(--text-2);line-height:1.55}
+.wcag-detail strong{font-weight:700;color:var(--text)}
+@media(max-width:700px){
+  .hifi-grid{grid-template-columns:1fr 1fr}
+  .lofi-stack{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .cs-overview{grid-template-columns:1fr 1fr}
+  .insight-grid{grid-template-columns:1fr 1fr}
+  .img-narrow{width:100%}
+  .img-research-2{grid-template-columns:1fr}
+  .img-3{grid-template-columns:1fr 1fr}
+  .outcomes-row{grid-template-columns:1fr 1fr}
+  .design-process-strip{grid-template-columns:repeat(3,1fr)}
+  .phone-device{flex:0 0 140px}
+  .phone-screen{height:270px}
+}
+
+/* ── Design process strip — shared across all case studies ── */
+.dp-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.75rem 0 0}
+.dp-strip .dp-s{background:var(--white);padding:.9rem .5rem;text-align:center;position:relative}
+.dp-strip .dp-s.active{background:var(--blue-light)}
+.dp-s-num{font-size:.62rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem;letter-spacing:.05em}
+.dp-s-lbl{font-size:.72rem;font-weight:600;color:var(--text);line-height:1.2}
+
+.dp-step-marker{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
+.dp-step-badge{font-size:.72rem;font-weight:700;color:var(--white);background:var(--blue);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;letter-spacing:.02em}
+
+.dp-header{margin:2.5rem 0 0;padding-top:2rem;border-top:1px solid var(--border)}
+.dp-header-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);display:block;margin-bottom:.3rem}
+.dp-header-title{font-size:1.15rem;font-weight:800;color:var(--text);margin:0 0 .75rem;letter-spacing:-.015em}
+</style>
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<div class="cs-editorial">
+  <a class="cs-back" href="index.html">← Back to Case Studies</a>
+
+  <!-- ── TITLE ── -->
+  <div style="padding:2.5rem 0 0">
+    <div class="gds-badge">GOV.UK Design System</div>
+    <div class="cs-pills" style="margin-bottom:1rem">
+      <span class="cs-pill">10 Weeks</span>
+      <span class="cs-pill blue">Lead Product Designer</span>
+      <span class="cs-pill green">40% Reduction in Drop-off</span>
+      <span class="cs-pill green">100% WCAG 2.2 AA</span>
+      <span class="cs-pill">Public Sector · GDS · Agile</span>
+    </div>
+    <h1 class="cs-page-title">Blue Badge Digital Companion</h1>
+    <p class="cs-outcome-lead">40% fewer abandoned applications. 85% reduction in council support calls. A GDS service that passed assessment at first review — making disabled parking permits genuinely accessible for 2.5 million eligible users.</p>
+    <p style="font-size:1.1rem;color:var(--text-2);line-height:1.7;max-width:640px;margin-top:.5rem">A complete GDS-compliant redesign of the Blue Badge application service — replacing a paper-heavy, inaccessible process with a clear, inclusive digital service built on the GOV.UK Design System.</p>
+  </div>
+
+  <!-- overview strip -->
+  <div class="cs-overview">
+    <div class="cs-ov-cell"><div class="cs-ov-label">Timeline</div><div class="cs-ov-val">10 Weeks</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Role</div><div class="cs-ov-val">Lead UX/UI &amp; Accessibility Designer</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Tools</div><div class="cs-ov-val">Figma · Sketch · Miro</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Standards</div><div class="cs-ov-val">WCAG 2.2 AA · GDS Service Manual · GOV.UK Design System</div></div>
+  </div>
+
+  <!-- hero -->
+  <div class="img-full">
+    <img src="../assets/images/bluebadge_hero.png" alt="Blue Badge Digital Companion — GOV.UK service design screens showing application, evidence upload, and confirmation">
+  </div>
+  <div style="margin:2rem 0 0;padding:1.5rem 0 0;border-top:2px solid #e5e7eb;">
+    <p style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;margin:0 0 .3rem;">Design Process</p>
+    <p style="font-size:1.1rem;font-weight:800;color:#111827;margin:0 0 1rem;letter-spacing:-.01em;">How I approached this project</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#e5e7eb;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">01</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Discovery</span></div>
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">02</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Insights</span></div>
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">03</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Ideation</span></div>
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">04</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Design</span></div>
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">05</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Validation</span></div>
+    </div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <!-- ── THE PROBLEM ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">01</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">The Problem</span></div>
+  <h2 class="ed-h2">The paper trail was failing the people who needed help most</h2>
+  <p class="ed-p">The Blue Badge scheme provides parking concessions to around 2.5 million disabled people in England. Yet the existing process was paper-heavy, inaccessible, and deeply frustrating. Applicants were searching outdated leaflets at council counters, travelling to find photo booths, waiting at GP surgeries, and then manually posting physical documents — only to enter a six-week black hole with no status updates.</p>
+  <p class="ed-p">Historically, <strong>20% of applications were lost in the mail or rejected due to unclear handwriting</strong>. The digital service that existed was no better — riddled with WCAG failures and so confusing that many eligible applicants gave up entirely.</p>
+
+  <div class="ed-quote">
+    <p>"I tried to apply online but it kept asking me questions I didn't understand. I gave up after 20 minutes and called the council instead. They told me I'd have to start again."</p>
+    <cite>— Blue Badge applicant, discovery research participant</cite>
+  </div>
+
+  <!-- AS-IS vs TO-BE service map — the centrepiece of the problem section -->
+  <div style="width:70%;margin:1.75rem auto;">
+    <div class="img-full" style="margin:0">
+      <img src="../assets/images/bb_as_is.jpg" alt="As-Is vs To-Be service map: The Paper Trail — Discovery, Application, Verification, Granting stages showing pain points in the paper process versus value adds in the digital companion">
+    </div>
+  </div>
+  <p class="img-caption">The As-Is vs To-Be service map I created during discovery — mapping the four pain points in the paper process against the digital solution's value adds at each stage.</p>
+
+  <ul class="cs-ul">
+    <li>Searching outdated leaflets at busy council counters with no clear guidance</li>
+    <li>Travelling to find a photo booth — a significant barrier for people with mobility impairments</li>
+    <li>Long waits at GP surgeries to get evidence letters</li>
+    <li>Manually posting physical documents — 20% lost or rejected due to unclear handwriting</li>
+    <li>A 6-week verification blackhole: no status updates, no acknowledgement, no way to check</li>
+    <li>Screen reader and keyboard navigation failures on the existing digital service</li>
+  </ul>
+
+  <!-- User personas -->
+  <div style="width:70%;margin:1.5rem auto 0;">
+    <div class="img-full" style="margin:0">
+      <img src="../assets/images/bb_personas.png" alt="User personas: Gerald Thompson, 72, motor-impaired veteran — and Sarah Chen, 28, tech-savvy student and caregiver">
+    </div>
+  </div>
+  <p class="img-caption">Gerald Thompson (72) — severe arthritis, uses trackball mouse, prefers physical mail. Goal: complete forms independently with dignity. Sarah Chen (28) — tech-savvy caregiver, frequent mobile user. Goal: efficiently organise tasks for family.</p>
+
+  <hr class="ed-divider">
+
+  <hr class="ed-divider">
+
+  <!-- ── RESEARCH ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">02</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">Research</span></div>
+  <h2 class="ed-h2">Understanding the people behind the application</h2>
+  <p class="ed-p">Before any design work began, I ran a structured discovery phase: reviewing analytics to identify drop-off points, shadowing council phone support agents, and conducting contextual interviews with applicants across three eligibility categories — including participants with mobility impairments, visual impairments, and cognitive disabilities.</p>
+  <p class="ed-p">I coordinated stakeholder alignment across council processing staff, DfT policy teams, and accessibility specialists — translating diverse requirements into a single, coherent design direction. I also conducted a full heuristic audit of the existing service, mapping every failure point against WCAG 2.2 AA criteria.</p>
+
+  <div class="insight-grid">
+    <div class="insight-card">
+      <div class="insight-num">01</div>
+      <div class="insight-text">Users with visual impairments <strong>could not navigate the existing forms without assistance</strong> — core failures on contrast, focus indicators, and screen reader labelling throughout</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">02</div>
+      <div class="insight-text">Evidence requirements were <strong>completely unclear</strong> — applicants didn't know what documents were acceptable, why they were needed, or how to upload them</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">03</div>
+      <div class="insight-text">Session timeouts <strong>lost all progress without warning</strong> — the single most common reason for support calls and the biggest driver of abandoned applications</div>
+    </div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <!-- ── IDEATION ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">03</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">Ideation</span></div>
+  <h2 class="ed-h2">GOV.UK Design System as the structural backbone</h2>
+  <p class="ed-p">The GOV.UK Design System's question-per-page pattern was the structural foundation of the redesign — each screen presenting only what was needed, progressively revealing complexity only when necessary. I mapped the full service architecture across all eligibility paths before sketching any screens, ensuring the branching logic was watertight before any visual design work began.</p>
+
+  <p class="ed-p"><strong>The key decision:</strong> I chose the question-per-page pattern over a single long form, despite early pressure from stakeholders to reduce 'the number of clicks.' The research was unambiguous — single focused questions significantly reduce errors and cognitive load, particularly for users with limited digital confidence. Every extra click is worth it if it means fewer abandoned applications. I made this argument by showing stakeholders the data: every time we tested a multi-question layout, error rates doubled for participants with cognitive disabilities.</p>
+
+  <!-- Inclusive user flow — full width, the real uploaded image -->
+  <div class="img-full">
+    <img src="../assets/images/bb_user_flow.jpg" alt="Inclusive user flow showing the complete application journey from landing page through eligibility screening, authentication, evidence upload, and submission — with GDS pattern annotations and WCAG decision notes">
+  </div>
+  <p class="img-caption">The inclusive user flow I designed — annotated with GDS pattern references and WCAG decisions at each branching point. Early eligibility screening prevents wasted effort; magic link authentication removes password barriers.</p>
+
+  <!-- GDS Component Audit mindmap -->
+  <div class="img-full">
+    <img src="../assets/images/bb_gds_audit.jpg" alt="GDS Component Audit — The Standard of Trust mindmap showing how GDS radios, checkboxes, and the custom photo guidance component balance WCAG compliance with innovation within a trusted framework">
+  </div>
+  <p class="img-caption">The Standard of Trust — my GDS component audit mapping every UI component against WCAG 2.2 AA criteria. Where standard components met the need, I used them. Where they didn't, I designed carefully within the established visual language.</p>
+
+  <div class="feat-list">
+    <div class="feat-row"><div class="feat-row-num">1</div><div><div class="feat-row-title">Progressive eligibility checking</div><div class="feat-row-desc">Eligibility assessed before requesting supporting evidence — preventing wasted effort and frustration for ineligible applicants</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">2</div><div><div class="feat-row-title">Magic link authentication</div><div class="feat-row-desc">WCAG 2.5.3.8 compliant — removes cognitive burden of password recall, critical for users with memory impairments</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">3</div><div><div class="feat-row-title">Contextual evidence guidance</div><div class="feat-row-desc">Inline help at the exact point of need — explaining which documents are acceptable, why they're required, and how to upload them in plain English</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">4</div><div><div class="feat-row-title">Persistent auto-save</div><div class="feat-row-desc">Progress saved automatically after each section — applicants return at any time without losing work or starting over</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">5</div><div><div class="feat-row-title">Real-time SMS status updates</div><div class="feat-row-desc">Eliminates the six-week verification blackhole — applicants receive Received, Reviewed, and Approved confirmations in real time</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">6</div><div><div class="feat-row-title">WCAG 2.2 AA by design</div><div class="feat-row-desc">44px touch targets, 4.5:1 contrast minimums, no drag-and-drop interactions, keyboard navigation, and all assistive technology tested — baked in from the first wireframe, not added at QA</div></div></div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <!-- ── DESIGN & VALIDATION ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">04</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">Design &amp; Validation</span></div>
+  <h2 class="ed-h2">From GDS wireframes to accessible high-fidelity</h2>
+  <p class="ed-p">Low-fidelity wireframes were tested early with real users — including participants using screen readers, switch access devices, and keyboard-only navigation — before any high-fidelity design work began. I used GOV.UK Design System components wherever they met user needs, introducing new patterns only where existing ones genuinely couldn't serve the user.</p>
+
+  <!-- Low-fi screens — 3 stacked full width -->
+  <p class="ed-p" style="margin-bottom:.5rem"><strong>Low-fidelity wireframes</strong> — tested with real users before any high-fidelity work began:</p>
+  <div class="lofi-stack">
+    <img src="../assets/images/bb_lofi_1.png" alt="Low-fidelity wireframe set 1 — task list and application structure screens">
+    <img src="../assets/images/bb_lofi_2.png" alt="Low-fidelity wireframe set 2 — evidence upload and file guidance screens">
+    <img src="../assets/images/bb_lofi_3.png" alt="Low-fidelity wireframe set 3 — authentication and confirmation screens">
+  </div>
+  <p class="img-caption">Low-fidelity wireframes applying the GOV.UK question-per-page pattern. Tested at this fidelity with real users to validate flow and terminology before committing to visual design.</p>
+
+  <!-- WCAG compliance matrix — rich text + image -->
+  <p class="ed-p" style="margin-bottom:.5rem"><strong>WCAG 2.2 compliance matrix</strong></p>
+  <p class="ed-p">Nine WCAG 2.2 AA criteria were formally assessed — each with specific implementation evidence, testing methodology, and a documented historical issue from the old system that the new design resolved. 100% pass rate across all assessed criteria.</p>
+  <div class="wcag-list">
+    <div class="wcag-item"><div class="wcag-code">2.4.11</div><div class="wcag-detail"><strong>Focus Not Obscured</strong> — custom focus rings visible at all zoom levels</div></div>
+    <div class="wcag-item"><div class="wcag-code">2.5.7</div><div class="wcag-detail"><strong>Dragging Movements</strong> — all uploads accessible via click-to-browse, no drag required</div></div>
+    <div class="wcag-item"><div class="wcag-code">2.5.8</div><div class="wcag-detail"><strong>Target Size</strong> — all interactive elements minimum 44×44px</div></div>
+    <div class="wcag-item"><div class="wcag-code">1.4.4</div><div class="wcag-detail"><strong>Resize Text</strong> — all content resizable to 200% with no loss of functionality</div></div>
+    <div class="wcag-item"><div class="wcag-code">1.4.10</div><div class="wcag-detail"><strong>Reflow</strong> — single-column layout, no horizontal scroll at 320px</div></div>
+    <div class="wcag-item"><div class="wcag-code">2.2.1</div><div class="wcag-detail"><strong>Timing Adjustable</strong> — no session timeouts; auto-save every 30 seconds</div></div>
+    <div class="wcag-item"><div class="wcag-code">3.2.6</div><div class="wcag-detail"><strong>Consistent Help</strong> — 'Contact Council' link in identical position on all 7 pages</div></div>
+    <div class="wcag-item"><div class="wcag-code">3.3.2</div><div class="wcag-detail"><strong>Labels or Instructions</strong> — every field has visible label, format example, and error guidance</div></div>
+    <div class="wcag-item"><div class="wcag-code">3.3.7</div><div class="wcag-detail"><strong>Accessible Authentication</strong> — magic-link login removes cognitive function test</div></div>
+  </div>
+  <div class="matrix-wrap" style="margin-top:1.25rem">
+    <img src="../assets/images/bb_wcag_matrix.jpg" alt="WCAG 2.2 Compliance Matrix table — 9 criteria, all passing, with implementation evidence and historical issues documented">
+  </div>
+  <p class="img-caption">The formal compliance matrix — each criterion evidenced with implementation detail, testing method, and the historical issue from the old system it resolved. Audit date: March 2026.</p>
+
+  <!-- High-fi screens — flat side-by-side grid matching lo-fi layout -->
+  <p class="ed-p" style="margin-top:1.5rem"><strong>High-fidelity screens</strong> — built directly in the GOV.UK Prototype Kit using authentic GDS typography (GDS Transport), spacing, and components. This fidelity was deliberate: users like Gerald need to trust the environment before submitting sensitive medical documentation.</p>
+  <div class="hifi-grid">
+    <div>
+      <img src="../assets/images/bb_hifi_1.png" alt="Hi-fi Screen 1: GDS Task List with Completed / In Progress / Not Started status badges">
+      <p class="screen-label">Screen 1: GDS Task List — application overview with status badges</p>
+    </div>
+    <div>
+      <img src="../assets/images/bb_hifi_2.png" alt="Hi-fi Screen 2: Evidence upload — dual input method, 44px+ targets, success confirmation">
+      <p class="screen-label">Screen 2: Evidence upload — dual input method, 44px+ targets, success confirmation</p>
+    </div>
+    <div>
+      <img src="../assets/images/bb_hifi_3.png" alt="Hi-fi Screen 3: Magic-link email confirmation — passwordless, no cognitive function test">
+      <p class="screen-label">Screen 3: Magic-link email confirmation — passwordless, no cognitive function test</p>
+    </div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <!-- ── RESULTS ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">05</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">Results</span></div>
+  <h2 class="ed-h2">Measurable impact for 2.5 million eligible users</h2>
+
+  <div class="outcomes-row">
+    <div class="outcome-cell"><div class="outcome-val">40%</div><div class="outcome-label">Reduction in incomplete applications</div></div>
+    <div class="outcome-cell"><div class="outcome-val">85%</div><div class="outcome-label">Reduction in council support queries</div></div>
+    <div class="outcome-cell"><div class="outcome-val">100%</div><div class="outcome-label">WCAG 2.2 AA — 9/9 criteria passing</div></div>
+    <div class="outcome-cell"><div class="outcome-val">2.5M</div><div class="outcome-label">Eligible users served across England</div></div>
+  </div>
+
+  <p class="ed-p">100% task completion in moderated usability testing across all user groups — including participants using screen readers, trackball mice, and keyboard-only navigation. Users described the redesigned service as "much clearer than before" and "I actually understood what they were asking for this time."</p>
+  <p class="ed-p">The service passed GDS assessment standards at first review. Council support teams reported a dramatic reduction in application-related calls, freeing capacity for more complex cases.</p>
+
+  <div class="ed-test">
+    <p>"This is exactly what the Blue Badge service needed. Andrew brought a deep understanding of GDS standards and accessibility requirements, but never lost sight of the real people applying for the badge. The reduction in support calls alone has freed up significant resource — and the feedback from applicants has been overwhelmingly positive. His ability to work across council teams, policy stakeholders, and technical delivery teams made a real difference."</p>
+    <div class="ed-test-name">Rachel Thompson</div>
+    <div class="ed-test-role">Head of Digital Services, Local Authority Digital Team</div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <!-- ── TAKEAWAYS ── -->
+  <span class="ed-label">Takeaways</span>
+  <h2 class="ed-h2">What I learned</h2>
+
+  <div class="kl-list">
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Accessibility is not a checklist — it's a design philosophy.</strong> Embedding WCAG 2.2 AA from the first sketch produced a genuinely better experience for everyone, not only users with disabilities. The evidence matrix wasn't bureaucracy — it was the design work itself.</div></div>
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Design for your hardest user first.</strong> Every decision was tested against Gerald — motor-impaired, low digital confidence, needs to succeed independently. If it worked for Gerald, it worked for everyone. That constraint produced better design than any amount of aesthetic refinement.</div></div>
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>GDS patterns exist for a reason.</strong> The GOV.UK Design System was built on extensive research with real government service users. Working within it — rather than around it — accelerated delivery and improved quality simultaneously. Innovation within a trusted framework is more powerful than innovation from scratch.</div></div>
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>The black hole was the product's biggest failure.</strong> Six weeks of silence after posting documents wasn't a processing issue — it was a design failure. Real-time SMS status updates cost little to implement and eliminated the single most common reason for support calls entirely.</div></div>
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Stakeholder breadth requires communication discipline.</strong> Aligning council teams, DfT policy, accessibility specialists, and technical delivery required structured communication and clear design rationale at every stage — not just at handoff. The As-Is vs To-Be service map became my most effective stakeholder alignment tool throughout the project.</div></div>
+  </div>
+
+  <a class="ed-next" href="harrods.html">
+    <span class="ed-next-lbl">Next project</span>
+    <div class="ed-next-title">Harrods Pre-Order — Luxury-grade pre-order experience design →</div>
+  </a>
+
+  <div style="height:4rem"></div>
+</div>
+
+<div class="cta-strip">
+  <span class="cta-eyebrow">Interested in working together?</span>
+  <h2 class="cta-title">Let's discuss how I can help bring your product vision to life.</h2>
+  <a href="mailto:azvoma@gmail.com" class="btn-white">Get In Touch</a>
+</div>
+
+<div id="footer-slot"></div>
+<script src="../assets/js/shared.js"></script>
+</body>
+</html>
