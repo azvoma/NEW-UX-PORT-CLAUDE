@@ -1,206 +1,453 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Designed a luxury-grade pre-order experience for Harrods — 85% reduction in support queries, WCAG 2.2 AA compliant, 100% task completion.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Andrew Zvoma">
-  <link rel="canonical" href="https://a2zee.uk/case-studies/harrods">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://a2zee.uk/case-studies/harrods">
-  <meta property="og:title" content="Harrods Pre-Order — Andrew Zvoma">
-  <meta property="og:description" content="A luxury retail UX case study designing a premium pre-order experience that reduced support queries by 85%.">
-  <meta property="og:site_name" content="Andrew Zvoma — Portfolio">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Harrods Pre-Order — Andrew Zvoma">
-  <meta name="twitter:description" content="A luxury retail UX case study designing a premium pre-order experience that reduced support queries by 85%.">
-  
-<title>Harrods Pre-Order Feature | Andrew Zvoma — UX/UI Designer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet"><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#FFFFFF;--bg2:#F0F4FF;--bg3:#E8EDF8;--surface:#FFFFFF;--ink:#0F172A;--ink-muted:#475569;--ink-faint:#94A3B8;--accent:#3B82F6;--accent-dark:#1D4ED8;--accent-light:#EFF6FF;--accent-glow:rgba(59,130,246,0.25);--border:#E2E8F0;--border-strong:#CBD5E1;--green:#16A34A;--green-bg:#F0FDF4;--amber:#D97706;--amber-bg:#FFFBEB;--tag-bg:#F1F5F9;--nav-bg:#FFFFFF;--footer-bg:#0F172A;--footer-ink:#E2E8F0;--footer-muted:#94A3B8;--radius:10px;--radius-lg:16px}
-html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}
-nav{position:sticky;top:0;z-index:100;background:var(--nav-bg,#fff);border-bottom:1px solid var(--border);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
-.nav-logo{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink)}.nav-logo .highlight{color:var(--accent)}.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}.nav-links a{font-size:.875rem;font-weight:500;color:var(--ink-muted);transition:color .2s}.nav-links a:hover{color:var(--ink)}.nav-links .nav-contact{background:var(--accent);color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.875rem}.nav-links .nav-contact:hover{background:var(--accent-dark)}
-.container{max-width:960px;margin:0 auto}section{padding:5rem 2rem}.section-label{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
-h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.02em;font-weight:700}
-h2{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.15;font-weight:600;letter-spacing:-.015em;margin-bottom:1rem}
-h3{font-size:.95rem;font-weight:600;line-height:1.4}
-.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--ink-muted);margin-bottom:2rem}.back-link:hover{color:var(--ink)}
-.meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:1.5rem 0 2.5rem}
-.meta-cell{background:var(--surface);padding:.9rem 1.1rem}.meta-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}.meta-val{font-size:.85rem;font-weight:600;color:var(--ink)}
-.hero-intro{font-size:1rem;color:var(--ink-muted);max-width:700px;margin:.6rem 0 0;line-height:1.85}
-.step{border-top:1px solid var(--border);padding:1.5rem 0;display:grid;grid-template-columns:60px 1fr;gap:1.5rem;align-items:start}
-.step-num{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--ink-faint)}
-.step-body h3{margin-bottom:.35rem}.step-body p{font-size:.9rem;color:var(--ink-muted);line-height:1.8;margin-top:.3rem}
-.step-body ul{font-size:.875rem;color:var(--ink-muted);padding-left:1.2rem;margin-top:.5rem;line-height:1.85}
-.deliverable-img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--border);margin-top:1.25rem;object-fit:cover}
-.img-caption{font-size:.72rem;color:var(--ink-faint);margin-top:.5rem;font-style:italic;text-align:center}
-.img-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.25rem}
-.img-row img{border-radius:var(--radius);border:1px solid var(--border);width:100%;object-fit:cover;object-position:top;height:220px}
-.outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:2rem}
-.outcome-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;text-align:center}
-.outcome-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:5px}
-.outcome-label{font-size:.78rem;color:var(--ink-muted);line-height:1.5}
-.quote-block{border-left:2px solid var(--accent);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--accent-light);border-radius:0 var(--radius) var(--radius) 0}
-.quote-block p{font-size:.9rem;color:var(--ink-muted);font-style:italic;line-height:1.75}
-.tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:.75rem}
-.tag{font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:.04em}
-.tag-blue{background:var(--accent-light);color:var(--accent);border:1px solid rgba(41,82,227,0.2)}
-.tag-green{background:var(--green-bg);color:var(--green);border:1px solid rgba(22,163,74,0.2)}
-.tag-amber{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(180,83,9,0.15)}
-.section-divider{border:none;border-top:1px solid var(--border);margin:0}
-.next-cs{background:var(--surface);border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
-.next-cs p{font-size:.7rem;color:var(--ink-faint);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
-.next-cs a{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:600;color:var(--ink)}.next-cs a:hover{color:var(--accent)}
-footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink)}
-.footer-links{display:flex;gap:1.5rem;list-style:none}.footer-links a{font-size:.8rem;color:var(--ink-muted)}.footer-links a:hover{color:var(--ink)}
-.footer-copy{font-size:.72rem;color:var(--ink-faint);width:100%}
-@media(max-width:700px){nav{padding:0 1.25rem}.nav-links{gap:1rem}section{padding:3.5rem 1.25rem}.step{grid-template-columns:1fr}.step-num{font-size:1rem}.img-row img{height:160px}}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harrods Pre-Order Feature | Andrew Zvoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+/* ── editorial layout ── */
+.cs-editorial { max-width: 860px; margin: 0 auto; padding: 0 var(--px, 1.5rem); }
+
+/* hero overview strip */
+.cs-overview {
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+  overflow: hidden; margin: 2.5rem 0;
+}
+.cs-ov-cell { background: var(--white); padding: 1.1rem 1.25rem; }
+.cs-ov-label { font-size: .67rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--text-3); margin-bottom: .35rem; }
+.cs-ov-val { font-size: .88rem; font-weight: 600; color: var(--text); line-height: 1.45; }
+
+/* section label + heading pattern */
+.ed-label {
+  font-size: .7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .12em; color: var(--blue); margin-bottom: .35rem; display: block;
+}
+.ed-h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800;
+  letter-spacing: -.025em; line-height: 1.1;
+  color: var(--text); margin-bottom: 1.1rem;
+}
+.ed-p { font-size: .95rem; color: var(--text-2); line-height: 1.82; margin-bottom: .9rem; }
+.ed-p strong { font-weight: 700; color: var(--text); }
+
+/* pull quote */
+.ed-quote {
+  border-left: 3px solid var(--blue);
+  margin: 1.75rem 0; padding: .85rem 1.25rem;
+  background: var(--blue-light); border-radius: 0 var(--r-lg) var(--r-lg) 0;
+}
+.ed-quote p { font-size: 1rem; font-style: italic; color: var(--text-2); line-height: 1.65; margin-bottom: .3rem; }
+.ed-quote cite { font-size: .78rem; color: var(--text-3); font-style: normal; }
+
+/* section divider */
+.ed-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+
+/* research images — full width, properly visible */
+.img-sm {
+  width: 100%; margin: 1.75rem 0;
+  border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border);
+  display: block;
+}
+.img-sm img { width: 100%; display: block; }
+.img-sm-2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  width: 100%; margin: 1.75rem 0;
+}
+.img-sm-2 img { width: 100%; border-radius: var(--r-lg); border: 1px solid var(--border); display: block; }
+
+/* 30% smaller — persona + information architecture */
+.img-sm-narrow {
+  width: 70%; margin: 1.75rem auto;
+  border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border);
+  display: block;
+}
+.img-sm-narrow img { width: 100%; display: block; }
+
+/* full-width images */
+.img-full { margin: 1.75rem 0; border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--border); }
+.img-full img { width: 100%; display: block; }
+
+/* insight pills */
+.insight-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .85rem; margin: 1.5rem 0; }
+.insight-card {
+  background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.1rem;
+}
+.insight-num { font-size: 1.6rem; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: .35rem; }
+.insight-text { font-size: .82rem; color: var(--text-2); line-height: 1.55; }
+
+/* feature list — editorial style, no cards */
+.feat-list { display: grid; gap: .6rem; margin: 1.25rem 0; }
+.feat-row {
+  display: flex; gap: .85rem; align-items: flex-start;
+  padding: .75rem 0; border-bottom: 1px solid var(--border);
+}
+.feat-row:last-child { border-bottom: none; }
+.feat-row-num {
+  font-size: .7rem; font-weight: 700; color: var(--blue);
+  background: var(--blue-light); border: 1px solid var(--blue-border);
+  min-width: 24px; height: 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: .15rem;
+}
+.feat-row-title { font-size: .88rem; font-weight: 700; color: var(--text); margin-bottom: .15rem; }
+.feat-row-desc  { font-size: .82rem; color: var(--text-3); line-height: 1.5; }
+
+/* ── scrollable phone frames — matching reference image style ── */
+.phone-showcase {
+  display: flex; gap: 1rem; margin: 2rem 0;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto; padding-bottom: .5rem;
+}
+.phone-showcase::-webkit-scrollbar { height: 4px; }
+.phone-showcase::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
+
+.phone-device {
+  flex: 0 0 148px;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* thin bezel matching reference — border only, no thick padding */
+.phone-shell {
+  background: #111;
+  border-radius: 28px;
+  padding: 5px;
+  box-shadow: 0 0 0 1px #1a1a1a, 0 6px 20px rgba(0,0,0,.25);
+  width: 100%;
+  position: relative;
+}
+
+/* remove notch — not needed, adds bulk */
+.phone-shell::before { display: none; }
+
+/* screen — full visible content, scrollable */
+.phone-screen {
+  border-radius: 24px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 290px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  background: #fff;
+}
+.phone-screen::-webkit-scrollbar { display: none; }
+.phone-screen img { width: 100%; display: block; }
+
+.phone-caption {
+  font-size: .7rem; color: var(--text-2); text-align: center;
+  margin-top: .6rem; line-height: 1.4; font-weight: 600;
+}
+.scroll-hint {
+  display: flex; align-items: center; justify-content: center; gap: .3rem;
+  font-size: .63rem; color: var(--text-4); margin-top: .2rem;
+}
+.scroll-hint svg { width: 10px; height: 10px; stroke: var(--text-4); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* outcomes row */
+.outcomes-row {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  border-radius: var(--r-xl); overflow: hidden; margin: 1.75rem 0;
+}
+.outcome-cell { background: var(--white); padding: 1.5rem 1rem; text-align: center; }
+.outcome-val { font-size: 2rem; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: .3rem; }
+.outcome-label { font-size: .72rem; color: var(--text-3); line-height: 1.4; }
+
+/* ba table */
+.ba-table { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; margin: 1.5rem 0; }
+.ba-col { background: var(--white); padding: 1.25rem; }
+.ba-col h4 { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-3); margin-bottom: 1rem; }
+.ba-row-i { display: flex; align-items: baseline; gap: .6rem; margin-bottom: .7rem; }
+.ba-val { font-size: 1.25rem; font-weight: 800; line-height: 1; }
+.ba-val.r { color: #dc2626; } .ba-val.g { color: #16a34a; }
+.ba-lbl { font-size: .82rem; color: var(--text-2); }
+
+/* testimonial */
+.ed-test { background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 2rem; margin: 1.75rem 0; }
+.ed-test p { font-size: 1rem; font-style: italic; color: var(--text-2); line-height: 1.75; margin-bottom: .85rem; }
+.ed-test-name { font-size: .9rem; font-weight: 700; color: var(--text); }
+.ed-test-role { font-size: .78rem; color: var(--text-3); }
+
+/* next cs */
+.ed-next { display: block; border-top: 2px solid var(--border); padding: 2rem 0 0; margin-top: 3rem; }
+.ed-next-lbl { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-3); margin-bottom: .4rem; display: block; }
+.ed-next-title { font-size: 1.25rem; font-weight: 800; color: var(--blue); letter-spacing: -.01em; }
+.ed-next:hover .ed-next-title { text-decoration: underline; }
+
+@media(max-width: 700px) {
+  .cs-overview { grid-template-columns: 1fr 1fr; }
+  .insight-grid { grid-template-columns: 1fr 1fr; }
+  .img-sm-narrow { width: 100%; }
+  .phone-device { flex: 0 0 120px; }
+  .phone-screen { height: 220px; }
+  .phone-shell { border-radius: 28px; padding: 10px 8px; }
+  .outcomes-row { grid-template-columns: 1fr 1fr; }
+  .ba-table { grid-template-columns: 1fr; }
+}
+
+.cs-outcome-lead{font-size:1.05rem;font-weight:600;color:var(--blue);line-height:1.65;max-width:640px;margin:0 0 1.25rem;border-left:3px solid var(--blue);padding:.6rem 1rem;background:var(--blue-light);border-radius:0 var(--r-lg) var(--r-lg) 0}
+
+/* ── Design process strip — shared across all case studies ── */
+.dp-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.75rem 0 0}
+.dp-strip .dp-s{background:var(--white);padding:.9rem .5rem;text-align:center;position:relative}
+.dp-strip .dp-s.active{background:var(--blue-light)}
+.dp-s-num{font-size:.62rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem;letter-spacing:.05em}
+.dp-s-lbl{font-size:.72rem;font-weight:600;color:var(--text);line-height:1.2}
+
+.dp-step-marker{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
+.dp-step-badge{font-size:.72rem;font-weight:700;color:var(--white);background:var(--blue);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;letter-spacing:.02em}
+
+.dp-header{margin:2.5rem 0 0;padding-top:2rem;border-top:1px solid var(--border)}
+.dp-header-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);display:block;margin-bottom:.3rem}
+.dp-header-title{font-size:1.15rem;font-weight:800;color:var(--text);margin:0 0 .75rem;letter-spacing:-.015em}
+</style>
 </head>
 <body>
-<a href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;focus:static;z-index:999;background:var(--accent,#2952e3);color:#fff;padding:8px 16px;border-radius:4px;font-size:.875rem;font-weight:600;text-decoration:none" onfocus="this.style.cssText='position:fixed;left:1rem;top:1rem;width:auto;height:auto;overflow:visible;z-index:9999;background:#2952e3;color:#fff;padding:8px 16px;border-radius:4px;font-size:.875rem;font-weight:600;text-decoration:none'">Skip to main content</a>
-<nav>
-  <a class="nav-logo" href="../index.html">Andrew <span class="highlight">Zvoma</span></a>
-  <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../case-studies.html">Case Studies</a></li>
-    <li><a href="../index.html#about">About Me</a></li>
-    <li><a href="../index.html#process">Process</a></li>
-    <li><a href="/cdn-cgi/l/email-protection#533229253c3e3213343e323a3f7d303c3e">Contact</a></li>
-  </ul>
-</nav>
+<div id="nav-slot"></div>
 
-<section id="main-content" style="background:var(--surface);">
-  <div class="container">
-    <a class="back-link" href="../case-studies.html">← Back to Case Studies</a>
-    <p class="section-label">Case Study · 8 Weeks · UI/UX Designer</p>
-    <h1>Harrods Pre-Order Feature</h1>
-    <p class="hero-intro">Designed a luxury-grade pre-order experience for Harrods that allowed high-intent customers to reserve coveted products before release — eliminating the frustration of missed launches, reducing manual support burden by 85%, and delivering a purchase flow that felt as premium as the brand itself.</p>
-    <div class="tag-row">
-      <span class="tag tag-blue">Figma · Sketch · Miro · HTML/CSS/JS</span>
-      <span class="tag tag-green">85% Reduction in Support Queries</span>
-      <span class="tag tag-green">WCAG 2.2 AA Compliant</span>
-      <span class="tag tag-amber">Luxury Retail · Agile Team</span>
+<div class="cs-editorial">
+  <a class="cs-back" href="index.html">← Back to Case Studies</a>
+
+  <!-- ── TITLE ── -->
+  <div style="padding: 2.5rem 0 0;">
+    <div class="cs-pills" style="margin-bottom:1rem">
+      <span class="cs-pill">8 Weeks</span>
+      <span class="cs-pill">Client Project</span>
+      <span class="cs-pill blue">UI/UX Designer</span>
+      <span class="cs-pill green">85% Reduction in Support Queries</span>
+      <span class="cs-pill green">WCAG 2.2 AA</span>
     </div>
-    <div class="meta-strip" style="margin-top:2rem;">
-      <div class="meta-cell"><div class="meta-label">Timeline</div><div class="meta-val">8 Weeks</div></div>
-      <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-val">UI/UX Designer</div></div>
-      <div class="meta-cell"><div class="meta-label">Tools</div><div class="meta-val">Figma · Sketch · Miro · HTML/CSS/JS</div></div>
-      <div class="meta-cell"><div class="meta-label">Team</div><div class="meta-val">PM · Tech Lead · QA Engineer</div></div>
-    </div>
-    <img loading="eager" class="deliverable-img" src="https://az-astro.netlify.app/_astro/harrods_main_screen.dk7MFWev.png" alt="Harrods pre-order screens" style="max-height:420px;object-fit:cover;" />
+    <h1 class="cs-page-title">Harrods Pre-Order Feature</h1>
+    <p class="cs-outcome-lead">85% reduction in support queries. 100% task completion in usability testing. A luxury pre-order experience that Harrods stakeholders described as exceeding expectations — designed and delivered in 8 weeks.</p>
+    <p style="font-size:1.1rem;color:var(--text-2);line-height:1.7;max-width:640px;margin-top:.5rem">
+      Designing a luxury-grade pre-order experience — giving high-intent customers a way to reserve coveted products before launch, while unlocking demand forecasting for the business.
+    </p>
   </div>
-</section>
 
-<hr class="section-divider"/>
-
-<section style="background:var(--bg2);">
-  <div class="container">
-    <p class="section-label">The Problem</p>
-    <h2>A missing capability costing loyalty and revenue</h2>
-    <p style="color:var(--ink-muted);font-size:.95rem;max-width:700px;line-height:1.85;">Harrods had no pre-order capability. For limited-edition and high-demand products — where exclusivity and guaranteed access are core to the luxury proposition — this was a significant gap. High-intent customers were repeatedly missing launches, leading to frustration, repeated availability-checking, and missed conversion. The business was also unable to forecast demand for limited releases, making inventory management reactive rather than planned.</p>
-    <div class="quote-block" style="margin-top:1.5rem;">
-      <p>"I missed out on the limited-edition bag I wanted because I didn't know when it would be available. By the time I heard about it, everything was sold out. There should be a way to reserve items in advance." — Emma Thompson, Luxury Shopper</p>
-    </div>
-    <p style="color:var(--ink-muted);font-size:.9rem;margin-top:1rem;">The design challenge was not simply adding a pre-order button. It was making the entire experience feel <em>effortless and exclusive</em> — a luxury service, not an ecommerce transaction.</p>
+  <!-- overview strip -->
+  <div class="cs-overview">
+    <div class="cs-ov-cell"><div class="cs-ov-label">Timeline</div><div class="cs-ov-val">8 Weeks</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Role</div><div class="cs-ov-val">UI/UX Designer</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Tools</div><div class="cs-ov-val">Figma · Sketch · Miro · Zeplin</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Team</div><div class="cs-ov-val">UX/UI Designer · PM · Tech Lead · QA</div></div>
   </div>
-</section>
 
-<hr class="section-divider"/>
+  <!-- hero image -->
+  <div class="img-full">
+    <img src="../assets/images/harrods_hero.png" alt="Harrods Pre-Order Feature — Shopping Bag, Order Details, and Confirmation screens">
+  </div>
+  <div style="margin:2rem 0 0;padding:1.5rem 0 0;border-top:2px solid #e5e7eb;">
+    <p style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;margin:0 0 .3rem;">Design Process</p>
+    <p style="font-size:1.1rem;font-weight:800;color:#111827;margin:0 0 1rem;letter-spacing:-.01em;">How I approached this project</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#e5e7eb;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">01</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Discovery</span></div>
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">02</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Insights</span></div>
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">03</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Ideation</span></div>
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">04</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Design</span></div>
+      <div style="background:#fff;padding:.9rem .5rem;text-align:center;"><span style="font-size:.65rem;font-weight:700;color:#2563eb;display:block;margin-bottom:.25rem;letter-spacing:.04em;">05</span><span style="font-size:.75rem;font-weight:600;color:#111827;">Validation</span></div>
+    </div>
+  </div>
 
-<section style="background:var(--surface);">
-  <div class="container">
-    <p class="section-label">Research &amp; Strategy</p>
-    <h2>Luxury requires a different research lens</h2>
+  <hr class="ed-divider">
 
-    <div class="step" style="margin-top:1rem;">
-      <div class="step-num">01</div>
-      <div class="step-body">
-        <h3>Mixed-method research across customer segments</h3>
-        <p>I used qualitative interviews with Harrods customers across segments, mapped limited-edition purchase journeys using analytics to identify friction and drop-off moments, conducted competitive analysis of luxury pre-order patterns, and reviewed existing conversion metrics. The consistent finding across every method: customers valued guaranteed access and transparency above all other features.</p>
-        <div class="img-row">
-          <img loading="lazy" src="https://az-astro.netlify.app/_astro/customer_interview_report.Bw4ExrT1.png" alt="Customer interview report" />
-          <img loading="lazy" src="https://az-astro.netlify.app/_astro/competitive_analysis.C16cib4v.png" alt="Competitive analysis" />
+  <!-- ── THE PROBLEM ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">01</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">The Problem</span></div>
+  <h2 class="ed-h2">A missing capability costing loyalty and revenue</h2>
+  <p class="ed-p">Harrods had no pre-order capability. For limited-edition and high-demand products — where exclusivity and guaranteed access are core to the luxury proposition — this was a critical gap. High-intent customers were repeatedly missing launches, leading to frustration, repeated availability-checking, and missed conversion.</p>
+  <p class="ed-p">The business was also unable to forecast demand for limited releases, making inventory management reactive rather than planned.</p>
+
+  <div class="ed-quote">
+    <p>"I missed out on the limited-edition bag I wanted because I didn't know when it would be available. By the time I heard about it, everything was sold out. There should be a way to reserve items in advance."</p>
+    <cite>— Emma Thompson, Luxury Shopper</cite>
+  </div>
+
+  <p class="ed-p">The design challenge was not just adding a pre-order button. It was making the entire experience feel <strong>effortless and exclusive</strong> — a luxury service, not an ecommerce transaction.</p>
+
+  <hr class="ed-divider">
+
+  <!-- ── RESEARCH ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">02</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">Research</span></div>
+  <h2 class="ed-h2">Understanding the luxury mindset</h2>
+  <p class="ed-p">I used qualitative interviews with Harrods customers across segments, mapped limited-edition purchase journeys using analytics to identify friction and drop-off moments, and conducted competitive analysis of luxury pre-order patterns.</p>
+
+  <div class="img-sm-2">
+    <img src="../assets/images/harrods_research.png" alt="Customer interview report">
+    <img src="../assets/images/harrods_research.png" alt="Competitive analysis">
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight-card"><div class="insight-num">01</div><div class="insight-text">Customers value <strong>guaranteed access</strong> to limited releases over launch-day competition</div></div>
+    <div class="insight-card"><div class="insight-num">02</div><div class="insight-text">Pre-ordering removes the need for constant monitoring, <strong>reducing frustration</strong></div></div>
+    <div class="insight-card"><div class="insight-num">03</div><div class="insight-text">High-value customers want to <strong>plan and budget</strong> purchases in advance</div></div>
+  </div>
+
+  <p class="ed-p">I anchored design decisions around a <strong>high-value luxury shopper persona</strong> — time-poor, experience-led, and skeptical of anything that feels transactional.</p>
+
+  <div class="img-sm-narrow">
+    <img src="../assets/images/harrods_persona.png" alt="High-value luxury shopper persona">
+  </div>
+
+  <hr class="ed-divider">
+
+  <!-- ── IDEATION ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">03</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">Ideation</span></div>
+  <h2 class="ed-h2">From problems to elegant solutions</h2>
+  <p class="ed-p">Using Crazy 8s and rapid sketching, I explored different reservation models, then applied a value-vs-effort matrix to prioritise concepts that enhanced exclusivity and integrated seamlessly into Harrods' existing shopping flows.</p>
+
+  <div class="img-sm-2">
+    <img src="../assets/images/harrods_research.png" alt="User flow diagram">
+    <img src="../assets/images/harrods_research.png" alt="Concept sketches">
+  </div>
+
+  <p class="ed-p">The six core features I prioritised:</p>
+  <div class="feat-list">
+    <div class="feat-row"><div class="feat-row-num">1</div><div><div class="feat-row-title">Exclusive access notifications</div><div class="feat-row-desc">VIP-style alerts for upcoming limited releases — reaching customers before items go live</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">2</div><div><div class="feat-row-title">Seamless reservation flow</div><div class="feat-row-desc">Integrated into the existing product page — no disruptive standalone processes</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">3</div><div><div class="feat-row-title">Real-time order status tracking</div><div class="feat-row-desc">Reassuring visibility from reservation confirmation through to dispatch and delivery</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">4</div><div><div class="feat-row-title">Flexible payment options</div><div class="feat-row-desc">Hold with a small deposit or pay in full — reducing friction at the point of commitment</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">5</div><div><div class="feat-row-title">Wishlist integration</div><div class="feat-row-desc">Signal interest before a product goes into pre-order — capturing demand earlier in the funnel</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">6</div><div><div class="feat-row-title">Concierge support</div><div class="feat-row-desc">Personal assistance for high-value customers — preserving the service feel that defines Harrods</div></div></div>
+  </div>
+
+  <p class="ed-p"><strong>The key decision:</strong> I chose to integrate the reservation flow directly into the existing product page rather than building a standalone pre-order section. Stakeholders initially pushed for a separate hub — but research showed that any friction or 'different' experience at the moment of intent immediately eroded the premium feeling Harrods customers expect. Seamlessness was the luxury feature.</p>
+  <p class="ed-p">I integrated pre-ordering into Harrods' existing structure to ensure intuitive navigation and minimal cognitive load.</p>
+
+  <div class="img-sm-narrow">
+    <img src="../assets/images/harrods_research.png" alt="Information architecture">
+  </div>
+
+  <hr class="ed-divider">
+
+  <!-- ── SOLUTION ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">04</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">Solution</span></div>
+  <h2 class="ed-h2">Design & validation</h2>
+  <p class="ed-p">I started with low-fidelity wireframes to validate flows, hierarchy, and terminology before applying any polish. Accessibility (WCAG 2.2 AA) was baked in from the start — not added after.</p>
+
+  <!-- LOW FIDELITY — smaller -->
+  <div class="img-sm">
+    <img src="../assets/images/harrods_low_fidelity.png" alt="Low fidelity wireframes — product listing, shopping bag, order details, confirmation and email screens">
+  </div>
+
+  <p class="ed-p">The final high-fidelity designs delivered a complete end-to-end mobile experience — product discovery through to shipment confirmation. Scroll inside each screen to explore the full content.</p>
+
+  <!-- ── SCROLLABLE PHONE SCREENS ── -->
+  <div class="phone-showcase">
+    <div class="phone-device">
+      <div class="phone-shell">
+        <div class="phone-screen">
+          <img src="../assets/images/harrods_screen_1.png" alt="Harrods Hampers product listing with Coming Soon labels">
         </div>
       </div>
+      <p class="phone-caption">Product Listing</p>
+      <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll to explore</div>
     </div>
-
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-body">
-        <h3>Persona-anchored design — the high-value luxury shopper</h3>
-        <p>The primary persona was a time-poor, high-intent luxury shopper who expected exclusivity and service — not deals and friction. This persona deprioritised aggressive lead capture, product grids, and sales-driven language throughout the entire design process. Every interaction was evaluated through the lens: does this feel like a service, or a transaction?</p>
-        <img loading="lazy" src="https://az-astro.netlify.app/_astro/user_persona.EPfrtPlW.png" alt="High-value luxury shopper persona" class="deliverable-img" style="max-height:300px;object-fit:cover;object-position:top;" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider"/>
-
-<section style="background:var(--bg2);">
-  <div class="container">
-    <p class="section-label">Design</p>
-    <h2>A service that feels as premium as the brand</h2>
-
-    <div class="step" style="margin-top:1rem;">
-      <div class="step-num">03</div>
-      <div class="step-body">
-        <h3>User flow &amp; ideation</h3>
-        <p>I designed end-to-end user flows ensuring the pre-order journey integrated seamlessly with Harrods' existing shopping experience — familiar, predictable, and free of disruptive standalone processes. Crazy 8s explored different reservation models; a value vs. effort matrix prioritised concepts that enhanced exclusivity without adding cognitive load.</p>
-        <div class="img-row">
-          <img loading="lazy" src="https://az-astro.netlify.app/_astro/user_flow.CHgfNvwq.png" alt="User flow" />
-          <img loading="lazy" src="https://az-astro.netlify.app/_astro/concept_sketches.B0nuivA4.png" alt="Concept sketches" />
+    <div class="phone-device">
+      <div class="phone-shell">
+        <div class="phone-screen">
+          <img src="../assets/images/harrods_screen_2.png" alt="Harrods Celebration of Christmas — product detail with Pre Order button">
         </div>
       </div>
+      <p class="phone-caption">Product Detail & Pre-Order</p>
+      <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll to explore</div>
     </div>
-
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-body">
-        <h3>Mobile-first, WCAG 2.2 AA compliant execution</h3>
-        <p>Low-fidelity wireframes validated terminology, information hierarchy, and accessibility — including screen reader compatibility and keyboard navigation — before any visual polish. High-fidelity screens were then built with proper colour contrast ratios, ARIA labels, semantic HTML structure, and responsive layouts. I worked closely with the development team throughout to ensure feasibility in HTML, CSS, and JavaScript.</p>
-        <div class="img-row">
-          <img loading="lazy" src="https://az-astro.netlify.app/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.2knc-v0g.png" alt="Product listing" />
-          <img loading="lazy" src="https://az-astro.netlify.app/_astro/2%20copy%20copy%20copy%20copy%20copy.CyP57Ybh.png" alt="Product detail with pre-order" />
-          <img loading="lazy" src="https://az-astro.netlify.app/_astro/3%20copy%20copy%20copy%20copy%20copy.DJ5VHS7V.png" alt="Order details" />
-          <img loading="lazy" src="https://az-astro.netlify.app/_astro/4%20copy%20copy%20copy%20copy%20copy.DOwlhcGY.png" alt="Checkout" />
+    <div class="phone-device">
+      <div class="phone-shell">
+        <div class="phone-screen">
+          <img src="../assets/images/harrods_screen_3.png" alt="Harrods Order Details page">
         </div>
       </div>
+      <p class="phone-caption">Order Details</p>
+      <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll to explore</div>
+    </div>
+    <div class="phone-device">
+      <div class="phone-shell">
+        <div class="phone-screen">
+          <img src="../assets/images/harrods_screen_4.png" alt="Harrods Thank you for your order confirmation">
+        </div>
+      </div>
+      <p class="phone-caption">Order Confirmation</p>
+      <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll to explore</div>
+    </div>
+    <div class="phone-device">
+      <div class="phone-shell">
+        <div class="phone-screen">
+          <img src="../assets/images/harrods_screen_5.png" alt="Harrods Shipment Confirmation email — It's on its way">
+        </div>
+      </div>
+      <p class="phone-caption">Shipment Email</p>
+      <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll to explore</div>
     </div>
   </div>
-</section>
 
-<hr class="section-divider"/>
+  <hr class="ed-divider">
 
-<section style="background:var(--surface);">
-  <div class="container">
-    <p class="section-label">Outcomes</p>
-    <h2>Measurable results, luxury experience intact</h2>
-    <div class="outcomes">
-      <div class="outcome-card"><div class="outcome-num" style="color:var(--green);">85%</div><div class="outcome-label">Reduction in pre-order related support queries</div></div>
-      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">100%</div><div class="outcome-label">Task completion in moderated usability testing</div></div>
-      <div class="outcome-card"><div class="outcome-num" style="color:var(--accent);">AA</div><div class="outcome-label">WCAG 2.2 AA compliance throughout</div></div>
-      <div class="outcome-card"><div class="outcome-num" style="color:var(--ink-faint);">✓</div><div class="outcome-label">Validated demand forecasting capability unlocked</div></div>
+  <!-- ── RESULTS ── -->
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;"><span style="font-size:.7rem;font-weight:700;color:#fff;background:#2563eb;min-width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">05</span><span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;">Results</span></div>
+  <h2 class="ed-h2">Measurable impact, luxury experience intact</h2>
+
+  <div class="outcomes-row">
+    <div class="outcome-cell"><div class="outcome-val">85%</div><div class="outcome-label">Reduction in pre-order related support queries</div></div>
+    <div class="outcome-cell"><div class="outcome-val">100%</div><div class="outcome-label">Task completion in moderated usability testing</div></div>
+    <div class="outcome-cell"><div class="outcome-val">AA</div><div class="outcome-label">WCAG 2.2 AA compliance throughout</div></div>
+    <div class="outcome-cell"><div class="outcome-val">✓</div><div class="outcome-label">Demand forecasting capability unlocked</div></div>
+  </div>
+
+  <div class="ba-table">
+    <div class="ba-col">
+      <h4>Before</h4>
+      <div class="ba-row-i"><div class="ba-val r">0%</div><div class="ba-lbl">No pre-order capability existed</div></div>
+      <div class="ba-row-i"><div class="ba-val r">High</div><div class="ba-lbl">Customer frustration with sold-out items</div></div>
+      <div class="ba-row-i"><div class="ba-val r">Low</div><div class="ba-lbl">Demand forecasting accuracy</div></div>
+      <div class="ba-row-i"><div class="ba-val r">Manual</div><div class="ba-lbl">Waitlist management process</div></div>
     </div>
-    <div class="quote-block" style="margin-top:2rem;">
-      <p>"Andrew brought a level of sophistication that truly reflects the Harrods brand. He balanced luxury aesthetics with functional clarity — the result exceeded our expectations." — James Richardson, Senior Product Manager, Harrods Digital</p>
+    <div class="ba-col">
+      <h4>After</h4>
+      <div class="ba-row-i"><div class="ba-val g">Enabled</div><div class="ba-lbl">Seamless pre-order across web and app</div></div>
+      <div class="ba-row-i"><div class="ba-val g">85%</div><div class="ba-lbl">Reduction in customer support queries</div></div>
+      <div class="ba-row-i"><div class="ba-val g">Improved</div><div class="ba-lbl">Demand forecasting and inventory planning</div></div>
+      <div class="ba-row-i"><div class="ba-val g">Automated</div><div class="ba-lbl">Streamlined pre-order workflow</div></div>
     </div>
   </div>
-</section>
 
-<div class="next-cs">
-  <p>Next Case Study</p>
-  <a href="surgeryprep.html">SurgeryPrep</a>
+  <div class="ed-test">
+    <p>"Andrew brought a level of sophistication to our pre-order feature that truly reflects the Harrods brand. He balanced luxury aesthetics with functional clarity, working closely with our stakeholders to navigate strict brand guidelines. The result exceeded our expectations — customers love the seamless experience, and our team has seen a dramatic reduction in manual processing."</p>
+    <div class="ed-test-name">James Richardson</div>
+    <div class="ed-test-role">Senior Product Manager, Harrods Digital</div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <!-- ── TAKEAWAYS ── -->
+  <span class="ed-label">Takeaways</span>
+  <h2 class="ed-h2">What I learned</h2>
+  <p class="ed-p"><strong>Luxury requires simplicity.</strong> Removing friction enhances perceived value. Every unnecessary step erodes the premium feeling.</p>
+  <p class="ed-p"><strong>Early access drives loyalty.</strong> Exclusivity strengthens emotional connection — customers don't just want the product, they want to feel like they got it first.</p>
+  <p class="ed-p"><strong>Accessibility is non-negotiable.</strong> WCAG 2.2 AA compliance was achieved without compromising a single aspect of the luxury aesthetic — the two are not in conflict.</p>
+  <p class="ed-p"><strong>Stakeholder alignment was critical.</strong> Working in an agile, cross-functional environment with commercial, tech, and brand teams required structured workshops and iterative communication throughout — not just at handoff.</p>
+
+  <a class="ed-next" href="surgeryprep.html">
+    <span class="ed-next-lbl">Next project</span>
+    <div class="ed-next-title">SurgeryPrep — Personalised surgical guidance to reduce patient anxiety →</div>
+  </a>
+
+  <div style="height:4rem"></div>
 </div>
 
-<footer>
-  <a class="footer-name" href="../index.html">Andrew Zvoma</a>
-  <ul class="footer-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../case-studies.html">Case Studies</a></li>
-    <li><a href="../index.html#about">About Me</a></li>
-    <li><a href="../index.html#process">Process</a></li>
-  </ul>
-  <p class="footer-
+<div class="cta-strip">
+  <span class="cta-eyebrow">Interested in working together?</span>
+  <h2 class="cta-title">Let's discuss how I can help bring your product vision to life.</h2>
+  <a href="mailto:azvoma@gmail.com" class="btn-white">Get In Touch</a>
+</div>
+
+<div id="footer-slot"></div>
+<script src="../assets/js/shared.js"></script>
+</body>
+</html>
